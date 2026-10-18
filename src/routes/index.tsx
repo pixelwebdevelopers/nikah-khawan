@@ -647,22 +647,47 @@ function Index() {
         </div>
       </section>
 
-      {/* Trust & Official Compliance Ticker Strip */}
-      <section className="border-y border-gold/30 bg-primary text-primary-foreground py-4">
-        <div className="mx-auto max-w-7xl px-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      {/* Trust & Official Compliance Infinite Marquee Strip */}
+      <section className="relative overflow-hidden border-y border-gold/30 bg-primary py-3.5 md:py-4 text-primary-foreground select-none">
+        {/* Left & Right Smooth Edge Fade Vignettes */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-12 md:w-24 bg-gradient-to-r from-primary to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-12 md:w-24 bg-gradient-to-l from-primary to-transparent" />
+
+        <div className="flex overflow-hidden whitespace-nowrap">
+          <div className="animate-marquee flex shrink-0 items-center gap-6 sm:gap-8 md:gap-12 text-xs sm:text-sm font-semibold tracking-wide">
+            {/* First Half */}
             {[
               { icon: ShieldCheck, text: "Govt. Registered Registrar" },
               { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
               { icon: Award, text: "NADRA MRC Assistance" },
               { icon: Clock, text: "24/7 Express Service" },
-            ].map(({ icon: I, text }) => (
-              <div
-                key={text}
-                className="flex items-center justify-center gap-2 text-xs md:text-sm font-medium"
-              >
-                <I className="h-4 w-4 text-champagne shrink-0" />
-                <span>{text}</span>
+              { icon: ShieldCheck, text: "Govt. Registered Registrar" },
+              { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
+              { icon: Award, text: "NADRA MRC Assistance" },
+              { icon: Clock, text: "24/7 Express Service" },
+            ].map(({ icon: I, text }, i) => (
+              <div key={`item-a-${i}`} className="flex items-center gap-2.5 shrink-0">
+                <I className="h-4 w-4 md:h-4.5 md:w-4.5 text-champagne shrink-0" />
+                <span className="text-champagne font-semibold">{text}</span>
+                <span className="text-gold/50 ml-6 sm:ml-8 md:ml-12">✦</span>
+              </div>
+            ))}
+
+            {/* Second Half (Exact Duplicate for Seamless Loop at -50% translate) */}
+            {[
+              { icon: ShieldCheck, text: "Govt. Registered Registrar" },
+              { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
+              { icon: Award, text: "NADRA MRC Assistance" },
+              { icon: Clock, text: "24/7 Express Service" },
+              { icon: ShieldCheck, text: "Govt. Registered Registrar" },
+              { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
+              { icon: Award, text: "NADRA MRC Assistance" },
+              { icon: Clock, text: "24/7 Express Service" },
+            ].map(({ icon: I, text }, i) => (
+              <div key={`item-b-${i}`} className="flex items-center gap-2.5 shrink-0">
+                <I className="h-4 w-4 md:h-4.5 md:w-4.5 text-champagne shrink-0" />
+                <span className="text-champagne font-semibold">{text}</span>
+                <span className="text-gold/50 ml-6 sm:ml-8 md:ml-12">✦</span>
               </div>
             ))}
           </div>
