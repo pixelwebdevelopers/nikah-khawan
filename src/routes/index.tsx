@@ -542,11 +542,53 @@ function Index() {
         <div className="pointer-events-none absolute -top-40 right-10 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-10 left-10 h-96 w-96 rounded-full bg-purple/5 blur-3xl" />
 
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2">
-          <div>
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:gap-12 px-5 lg:grid-cols-2">
+          {/* Hero Visual Column (Appears FIRST on mobile, RIGHT on desktop) */}
+          <div className="relative order-1 lg:order-2">
+            {/* Ornamental Gold Offset Frame */}
+            <div className="absolute -inset-3 rounded-[2.2rem] border-2 border-gold/30 -rotate-1 hidden sm:block" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-gold/40 shadow-soft">
+              <img
+                src={hero}
+                alt="Nikah Khawan performing official Nikah ceremony in Karachi"
+                width={1280}
+                height={1536}
+                className="aspect-[4/3] sm:aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-103"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+            </div>
+
+            {/* Floating Badge 1: Online Nikah Worldwide */}
+            <div className="absolute -bottom-4 left-2 sm:-bottom-6 sm:-left-4 rounded-2xl border border-gold/40 bg-background/95 p-3 sm:p-4 shadow-soft backdrop-blur md:-left-8 animate-float">
+              <div className="flex items-center gap-3">
+                <div className="grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-full bg-lavender border border-gold/30">
+                  <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-gold" />
+                </div>
+                <div>
+                  <div className="text-xs sm:text-sm font-bold text-primary">
+                    Online Nikah Worldwide
+                  </div>
+                  <div className="text-[10px] sm:text-xs text-muted-foreground">
+                    UK · USA · UAE · Canada · Europe
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Badge 2: NADRA & Govt Certified */}
+            <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 rounded-2xl border border-gold/40 bg-background/95 p-2.5 sm:p-3.5 shadow-soft backdrop-blur flex items-center gap-2">
+              <BadgeCheck className="h-4 w-4 sm:h-5 sm:w-5 text-gold" />
+              <div className="text-[11px] sm:text-xs font-bold text-primary">
+                Govt. Registered & NADRA Verified
+              </div>
+            </div>
+          </div>
+
+          {/* Hero Content Column (Appears SECOND on mobile, LEFT on desktop) */}
+          <div className="order-2 lg:order-1 pt-4 lg:pt-0">
             {/* Islamic Calligraphy */}
             <p
-              className="mb-4 font-urdu text-2xl md:text-3xl leading-loose text-gold"
+              className="mb-4 font-urdu text-2xl md:text-3xl leading-loose text-gold text-center lg:text-left"
               dir="rtl"
               lang="ur"
             >
@@ -560,19 +602,19 @@ function Index() {
             </div>
 
             {/* Keyword-Rich High SEO H1 Heading */}
-            <h1 className="text-4xl font-semibold leading-[1.1] md:text-6xl lg:text-7xl">
+            <h1 className="text-3xl font-semibold leading-[1.15] sm:text-4xl md:text-6xl lg:text-7xl">
               Official <span className="gold-gradient-text">Nikah Khawan</span> & Registered
               Registrar Karachi
             </h1>
 
-            <p className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-5 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
               Solemnizing sacred matrimonial bonds with dignity, legal perfection and Sunnah
               barakah. Available for home, masjid, and banquet ceremonies across all Karachi areas —
               plus legitimate Online Nikah for couples worldwide.
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-8 flex flex-wrap gap-4 items-center">
+            <div className="mt-7 sm:mt-8 flex flex-wrap gap-3.5 sm:gap-4 items-center">
               <a href={WA} target="_blank" rel="noreferrer" className={btnGold}>
                 <MessageCircle className="h-4 w-4" />
                 <span>Book via WhatsApp</span>
@@ -584,61 +626,22 @@ function Index() {
             </div>
 
             {/* Fast Stats with Luxury Cards */}
-            <div className="mt-12 grid grid-cols-3 gap-4 border-t border-gold/20 pt-8">
+            <div className="mt-10 sm:mt-12 grid grid-cols-3 gap-3 sm:gap-4 border-t border-gold/20 pt-6 sm:pt-8">
               {[
                 ["10+", "Years of Trust", "Serving families across Karachi"],
                 ["5,000+", "Nikahs Performed", "100% Shariah compliant"],
                 ["24/7", "Immediate Dispatch", "Short notice & urgent Nikah"],
               ].map(([num, label, desc]) => (
                 <div key={label} className="text-left">
-                  <div className="font-display text-3xl md:text-4xl font-bold text-primary">
+                  <div className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
                     {num}
                   </div>
-                  <div className="text-xs font-semibold text-gold mt-1">{label}</div>
-                  <div className="text-[11px] text-muted-foreground hidden sm:block mt-0.5">
+                  <div className="text-[11px] sm:text-xs font-semibold text-gold mt-1">{label}</div>
+                  <div className="text-[10px] sm:text-[11px] text-muted-foreground hidden sm:block mt-0.5">
                     {desc}
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Hero Visual Column */}
-          <div className="relative">
-            {/* Ornamental Gold Offset Frame */}
-            <div className="absolute -inset-3 rounded-[2.2rem] border-2 border-gold/30 -rotate-1 hidden sm:block" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-gold/40 shadow-soft">
-              <img
-                src={hero}
-                alt="Nikah Khawan performing official Nikah ceremony in Karachi"
-                width={1280}
-                height={1536}
-                className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-103"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-            </div>
-
-            {/* Floating Badge 1: Online Nikah Worldwide */}
-            <div className="absolute -bottom-6 -left-4 rounded-2xl border border-gold/40 bg-background/95 p-4 shadow-soft backdrop-blur md:-left-8 animate-float">
-              <div className="flex items-center gap-3">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-lavender border border-gold/30">
-                  <Globe className="h-6 w-6 text-gold" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-primary">Online Nikah Worldwide</div>
-                  <div className="text-xs text-muted-foreground">
-                    UK · USA · UAE · Canada · Europe
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Badge 2: NADRA & Govt Certified */}
-            <div className="absolute -top-4 -right-4 rounded-2xl border border-gold/40 bg-background/95 p-3.5 shadow-soft backdrop-blur hidden sm:flex items-center gap-2.5">
-              <BadgeCheck className="h-5 w-5 text-gold" />
-              <div className="text-xs font-bold text-primary">
-                Govt. Registered & NADRA Verified
-              </div>
             </div>
           </div>
         </div>

@@ -1,57 +1,29 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
+// In-memory flag: resets on full page reload/refresh, but prevents replay during SPA client-side route navigation
+let hasPlayedInCurrentTab = false;
+
 export default function LoadingScreen() {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(!hasPlayedInCurrentTab);
   const [isFading, setIsFading] = useState(false);
-  const [isMounted, setIsMounted] = useState(() => {
-    if (typeof window !== "undefined") {
-      try {
-        // If already seen in this session, don't mount
-        return sessionStorage.getItem("nikah_intro_seen") !== "1";
-      } catch {
-        return true;
-      }
-    }
-    return true;
-  });
+  const [isMounted, setIsMounted] = useState(!hasPlayedInCurrentTab);
 
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const fallbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleFinish = useCallback(() => {
-    if (isFading || !isPlaying) return;
-    setIsFading(true);
-    // Smooth 500ms cinematic crossfade to hero section
-    setTimeout(() => {
-      setIsPlaying(false);
-      setIsMounted(false);
-    }, 500);
-  }, [isFading, isPlaying]);
-
-  // Adjust safety fallback timer dynamically when video metadata loads (calibrated for 3-3.5s video)
-  const handleLoadedMetadata = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
-    const video = e.currentTarget;
-    const duration = video.duration;
-    if (duration && !isNaN(duration) && duration > 0) {
-      if (fallbackTimerRef.current) {
-        clearTimeout(fallbackTimerRef.current);
-      }
-      // Add a slim 250ms buffer past video duration so full clip plays cleanly
-      const safeDurationMs = Math.round(duration * 1000) - 550;
-      fallbackTimerRef.current = setTimeout(() => {
-        handleFinish();
-      }, safeDurationMs);
-    }
-  };
-
-  // Near-end trigger for instant, seamless transition without end-of-buffer stall
-  const handleTimeUpdate = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
-    const video = e.currentTarget;
-    if (video.duration && video.currentTime >= video.duration - 0.12) {
-      handleFinish();
-    }
-  };
+    setIsFading((prev) => {
+      if (prev) return true;
+      hasPlayedInCurrentTab = true;
+      // 700ms smooth cinematic zoom-dissolve transition to reveal website
+      setTimeout(() => {
+        setIsPlaying(false);
+        setIsMounted(false);
+      }, 700);
+      return true;
+    });
+  }, []);
 
   useEffect(() => {
     // 1. Bot check: bypass immediately for SEO crawlers
@@ -64,16 +36,11 @@ export default function LoadingScreen() {
       return;
     }
 
-    // 2. Session check: only play once per browser session
-    try {
-      if (sessionStorage.getItem("nikah_intro_seen") === "1") {
-        setIsPlaying(false);
-        setIsMounted(false);
-        return;
-      }
-      sessionStorage.setItem("nikah_intro_seen", "1");
-    } catch {
-      // Ignore if sessionStorage is disabled
+    // 2. If already played during in-app navigation, unmount cleanly
+    if (hasPlayedInCurrentTab) {
+      setIsPlaying(false);
+      setIsMounted(false);
+      return;
     }
 
     // Lock background scroll during the intro splash animation
@@ -83,23 +50,64 @@ export default function LoadingScreen() {
       document.body.style.overflow = "unset";
     }
 
-    // Initial safety fallback: calibrated for ~3-3.5s video (times out at 3.9s if metadata is delayed)
+    // Determine active video based on screen width
+    const isMobile = window.innerWidth < 768;
+    const activeVideo = isMobile ? mobileVideoRef.current : desktopVideoRef.current;
+    const inactiveVideo = isMobile ? desktopVideoRef.current : mobileVideoRef.current;
+
+    // Pause and unload inactive video to avoid network waste and event conflicts
+    if (inactiveVideo) {
+      try {
+        inactiveVideo.pause();
+        inactiveVideo.removeAttribute("src");
+        inactiveVideo.load();
+      } catch {
+        // Ignore
+      }
+    }
+
+    if (!activeVideo) {
+      handleFinish();
+      return;
+    }
+
+    // Trigger transition ~350-400ms before video ends so it smoothly dissolves without freeze-frame
+    const onTimeUpdate = () => {
+      const duration = activeVideo.duration;
+      const targetTime = duration && !isNaN(duration) ? Math.max(duration - 0.4, 2.6) : 2.8;
+      if (activeVideo.currentTime >= targetTime) {
+        handleFinish();
+      }
+    };
+
+    const onEnded = () => {
+      handleFinish();
+    };
+
+    const onError = () => {
+      handleFinish();
+    };
+
+    activeVideo.addEventListener("timeupdate", onTimeUpdate);
+    activeVideo.addEventListener("ended", onEnded);
+    activeVideo.addEventListener("error", onError);
+
+    // Initial check if video was already cached and buffered
+    if (activeVideo.duration && activeVideo.currentTime >= 2.6) {
+      handleFinish();
+    }
+
+    // Guaranteed fallback timer (3.2 seconds max total runtime)
     fallbackTimerRef.current = setTimeout(() => {
       handleFinish();
     }, 3200);
 
-    // Attempt autoplay immediately
-    const playDesktop = desktopVideoRef.current?.play();
-    if (playDesktop !== undefined) {
-      playDesktop.catch(() => {
-        // Handled via user tap or fallback timer
-      });
-    }
-
-    const playMobile = mobileVideoRef.current?.play();
-    if (playMobile !== undefined) {
-      playMobile.catch(() => {
-        // Handled via user tap or fallback timer
+    // Trigger autoplay
+    const playPromise = activeVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // If browser blocks autoplay, fade out smoothly after 1.2s
+        setTimeout(handleFinish, 1200);
       });
     }
 
@@ -107,6 +115,11 @@ export default function LoadingScreen() {
       document.body.style.overflow = "unset";
       if (fallbackTimerRef.current) {
         clearTimeout(fallbackTimerRef.current);
+      }
+      if (activeVideo) {
+        activeVideo.removeEventListener("timeupdate", onTimeUpdate);
+        activeVideo.removeEventListener("ended", onEnded);
+        activeVideo.removeEventListener("error", onError);
       }
     };
   }, [handleFinish, isPlaying]);
@@ -122,11 +135,20 @@ export default function LoadingScreen() {
   return (
     <div
       onClick={handleFinish}
-      className={`fixed inset-0 z-[99999] flex items-center justify-center bg-black overflow-hidden select-none transition-opacity duration-500 ease-out cursor-pointer ${
-        isFading ? "opacity-0 pointer-events-none" : "opacity-100"
+      className={`fixed inset-0 z-[99999] flex items-center justify-center bg-black overflow-hidden select-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer ${
+        isFading
+          ? "opacity-0 scale-105 filter blur-sm pointer-events-none"
+          : "opacity-100 scale-100 filter-none"
       }`}
       aria-label="Nikah Khawan Karachi Intro"
     >
+      {/* Subtle luxury golden radial glow that blooms softly during the transition into the website */}
+      <div
+        className={`absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.2)_0%,transparent_70%)] transition-opacity duration-700 ease-out ${
+          isFading ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
       {/* Desktop Video (16:9 Landscape - visible on md and larger) */}
       <video
         ref={desktopVideoRef}
@@ -138,11 +160,9 @@ export default function LoadingScreen() {
         controls={false}
         disablePictureInPicture
         disableRemotePlayback
-        onLoadedMetadata={handleLoadedMetadata}
-        onTimeUpdate={handleTimeUpdate}
-        onEnded={handleFinish}
-        onError={handleFinish}
-        className="hidden md:block w-full h-full object-cover object-center pointer-events-none"
+        className={`hidden md:block w-full h-full object-cover object-center pointer-events-none transition-transform duration-700 ease-out ${
+          isFading ? "scale-105" : "scale-100"
+        }`}
       />
 
       {/* Mobile Video (9:16 Portrait - visible on mobile screens) */}
@@ -156,11 +176,9 @@ export default function LoadingScreen() {
         controls={false}
         disablePictureInPicture
         disableRemotePlayback
-        onLoadedMetadata={handleLoadedMetadata}
-        onTimeUpdate={handleTimeUpdate}
-        onEnded={handleFinish}
-        onError={handleFinish}
-        className="block md:hidden w-full h-full object-cover object-center pointer-events-none"
+        className={`block md:hidden w-full h-full object-cover object-center pointer-events-none transition-transform duration-700 ease-out ${
+          isFading ? "scale-105" : "scale-100"
+        }`}
       />
     </div>
   );
