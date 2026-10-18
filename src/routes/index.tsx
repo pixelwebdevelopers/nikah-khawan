@@ -44,6 +44,7 @@ import hero from "@/assets/hero.jpg";
 import g1 from "@/assets/g1.jpg";
 import g2 from "@/assets/g2.jpg";
 import g3 from "@/assets/g3.jpg";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const PHONE = "03032924813";
 const PHONE_INT = "+923032924813";
@@ -266,6 +267,9 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased selection:bg-gold/30 selection:text-primary">
+      {/* 0. Cinematic Loading Screen / Intro (Plays once per session) */}
+      <LoadingScreen />
+
       {/* JSON-LD Schema for direct DOM guarantee */}
       <script
         type="application/ld+json"
