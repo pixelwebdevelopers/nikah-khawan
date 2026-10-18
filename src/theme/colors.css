@@ -1,0 +1,12 @@
+/*
+ * BRAND COLORS — change these values to re-theme the whole website.
+ */
+:root {
+  --brand-purple: #370858;       /* Royal Purple: headings, primary buttons, footer */
+  --brand-gold: #D9A62E;         /* Elegant Gold: accents, borders, icons */
+  --brand-champagne: #F2D17A;    /* Champagne Gold: soft highlights, hover */
+  --brand-lavender: #F0E8FB;     /* Soft Lavender: tinted sections */
+  --brand-pearl: #FBF9FF;        /* Pearl White: alternating sections */
+  --brand-white: #FFFFFF;        /* Pure White: clean sections */
+  --brand-charcoal: #17121D;     /* Deep Charcoal: body text */
+}
