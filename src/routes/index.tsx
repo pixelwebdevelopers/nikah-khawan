@@ -617,11 +617,11 @@ function Index() {
             <div className="mt-7 sm:mt-8 flex flex-wrap gap-3.5 sm:gap-4 items-center">
               <a href={WA} target="_blank" rel="noreferrer" className={btnGold}>
                 <MessageCircle className="h-4 w-4" />
-                <span>Book via WhatsApp</span>
+                <span>Book on WhatsApp</span>
               </a>
               <a href={`tel:${PHONE}`} className={btnOutline}>
                 <Phone className="h-4 w-4 text-gold" />
-                <span>Direct Call {PHONE}</span>
+                <span>Call {PHONE}</span>
               </a>
             </div>
 

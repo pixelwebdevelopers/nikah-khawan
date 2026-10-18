@@ -100,7 +100,7 @@ export default function LoadingScreen() {
     // Guaranteed fallback timer (3.2 seconds max total runtime)
     fallbackTimerRef.current = setTimeout(() => {
       handleFinish();
-    }, 3200);
+    }, 3300);
 
     // Trigger autoplay
     const playPromise = activeVideo.play();
