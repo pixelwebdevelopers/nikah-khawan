@@ -2,10 +2,9 @@
 
 Design a beautiful, modern, elegant, and premium website for **Nikah Khawan — Registerar Service Karachi & Online Worldwide**, using the following color palette inspired by my reference design.
 
-Logo and favicon is already attached to use 
+Logo and favicon is already attached to use
 
 generate real images which look real and of pakistani people.
-
 
 ### Brand Color Palette
 
@@ -65,68 +64,47 @@ Do not use neon colors, overly saturated purple gradients, excessive gold, or da
 
 **Final goal:** Create a polished, trustworthy, premium-looking Nikah Khawan website that preserves the royal-purple-and-gold brand identity while feeling bright, modern, airy, and elegant. The colors should complement the content and photography rather than overpower them.
 
-
-here is the other details we have refine them accordindly 
-
+here is the other details we have refine them accordindly
 
 Whatsapp / Call Number 👇🏻
 03032924813
 
 Office Address 🏢 👇🏻
-Office No. 1 Plot No. 694  Block 31/A Near Rasheedia Masjid Allah Wala Town Korangi Crossing Karachi 
+Office No. 1 Plot No. 694 Block 31/A Near Rasheedia Masjid Allah Wala Town Korangi Crossing Karachi
 
 Gmail 👇🏻
-info.nikahkhawan@gmail.com 
-
-
+info.nikahkhawan@gmail.com
 
 Facebook page 👇
 
 https://www.facebook.com/share/1M39MCJL71/
 
-
 Google office location Link 👇🏻📍
 
 https://maps.app.goo.gl/vFbmoenHbvw3v2wy8?g_st=ac
 
-
 website link 🖇️ 👇🏻
 https://www.nikahkhawan.com
-
 
 Instagram link 🔗 👇🏻
 
 https://www.instagram.com/nikah_khawan_service_karachi?vrfl=MWdjbm1kYmtvYzYycA==
 
-
 YouTube Link 🔗 👇🏻
 
 https://youtube.com/@nikahkhawannikahservicekarachi?si=yEm7Mvcg2rXNUndm
-
-
 
 Olx profile link 🔗 👇🏻
 
 Check out Nikah Khawan & Nikah Service Karachi's profile on OLX!
 
- https://www.olx.com.pk//en/companies/6431
-
+https://www.olx.com.pk//en/companies/6431
 
 create seperate color file so we can easily change color scheme of the whole website fromt there
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c6ebc477-bc4f-416c-8759-ecfc6078d376).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Prefer working locally? You need Node.js and npm:
 
 ```sh
 git clone <this-repository-url>
