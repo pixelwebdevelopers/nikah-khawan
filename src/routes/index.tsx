@@ -602,7 +602,7 @@ function Index() {
             </div>
 
             {/* Keyword-Rich High SEO H1 Heading */}
-            <h1 className="text-3xl font-semibold leading-[1.15] sm:text-4xl md:text-6xl lg:text-7xl">
+            <h1 className="text-3xl font-semibold leading-[1.15] sm:text-4xl md:text-5xl lg:text-5xl">
               Official <span className="gold-gradient-text">Nikah Khawan</span> & Registered
               Registrar Karachi
             </h1>
