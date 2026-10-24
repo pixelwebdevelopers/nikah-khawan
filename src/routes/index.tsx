@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import {
   BookOpen,
@@ -45,6 +45,9 @@ import g1 from "@/assets/g1.jpg";
 import g2 from "@/assets/g2.jpg";
 import g3 from "@/assets/g3.jpg";
 import LoadingScreen from "@/components/LoadingScreen";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
 const PHONE = "03032924813";
 const PHONE_INT = "+923032924813";
@@ -177,16 +180,16 @@ const schemaData = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nikah Khawan Karachi | Govt Registered Nikah Registrar & Online Nikah" },
+      { title: "Best Nikah Khawan Karachi | Registered Nikah Registrar Karachi & Online Nikah" },
       {
         name: "description",
         content:
-          "Official Govt-registered Nikah Registrar & Khawan in Karachi. Home, masjid & banquet Nikah, court marriage legal assistance, NADRA marriage registration & online Nikah worldwide. Available 24/7.",
+          "Top-rated Government Registered Nikah Registrar & Qualified Nikah Khawan in Karachi. 24/7 doorstep service for home, banquet hall, mosque, court marriage, NADRA certificate & online Nikah worldwide.",
       },
       {
         name: "keywords",
         content:
-          "Nikah Khawan Karachi, Nikah Registrar Karachi, Registered Nikah Khawan, Online Nikah Worldwide, Court Marriage Karachi, NADRA Marriage Certificate Karachi, Marriage Registrar Karachi, Nikah Nama Registration Karachi",
+          "Best Nikah Khawan in Karachi, Nikah Khawan Karachi, Nikah Registrar Karachi, Registered Nikah Registrar, Court Marriage Karachi, Online Nikah Worldwide, Nikah at Home Karachi, Nikah in Hall Karachi, Nikah in Mosque Karachi, NADRA Marriage Certificate Karachi, Marriage Registrar Karachi, Nikah Nama Registration Karachi",
       },
       { property: "og:title", content: "Nikah Khawan Karachi | Govt Registered Nikah Registrar" },
       {
@@ -263,8 +266,6 @@ function Heading({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?
 }
 
 function Index() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-background text-foreground antialiased selection:bg-gold/30 selection:text-primary">
       {/* 0. Cinematic Loading Screen / Intro (Plays once per session) */}
@@ -276,262 +277,8 @@ function Index() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* Top Pre-Header Bar */}
-      {/* Mobile Marquee Ticker */}
-      <div className="relative flex items-center overflow-hidden border-b border-gold/25 bg-primary py-2 text-xs text-primary-foreground md:hidden">
-        {/* Pinned Left 24/7 Status Pill */}
-        <div className="z-10 flex shrink-0 items-center gap-1.5 bg-primary pl-3 pr-2.5 text-[11px] font-bold text-champagne shadow-[4px_0_12px_rgba(55,8,88,0.9)]">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-          </span>
-          <span>24/7 LIVE</span>
-          <span className="text-gold/60">|</span>
-        </div>
-
-        {/* Endless Marquee Stream */}
-        <div className="flex overflow-hidden whitespace-nowrap">
-          <div className="animate-marquee flex shrink-0 items-center gap-6 text-[11px] font-medium text-primary-foreground">
-            <span className="flex items-center gap-2">
-              <span>Nikah Registrar on call across all Karachi towns & Online Worldwide</span>
-              <span className="text-gold">✦</span>
-            </span>
-            <a
-              href={`tel:${PHONE}`}
-              className="flex items-center gap-1 font-semibold text-champagne hover:underline"
-            >
-              <Phone className="h-3 w-3 text-gold" /> Call: {PHONE}
-              <span className="ml-1 text-gold">✦</span>
-            </a>
-            <a
-              href={WA}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1 font-semibold text-champagne hover:underline"
-            >
-              <MessageCircle className="h-3 w-3 text-emerald-400" /> WhatsApp Us
-              <span className="ml-1 text-gold">✦</span>
-            </a>
-            <span className="flex items-center gap-2">
-              <span>Home, Masjid, Banquet Hall & Court Marriage Ceremonies</span>
-              <span className="text-gold">✦</span>
-            </span>
-
-            {/* Seamless Loop Duplicate */}
-            <span className="flex items-center gap-2">
-              <span>Nikah Registrar on call across all Karachi towns & Online Worldwide</span>
-              <span className="text-gold">✦</span>
-            </span>
-            <a
-              href={`tel:${PHONE}`}
-              className="flex items-center gap-1 font-semibold text-champagne hover:underline"
-            >
-              <Phone className="h-3 w-3 text-gold" /> Call: {PHONE}
-              <span className="ml-1 text-gold">✦</span>
-            </a>
-            <a
-              href={WA}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1 font-semibold text-champagne hover:underline"
-            >
-              <MessageCircle className="h-3 w-3 text-emerald-400" /> WhatsApp Us
-              <span className="ml-1 text-gold">✦</span>
-            </a>
-            <span className="flex items-center gap-2">
-              <span>Home, Masjid, Banquet Hall & Court Marriage Ceremonies</span>
-              <span className="text-gold">✦</span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Desktop Pre-Header Bar */}
-      <div className="hidden border-b border-gold/20 bg-primary px-4 py-2 text-xs text-primary-foreground md:block">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-          <div className="flex items-center gap-2 font-medium">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            <span className="font-semibold text-champagne">24/7 Immediate Availability:</span>
-            <span className="opacity-90">
-              Registered Nikah Registrar on call across all Karachi towns & Online Worldwide
-            </span>
-          </div>
-          <div className="flex shrink-0 items-center gap-4 text-xs font-semibold">
-            <a
-              href={`tel:${PHONE}`}
-              className="flex items-center gap-1 transition hover:text-champagne"
-            >
-              <Phone className="h-3 w-3 text-gold" /> {PHONE}
-            </a>
-            <span className="opacity-40">|</span>
-            <a
-              href={WA}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1 text-champagne hover:underline"
-            >
-              <MessageCircle className="h-3 w-3 text-emerald-400" /> Quick WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <header className="sticky top-0 z-40 border-b border-gold/20 bg-background/95 backdrop-blur-md transition-all">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
-          <a
-            href="#top"
-            className="flex items-center gap-3 group"
-            aria-label="Nikah Khawan Karachi Home"
-          >
-            <img
-              src={logo}
-              alt="Nikah Khawan & Registrar Karachi"
-              className="h-11 w-auto md:h-14 transition-transform group-hover:scale-102"
-              width={180}
-              height={56}
-            />
-          </a>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-7 xl:gap-8 lg:flex">
-            {nav.map(([label, href]) => (
-              <a
-                key={href}
-                href={href}
-                className="text-sm font-medium text-primary transition-colors hover:text-gold relative py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold after:transition-all hover:after:w-full"
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Desktop CTA — Per user requirement: NO phone number written before the button */}
-          <div className="hidden items-center gap-3 lg:flex">
-            <a
-              href={WA}
-              target="_blank"
-              rel="noreferrer"
-              className={btnPrimary + " !py-2.5 !px-6 shadow-md hover:border-gold"}
-            >
-              <MessageCircle className="h-4 w-4 text-champagne" />
-              <span>Book Nikah</span>
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 rounded-xl border border-gold/40 text-primary transition hover:bg-gold/10"
-            onClick={() => setSidebarOpen(true)}
-            aria-label="Open Navigation Menu"
-          >
-            <Menu className="h-6 w-6" />
-          </button>
-        </div>
-      </header>
-
-      {/* Modern Slide-Over Sidebar Menu (Mobile Drawer) */}
-      {sidebarOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-charcoal/60 backdrop-blur-sm transition-opacity duration-300"
-          onClick={() => setSidebarOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
-      <aside
-        className={`fixed top-0 right-0 z-50 flex h-[100dvh] w-[86%] max-w-sm flex-col border-l border-gold/30 bg-background shadow-2xl transition-transform duration-300 ease-out ${
-          sidebarOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
-        }`}
-        aria-label="Mobile Navigation Sidebar"
-      >
-        {/* Pinned Top Bar: Logo & Close */}
-        <div className="flex shrink-0 items-center justify-between border-b border-gold/20 bg-background px-5 py-4">
-          <img src={logo} alt="Nikah Khawan Karachi" className="h-10 w-auto" />
-          <button
-            onClick={() => setSidebarOpen(false)}
-            className="rounded-full border border-gold/30 p-2 text-primary transition hover:bg-gold/15"
-            aria-label="Close menu"
-          >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-
-        {/* Scrollable Middle: 24/7 Pill + Navigation Links */}
-        <div className="flex-1 space-y-4 overflow-y-auto overscroll-contain px-5 py-4">
-          {/* 24/7 Availability Badge */}
-          <div className="flex items-center gap-2 rounded-xl border border-gold/30 bg-pearl p-3 text-xs font-medium text-primary">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            <span>24/7 On-Call in Karachi & Online Worldwide</span>
-          </div>
-
-          {/* Navigation Links */}
-          <nav className="flex flex-col space-y-1">
-            {nav.map(([label, href]) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setSidebarOpen(false)}
-                className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-primary transition hover:bg-lavender active:bg-gold/10"
-              >
-                <span>{label}</span>
-                <ChevronRight className="h-4 w-4 text-gold" />
-              </a>
-            ))}
-          </nav>
-        </div>
-
-        {/* Pinned Bottom Actions: Always 100% visible, NEVER cropped */}
-        <div className="shrink-0 border-t border-gold/25 bg-background/98 p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-[0_-8px_20px_rgba(0,0,0,0.06)] backdrop-blur-md space-y-2.5">
-          <a
-            href={WA}
-            target="_blank"
-            rel="noreferrer"
-            onClick={() => setSidebarOpen(false)}
-            className={btnPrimary + " w-full !py-3 justify-center text-xs shadow-md"}
-          >
-            <MessageCircle className="h-4 w-4 text-champagne" />
-            <span>Book on WhatsApp</span>
-          </a>
-          <a
-            href={`tel:${PHONE}`}
-            onClick={() => setSidebarOpen(false)}
-            className={btnOutline + " w-full !py-2.5 justify-center text-xs"}
-          >
-            <Phone className="h-3.5 w-3.5 text-gold" />
-            <span>Call {PHONE}</span>
-          </a>
-
-          <div className="flex items-center justify-center gap-3 pt-1">
-            {SOCIAL.map(({ icon: I, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className="grid h-8 w-8 place-items-center rounded-full border border-gold/40 text-primary transition hover:bg-gold/15"
-              >
-                <I className="h-3.5 w-3.5 text-gold" />
-              </a>
-            ))}
-            <a
-              href={OLX}
-              target="_blank"
-              rel="noreferrer"
-              className="grid h-8 place-items-center rounded-full border border-gold/40 px-2.5 text-[11px] font-bold text-primary transition hover:bg-gold/15"
-            >
-              OLX
-            </a>
-          </div>
-        </div>
-      </aside>
+      {/* Unified Site Header with Dropdowns and Mobile Drawer */}
+      <SiteHeader />
 
       {/* Hero Section */}
       <section
@@ -603,8 +350,7 @@ function Index() {
 
             {/* Keyword-Rich High SEO H1 Heading */}
             <h1 className="text-3xl font-semibold leading-[1.15] sm:text-4xl md:text-5xl lg:text-5xl">
-              Official <span className="gold-gradient-text">Nikah Khawan</span> & Registered
-              Registrar Karachi
+              Official <span className="gold-gradient-text">Nikah Khawan</span> & RNikah Service Karachi 
             </h1>
 
             <p className="mt-5 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
@@ -712,6 +458,9 @@ function Index() {
       {/* NEW: Required Documents Checklist */}
       <DocumentsChecklist />
 
+      {/* NEW: Knowledge & Trust Hub */}
+      <KnowledgeHub />
+
       {/* Gallery */}
       <Gallery />
 
@@ -725,27 +474,10 @@ function Index() {
       <Contact />
 
       {/* Footer */}
-      <Footer />
+      <SiteFooter />
 
       {/* Floating 24/7 WhatsApp Quick Button */}
-      <aside aria-label="Quick WhatsApp Contact" className="fixed bottom-5 right-5 z-40 group">
-        <div className="absolute -top-10 right-0 hidden sm:group-hover:flex items-center whitespace-nowrap rounded-lg border border-gold/40 bg-background px-3 py-1 text-xs font-semibold text-primary shadow-soft animate-in fade-in duration-200">
-          Chat with Nikah Registrar 24/7
-        </div>
-        <a
-          href={WA}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Contact Nikah Registrar on WhatsApp"
-          className="relative grid h-14 w-14 place-items-center rounded-full border-2 border-gold bg-gradient-to-tr from-primary to-[#500c7e] text-primary-foreground shadow-2xl transition hover:scale-110 active:scale-95"
-        >
-          <span className="absolute -top-1 -right-1 flex h-4 w-4">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-500" />
-          </span>
-          <MessageCircle className="h-7 w-7 text-champagne" />
-        </a>
-      </aside>
+      <FloatingWhatsApp />
     </div>
   );
 }
@@ -755,31 +487,49 @@ const services = [
     icon: Home,
     t: "Nikah at Home",
     d: "Our qualified Nikah Khawan visits your residence anywhere in Karachi with complete official documents, performing the Sunnah ceremony with warmth and elegance.",
+    href: "/nikah-in-home",
   },
   {
     icon: BookOpen,
-    t: "Masjid & Hall Ceremonies",
-    d: "Respectful, dignified attendance at banquets, marriage halls, marquees, and masjids across Karachi with punctual arrival and proper documentation.",
+    t: "Banquet Hall & Marquee",
+    d: "Respectful, dignified attendance at banquets, marriage halls, marquees, and wedding venues across Karachi with strictly punctual arrival and legal documentation.",
+    href: "/nikah-in-hall",
   },
   {
     icon: Video,
     t: "Online Nikah Worldwide",
     d: "100% Shariah-compliant and legally recognized online Nikah via Zoom or WhatsApp Video for overseas Pakistanis in UK, USA, UAE, Canada, and worldwide.",
-  },
-  {
-    icon: FileSignature,
-    t: "Official Nikah Registration",
-    d: "Government-authorized Nikah Registrar filling, signing, and sealing official Nikah Nama with immediate Union Council processing.",
-  },
-  {
-    icon: ScrollText,
-    t: "NADRA Marriage Certificate (MRC)",
-    d: "Full guidance and facilitation for obtaining your official computerized NADRA Marriage Certificate essential for visas and foreign embassies.",
+    href: "/online-nikah-worldwide",
   },
   {
     icon: Scale,
     t: "Court Marriage Legal Assistance",
-    d: "Discreet and strictly confidential court marriage assistance handled with qualified high court lawyers, police protection, and full legal documentation.",
+    d: "100% confidential and legal court marriage in Karachi backed by qualified High Court advocates, police protection, free will affidavit, and NADRA registration.",
+    href: "/court-marriage",
+  },
+  {
+    icon: FileSignature,
+    t: "Nikah in Our Office",
+    d: "Simple, dignified, and budget-friendly Nikah solemnization directly at our registrar office in Korangi Crossing, Karachi with immediate official copies.",
+    href: "/nikah-in-our-office",
+  },
+  {
+    icon: Building2,
+    t: "Luxury Hotel Nikah",
+    d: "Executive Nikah Registrar service for 4-star and 5-star hotel weddings in Karachi (Mövenpick, PC, Marriott, Avari) with bilingual English and Urdu Khutbah.",
+    href: "/nikah-in-hotel",
+  },
+  {
+    icon: ScrollText,
+    t: "Nikah in Mosque (Masjid)",
+    d: "Revive the sacred Sunnah with a blessed Nikah ceremony in major Masajid across Karachi with official government stamping on-site.",
+    href: "/nikah-in-mosque",
+  },
+  {
+    icon: ShieldCheck,
+    t: "Nikah Khawan Service Karachi",
+    d: "Full-service Nikah solemnization, legal documentation, and Union Council marriage registration across all Karachi towns with 24/7 emergency dispatch.",
+    href: "/nikah-khawan-service-karachi",
   },
 ];
 
@@ -792,25 +542,38 @@ function Services() {
           title="Every Nikah Service Under One Roof"
           sub="From sacred Masnoon Khutbah recitation to official government registration and NADRA certificate issuance."
         />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ icon: I, t, d }) => (
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {services.map(({ icon: I, t, d, href }) => (
             <div
               key={t}
-              className="group relative rounded-2xl border border-gold/25 bg-background p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold hover:shadow-xl"
+              className="group relative rounded-2xl border border-gold/25 bg-background p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold hover:shadow-xl flex flex-col justify-between"
             >
-              <div className="mb-6 grid h-14 w-14 place-items-center rounded-2xl border border-gold/40 bg-pearl transition-colors group-hover:bg-gold/15">
-                <I className="h-6 w-6 text-gold" />
+              <div>
+                <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl border border-gold/40 bg-pearl transition-colors group-hover:bg-gold/15">
+                  <I className="h-5 w-5 text-gold" />
+                </div>
+                <h3 className="text-xl font-semibold text-primary group-hover:text-gold transition">
+                  <Link to={href}>{t}</Link>
+                </h3>
+                <p className="mt-2.5 text-xs leading-relaxed text-muted-foreground">{d}</p>
               </div>
-              <h3 className="text-2xl font-semibold text-primary">{t}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d}</p>
-              <div className="mt-6 pt-4 border-t border-gold/15 flex items-center justify-between">
+
+              <div className="mt-6 pt-4 border-t border-gold/15 flex flex-col gap-2">
+                <Link
+                  to={href}
+                  className="text-xs font-bold text-primary group-hover:text-gold transition flex items-center justify-between"
+                >
+                  <span>View Details & Guide</span>
+                  <ChevronRight className="h-3.5 w-3.5 text-gold" />
+                </Link>
                 <a
                   href={`${WA}?text=${encodeURIComponent(`Assalam-o-Alaikum, I am inquiring about: ${t}`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xs font-bold text-primary group-hover:text-gold transition flex items-center gap-1"
+                  className="text-[11px] font-semibold text-muted-foreground hover:text-emerald-600 transition flex items-center gap-1"
                 >
-                  Book Service <ChevronRight className="h-3.5 w-3.5" />
+                  <MessageCircle className="h-3 w-3 text-emerald-500" />
+                  <span>Book on WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -828,6 +591,7 @@ function Packages() {
       title: "Home / Masjid Nikah",
       subtitle: "For family ceremonies at your residence or local masjid",
       badge: "Most Popular",
+      href: "/nikah-in-home",
       features: [
         "Qualified Nikah Khawan arrives at your home/masjid",
         "Masnoon Arabic Khutbah & soulful Dua-e-Khair",
@@ -842,6 +606,7 @@ function Packages() {
       title: "Banquet Hall & Marquee",
       subtitle: "For grand wedding receptions and banquet halls",
       badge: "VIP Service",
+      href: "/nikah-in-hall",
       features: [
         "Strictly punctual arrival at your wedding venue",
         "Dignified attire and respectful stage coordination",
@@ -856,6 +621,7 @@ function Packages() {
       title: "Online Nikah Worldwide",
       subtitle: "For overseas Pakistanis living in UK, USA, UAE, Canada, etc.",
       badge: "International",
+      href: "/online-nikah-worldwide",
       features: [
         "Live High-Definition Zoom / WhatsApp Video session",
         "Shariah-compliant Wakeel (Proxy) appointment",
@@ -870,6 +636,7 @@ function Packages() {
       title: "Court Marriage & Legal",
       subtitle: "Confidential legal marriage with complete privacy & protection",
       badge: "100% Confidential",
+      href: "/court-marriage",
       features: [
         "Solemnized by certified registrar & advocate high court",
         "Free will affidavit drafting and judicial registration",
@@ -903,7 +670,11 @@ function Packages() {
                 </div>
               )}
               <div>
-                <h3 className="text-xl font-bold text-primary mt-2">{pkg.title}</h3>
+                <h3 className="text-xl font-bold text-primary mt-2">
+                  <Link to={pkg.href} className="hover:text-gold transition">
+                    {pkg.title}
+                  </Link>
+                </h3>
                 <p className="mt-2 text-xs text-muted-foreground leading-relaxed min-h-[36px]">
                   {pkg.subtitle}
                 </p>
@@ -920,7 +691,14 @@ function Packages() {
                 </ul>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-gold/20">
+              <div className="mt-8 pt-4 border-t border-gold/20 flex flex-col gap-2.5">
+                <Link
+                  to={pkg.href}
+                  className="text-xs font-bold text-center text-primary hover:text-gold transition flex items-center justify-center gap-1"
+                >
+                  <span>Read Full Guide & Checklist</span>
+                  <ChevronRight className="h-3 w-3 text-gold" />
+                </Link>
                 <a
                   href={`${WA}?text=${encodeURIComponent(`Assalam-o-Alaikum, I want to book the package: ${pkg.title}`)}`}
                   target="_blank"
@@ -1202,55 +980,448 @@ function DocumentsChecklist() {
   );
 }
 
+function KnowledgeHub() {
+  const hubs = [
+    {
+      title: "Educational Blogs & Legal Guides",
+      desc: "Complete guides on NADRA marriage certificate issuance, court marriage rights in Pakistan, and Islamic Haq-Mehr rules.",
+      href: "/blogs",
+      badge: "In-Depth Guides",
+    },
+    {
+      title: "Comprehensive Q&A Knowledge Base",
+      desc: "Instant authoritative answers to 15+ common questions regarding witnesses, Wali permissions, age rules, and second marriages.",
+      href: "/q-and-a",
+      badge: "Instant Clarifications",
+    },
+    {
+      title: "Client Feedback & Testimonials",
+      desc: "Heartfelt stories and verified wedding feedback from families across Karachi and overseas couples.",
+      href: "/feedback-reviews",
+      badge: "Real Experiences",
+    },
+    {
+      title: "Google Maps 5-Star Reviews",
+      desc: "Over 100+ unedited public reviews rating our punctuality, religious dignity, and transparent documentation.",
+      href: "/google-reviews",
+      badge: "5.0 Rated",
+    },
+    {
+      title: "Islamic Scholar Credentials & Photos",
+      desc: "Official Shahadat-ul-Aalamia qualifications, government registrar licenses, and real ceremony photo gallery.",
+      href: "/nikah-khawan-islamic-scholar-photos",
+      badge: "Certified Scholars",
+    },
+    {
+      title: "Nikah Videos & Khutbah Recitations",
+      desc: "Watch ceremonial highlights, prophetic Khutbah-e-Nikah recitations, and legal lectures on our YouTube channel.",
+      href: "/nikah-videos",
+      badge: "Video Highlights",
+    },
+  ];
+
+  return (
+    <section className="bg-lavender py-24 scroll-mt-12">
+      <div className="mx-auto max-w-7xl px-5">
+        <Heading
+          eyebrow="Knowledge & Trust Hub"
+          title="Explore Our Comprehensive Marriage Resources"
+          sub="Empowering families with authentic Shariah knowledge, legal clarity, and verified customer trust."
+        />
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {hubs.map((hub) => (
+            <Link
+              key={hub.title}
+              to={hub.href}
+              className="group flex flex-col justify-between rounded-3xl border border-gold/25 bg-background p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold hover:shadow-xl"
+            >
+              <div>
+                <span className="inline-block rounded-full bg-gold/15 px-3 py-1 text-[11px] font-bold text-gold border border-gold/30 mb-3">
+                  {hub.badge}
+                </span>
+                <h3 className="text-xl font-bold text-primary group-hover:text-gold transition">
+                  {hub.title}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{hub.desc}</p>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-gold/15 flex items-center justify-between text-xs font-bold text-primary group-hover:text-gold transition">
+                <span>Explore Resource</span>
+                <ChevronRight className="h-4 w-4 text-gold transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const GALLERY_ROW_1 = [
+  {
+    src: "/images/services/nikah-in-hall-1.jpg",
+    alt: "Grand Banquet Hall Nikah Ceremony Karachi",
+    title: "Grand Banquet Hall Solemnization",
+    location: "DHA Creek Banquet, Karachi",
+    badge: "Hall Ceremony",
+  },
+  {
+    src: "/images/services/nikah-in-home-1.jpg",
+    alt: "Intimate Home Living Room Nikah Solemnization",
+    title: "Intimate Family Living Room Nikah",
+    location: "Clifton Block 4, Karachi",
+    badge: "Home Ceremony",
+  },
+  {
+    src: "/images/services/nikah-in-mosque-1.jpg",
+    alt: "Sunnah Masjid Prayer Hall Nikah Ceremony",
+    title: "Sunnah Masjid Prayer Hall Solemnization",
+    location: "Bait-ul-Mukarram, Gulshan",
+    badge: "Mosque Sunnah",
+  },
+  {
+    src: "/images/services/nikah-in-hotel-1.jpg",
+    alt: "5-Star Luxury Ballroom Nikah Setup",
+    title: "5-Star Luxury Ballroom Celebration",
+    location: "Pearl Continental Hotel, Karachi",
+    badge: "5-Star Hotel",
+  },
+  {
+    src: "/images/services/nikah-in-makkah-1.jpg",
+    alt: "Umrah Sacred Nikah in Masjid al-Haram Makkah",
+    title: "Holy Umrah Pilgrimage Nikah Blessing",
+    location: "Masjid al-Haram, Makkah",
+    badge: "Holy Makkah",
+  },
+  {
+    src: "/images/services/online-nikah-1.jpg",
+    alt: "Live HD Video Conference Online Nikah",
+    title: "Worldwide Live Video Solemnization",
+    location: "London UK & Karachi Video Live",
+    badge: "Online Worldwide",
+  },
+];
+
+const GALLERY_ROW_2 = [
+  {
+    src: "/images/services/nikah-in-hall-2.jpg",
+    alt: "Official Urdu Nikahnama Registration with Gold Pen",
+    title: "Official Government Nikahnama Registry",
+    location: "Sindh Local Govt 4-Copy Register",
+    badge: "Legal Document",
+  },
+  {
+    src: "/images/services/nikah-in-home-2.jpg",
+    alt: "Pakistani Bride Signing Nikahnama at Home",
+    title: "Bride Nikahnama Sign-off with Family",
+    location: "North Nazimabad, Karachi",
+    badge: "Dignified Sign-off",
+  },
+  {
+    src: "/images/services/nikah-in-mosque-2.jpg",
+    alt: "Congregational Dua-e-Khair in Mosque",
+    title: "Sunlit Congregational Dua-e-Khair",
+    location: "Masjid-e-Tooba, DHA Karachi",
+    badge: "Sacred Dua",
+  },
+  {
+    src: "/images/services/nikah-in-hotel-2.jpg",
+    alt: "Bilingual Khutbah on Luxury Hotel Stage",
+    title: "Bilingual Khutbah & Marital Guidance",
+    location: "Mövenpick Hotel, Karachi",
+    badge: "Executive VIP",
+  },
+  {
+    src: "/images/services/nikah-in-madinah-1.jpg",
+    alt: "Prophetic Mosque Courtyard in Madinah",
+    title: "Prophetic Sunnah Nikah in Madinah",
+    location: "Masjid an-Nabawi, Madinah",
+    badge: "Holy Madinah",
+  },
+  {
+    src: "/images/services/court-marriage-1.jpg",
+    alt: "Judicial Legal Protection & Court Marriage",
+    title: "Judicial Legal Counsel & Protection",
+    location: "City Court Chambers, Karachi",
+    badge: "Article 35 Law",
+  },
+];
+
+const GALLERY_ROW_3 = [
+  {
+    src: "/images/services/nikah-in-hall-3.jpg",
+    alt: "Heartfelt Family Dua on Banquet Wedding Stage",
+    title: "Emotional Family Dua & Blessings",
+    location: "Karsaz Banquet Lawn, Karachi",
+    badge: "Family Dua",
+  },
+  {
+    src: "/images/services/nikah-in-home-3.jpg",
+    alt: "Traditional Mithai Sweets Distribution with Qazi",
+    title: "Traditional Mithai Celebratory Sweets",
+    location: "Gulshan-e-Iqbal, Karachi",
+    badge: "Celebration",
+  },
+  {
+    src: "/images/services/nikah-in-mosque-3.jpg",
+    alt: "Prophetic Sunnah Date Distribution Khajoor Taqseem",
+    title: "Prophetic Sunnah Khajoor Date Taqseem",
+    location: "Memon Masjid, Karachi",
+    badge: "Sunnah Taqseem",
+  },
+  {
+    src: "/images/services/nikah-in-hotel-3.jpg",
+    alt: "Official Marriage Contract on Podium with Rings",
+    title: "VIP Executive Registry & Rings",
+    location: "Marriott Hotel, Karachi",
+    badge: "VIP Presentation",
+  },
+  {
+    src: "/images/services/nikah-in-office-1.jpg",
+    alt: "Authorized Nikah Registrar Office in Karachi",
+    title: "Direct Registrar Chamber Solemnization",
+    location: "Korangi Crossing, Karachi",
+    badge: "Office Suite",
+  },
+  {
+    src: "/images/services/court-marriage-2.jpg",
+    alt: "Official Marriage Registration Affidavit & Seals",
+    title: "NADRA Verified Statutory Documentation",
+    location: "Sindh Family Court Jurisdiction",
+    badge: "NADRA Verified",
+  },
+];
+
 function Gallery() {
   return (
-    <section id="gallery" className="bg-background py-24 scroll-mt-12">
-      <div className="mx-auto max-w-7xl px-5">
+    <section
+      id="gallery"
+      className="relative bg-background py-20 sm:py-28 overflow-hidden scroll-mt-12"
+    >
+      {/* Decorative ambient background blur */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 -z-10 h-96 w-[700px] rounded-full bg-gradient-to-r from-gold/15 via-champagne/10 to-primary/10 blur-3xl opacity-70" />
+
+      <div className="mx-auto max-w-7xl px-5 mb-12 sm:mb-16">
         <Heading
           eyebrow="Moments of Grace"
           title="Moments of Sacred Barakah"
-          sub="Glimpses of joyful Nikah ceremonies solemnized across Karachi and online."
+          sub="Glimpses of joyful, Shariah-compliant Nikah ceremonies solemnized across Karachi, the Holy Cities, and worldwide."
         />
-        <div className="grid gap-5 md:grid-cols-3 md:grid-rows-2">
-          <div className="relative group overflow-hidden rounded-2xl border border-gold/30 md:row-span-2">
-            <img
-              src={g2}
-              alt="Couple and family signing official Nikah Nama"
-              loading="lazy"
-              width={1024}
-              height={1280}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+      </div>
+
+      {/* 3-Row Continuous Marquee Gallery with Narrow Edge Fades Covering All Rows */}
+      <div className="relative w-full overflow-hidden space-y-4 sm:space-y-6">
+        {/* Row 1: Left to Right */}
+        <div className="relative w-full overflow-hidden">
+          {/* Subtle Narrow Left & Right Fade Masks */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-12 md:w-16 bg-gradient-to-r from-background to-transparent z-20" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-12 md:w-16 bg-gradient-to-l from-background to-transparent z-20" />
+
+          <div className="flex w-max animate-marquee-reverse animate-marquee-medium">
+            <div className="flex shrink-0 items-center gap-4 sm:gap-6 pr-4 sm:pr-6">
+              {GALLERY_ROW_1.map((item, idx) => (
+                <div
+                  key={`r1-a-${idx}`}
+                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  />
+                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>{item.badge}</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
+                      <MapPin className="h-3 w-3 text-gold shrink-0" />
+                      <span>{item.location}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div
+              className="flex shrink-0 items-center gap-4 sm:gap-6 pr-4 sm:pr-6"
+              aria-hidden="true"
+            >
+              {GALLERY_ROW_1.map((item, idx) => (
+                <div
+                  key={`r1-b-${idx}`}
+                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  />
+                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>{item.badge}</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
+                      <MapPin className="h-3 w-3 text-gold shrink-0" />
+                      <span>{item.location}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="relative group overflow-hidden rounded-2xl border border-gold/30">
-            <img
-              src={g1}
-              alt="Bride signing government registered Nikah Nama"
-              loading="lazy"
-              width={1024}
-              height={1024}
-              className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+        </div>
+
+        {/* Row 2: Right to Left */}
+        <div className="relative w-full overflow-hidden">
+          {/* Subtle Narrow Left & Right Fade Masks */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-12 md:w-16 bg-gradient-to-r from-background to-transparent z-20" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-12 md:w-16 bg-gradient-to-l from-background to-transparent z-20" />
+
+          <div className="flex w-max animate-marquee animate-marquee-slow">
+            <div className="flex shrink-0 items-center gap-4 sm:gap-6 pr-4 sm:pr-6">
+              {GALLERY_ROW_2.map((item, idx) => (
+                <div
+                  key={`r2-a-${idx}`}
+                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  />
+                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>{item.badge}</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
+                      <MapPin className="h-3 w-3 text-gold shrink-0" />
+                      <span>{item.location}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div
+              className="flex shrink-0 items-center gap-4 sm:gap-6 pr-4 sm:pr-6"
+              aria-hidden="true"
+            >
+              {GALLERY_ROW_2.map((item, idx) => (
+                <div
+                  key={`r2-b-${idx}`}
+                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  />
+                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>{item.badge}</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
+                      <MapPin className="h-3 w-3 text-gold shrink-0" />
+                      <span>{item.location}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="relative group overflow-hidden rounded-2xl border border-gold/30">
-            <img
-              src={hero}
-              alt="Nikah ceremony banquet hall stage Karachi"
-              loading="lazy"
-              width={1280}
-              height={1536}
-              className="aspect-square w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-          <div className="relative group overflow-hidden rounded-2xl border border-gold/30 md:col-span-2">
-            <img
-              src={g3}
-              alt="Nikah Khawan delivering Islamic marriage Khutbah"
-              loading="lazy"
-              width={1024}
-              height={1024}
-              className="aspect-[2/1] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+        </div>
+
+        {/* Row 3: Left to Right */}
+        <div className="relative w-full overflow-hidden">
+          {/* Subtle Narrow Left & Right Fade Masks */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-12 md:w-16 bg-gradient-to-r from-background to-transparent z-20" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-12 md:w-16 bg-gradient-to-l from-background to-transparent z-20" />
+
+          <div className="flex w-max animate-marquee-reverse animate-marquee-medium">
+            <div className="flex shrink-0 items-center gap-4 sm:gap-6 pr-4 sm:pr-6">
+              {GALLERY_ROW_3.map((item, idx) => (
+                <div
+                  key={`r3-a-${idx}`}
+                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  />
+                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>{item.badge}</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
+                      <MapPin className="h-3 w-3 text-gold shrink-0" />
+                      <span>{item.location}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div
+              className="flex shrink-0 items-center gap-4 sm:gap-6 pr-4 sm:pr-6"
+              aria-hidden="true"
+            >
+              {GALLERY_ROW_3.map((item, idx) => (
+                <div
+                  key={`r3-b-${idx}`}
+                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  />
+                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>{item.badge}</span>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
+                      <MapPin className="h-3 w-3 text-gold shrink-0" />
+                      <span>{item.location}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -1258,68 +1429,195 @@ function Gallery() {
   );
 }
 
-function Testimonials() {
-  const items = [
-    {
-      n: "Ahmed & Ayesha",
-      c: "Gulshan-e-Iqbal, Karachi",
-      s: "Home Nikah Ceremony",
-      q: "Maulana sahab arrived 15 minutes before time and explained every clause of the Nikah Nama with clarity. The Union Council registration was completed within the week. Highly recommended!",
-    },
-    {
-      n: "Usman & Hira",
-      c: "London, UK (Online Nikah)",
-      s: "Online Nikah Worldwide",
-      q: "We solemnized our Nikah online while my family was in Karachi and I was in London. The Zoom ceremony was flawless and our NADRA computerized certificate reached London via DHL in 4 days.",
-    },
-    {
-      n: "Bilal & Sana",
-      c: "DHA Phase 6, Karachi",
-      s: "Banquet Hall Nikah",
-      q: "Very dignified and respectful service. Our family elders were truly impressed by the beautiful Masnoon Khutbah and the meticulous care taken with the official documentation.",
-    },
-    {
-      n: "Zubair & Fatima",
-      c: "North Nazimabad, Karachi",
-      s: "Urgent Same-Day Nikah",
-      q: "We needed a Nikah Khawan urgently on a Sunday evening due to an unexpected family departure. The registrar arrived promptly within 50 minutes with all official forms. Lifesavers!",
-    },
-  ];
+const TESTIMONIALS = [
+  {
+    name: "Ahmed & Ayesha",
+    location: "Gulshan-e-Iqbal, Karachi",
+    service: "Home Nikah Ceremony",
+    rating: 5,
+    tag: "Verified Nikah",
+    quote:
+      "Maulana sahab arrived 15 minutes before time and explained every clause of the Nikah Nama with clarity. The Union Council registration was completed within the week. Highly recommended!",
+  },
+  {
+    name: "Usman & Hira",
+    location: "London, UK (Online)",
+    service: "Online Nikah Worldwide",
+    rating: 5,
+    tag: "Embassy Attested",
+    quote:
+      "We solemnized our Nikah online while my family was in Karachi and I was in London. The Zoom ceremony was flawless and our NADRA computerized certificate reached London via DHL in 4 days.",
+  },
+  {
+    name: "Bilal & Sana",
+    location: "DHA Phase 6, Karachi",
+    service: "Banquet Hall Nikah",
+    rating: 5,
+    tag: "Stage Ceremony",
+    quote:
+      "Very dignified and respectful service. Our family elders were truly impressed by the beautiful Masnoon Khutbah and the meticulous care taken with the official documentation.",
+  },
+  {
+    name: "Dr. Hamza & Mahnoor",
+    location: "North Nazimabad, Karachi",
+    service: "Masjid Nikah Ceremony",
+    rating: 5,
+    tag: "Sunnah Masjid",
+    quote:
+      "Conducted our Sunnah Nikah after Jummah prayer at the grand mosque. The scholar brought official registers and distributed dates according to the Prophet's Sunnah.",
+  },
+  {
+    name: "Zubair & Fatima",
+    location: "Korangi, Karachi",
+    service: "Urgent Same-Day Nikah",
+    rating: 5,
+    tag: "Express Service",
+    quote:
+      "We needed a Nikah Khawan urgently on a Sunday evening due to an unexpected family departure. The registrar arrived promptly within 50 minutes with all official forms. Lifesavers!",
+  },
+  {
+    name: "Tariq & Zainab",
+    location: "Toronto, Canada",
+    service: "Overseas Proxy Nikah",
+    rating: 5,
+    tag: "Canadian Visa",
+    quote:
+      "Smooth coordination with Power of Attorney and legal Wakeel. The Nikahnama and MOFA attested certificate arrived right on schedule for our Canadian spouse visa petition.",
+  },
+  {
+    name: "Saad & Nida",
+    location: "Clifton Block 4, Karachi",
+    service: "Luxury Hotel Nikah",
+    rating: 5,
+    tag: "5-Star Hotel VIP",
+    quote:
+      "The scholar conducted the ceremony in our 5-star hotel ballroom with impeccable etiquette and bilingual English/Urdu explanation of marital responsibilities.",
+  },
+  {
+    name: "Farhan & Maryam",
+    location: "Bahria Town, Karachi",
+    service: "Court Marriage & Protection",
+    rating: 5,
+    tag: "NADRA Registered",
+    quote:
+      "Complete confidentiality, respect, and zero legal complications. The advocates drafted our free-will affidavits and handled the NADRA marriage certificate seamlessly.",
+  },
+];
 
+function Testimonials() {
   return (
-    <section id="testimonials" className="bg-lavender py-24 scroll-mt-12">
-      <div className="mx-auto max-w-7xl px-5">
+    <section
+      id="testimonials"
+      className="relative bg-lavender/50 py-20 sm:py-28 overflow-hidden scroll-mt-12"
+    >
+      {/* Decorative ambient background */}
+      <div className="pointer-events-none absolute -bottom-40 left-1/2 -translate-x-1/2 -z-10 h-96 w-[600px] rounded-full bg-gradient-to-tr from-gold/15 to-pearl/40 blur-3xl opacity-60" />
+
+      <div className="mx-auto max-w-7xl px-5 mb-12 sm:mb-16">
         <Heading
           eyebrow="Verified Feedback"
           title="Words of Appreciation from Blessed Families"
-          sub="Read real experiences from couples and parents who trusted our Nikah Khawan services."
+          sub="Read real experiences from couples and parents who trusted our Nikah Khawan services across Karachi and internationally."
         />
+      </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {items.map((t) => (
-            <figure
-              key={t.n}
-              className="flex flex-col justify-between rounded-2xl border border-gold/25 bg-background p-7 shadow-sm transition hover:shadow-md"
-            >
-              <div>
-                <div className="flex gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-                  ))}
+      {/* Modern Single-Row Continuous Marquee with Subtle Edge Vignettes */}
+      <div className="relative w-full overflow-hidden py-3">
+        {/* Subtle Narrow Left & Right Fade Masks */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-12 md:w-16 bg-gradient-to-r from-lavender/90 to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-12 md:w-16 bg-gradient-to-l from-lavender/90 to-transparent z-20" />
+
+        {/* Single Row: Continuous Uninterrupted Twin-Track Flow */}
+        <div className="flex w-max animate-marquee animate-marquee-slow">
+          <div className="flex shrink-0 items-center gap-6 pr-6">
+            {TESTIMONIALS.map((t, idx) => (
+              <figure
+                key={`t-a-${idx}`}
+                className="group w-80 sm:w-96 shrink-0 flex flex-col justify-between rounded-3xl border border-gold/30 bg-background/95 backdrop-blur-md p-6 sm:p-7 shadow-soft transition-all duration-300 hover:border-gold hover:shadow-xl hover:-translate-y-1"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                      ))}
+                      <span className="ml-1 text-xs font-bold text-primary">5.0</span>
+                    </div>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">
+                      <CheckCircle2 className="h-3 w-3" />
+                      <span>{t.tag}</span>
+                    </span>
+                  </div>
+
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-gold">
+                    {t.service}
+                  </div>
+
+                  <blockquote className="mt-3 text-xs sm:text-sm leading-relaxed text-charcoal/90 italic">
+                    “{t.quote}”
+                  </blockquote>
                 </div>
-                <div className="mt-2 text-[11px] font-semibold text-gold uppercase tracking-wider">
-                  {t.s}
+
+                <figcaption className="mt-6 border-t border-gold/20 pt-4 flex items-center gap-3">
+                  <div className="h-9 w-9 rounded-full bg-primary/10 border border-gold/40 grid place-items-center font-bold text-xs text-primary shrink-0">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="font-bold text-primary text-sm leading-snug">{t.name}</div>
+                    <div className="text-[11px] text-muted-foreground flex items-center gap-1">
+                      <MapPin className="h-3 w-3 text-gold/80" />
+                      <span>{t.location}</span>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="flex shrink-0 items-center gap-6 pr-6" aria-hidden="true">
+            {TESTIMONIALS.map((t, idx) => (
+              <figure
+                key={`t-b-${idx}`}
+                className="group w-80 sm:w-96 shrink-0 flex flex-col justify-between rounded-3xl border border-gold/30 bg-background/95 backdrop-blur-md p-6 sm:p-7 shadow-soft transition-all duration-300 hover:border-gold hover:shadow-xl hover:-translate-y-1"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                      ))}
+                      <span className="ml-1 text-xs font-bold text-primary">5.0</span>
+                    </div>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">
+                      <CheckCircle2 className="h-3 w-3" />
+                      <span>{t.tag}</span>
+                    </span>
+                  </div>
+
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-gold">
+                    {t.service}
+                  </div>
+
+                  <blockquote className="mt-3 text-xs sm:text-sm leading-relaxed text-charcoal/90 italic">
+                    “{t.quote}”
+                  </blockquote>
                 </div>
-                <blockquote className="mt-4 text-xs md:text-sm leading-relaxed text-charcoal italic">
-                  “{t.q}”
-                </blockquote>
-              </div>
-              <figcaption className="mt-6 border-t border-gold/20 pt-4">
-                <div className="font-bold text-primary text-sm">{t.n}</div>
-                <div className="text-xs text-muted-foreground">{t.c}</div>
-              </figcaption>
-            </figure>
-          ))}
+
+                <figcaption className="mt-6 border-t border-gold/20 pt-4 flex items-center gap-3">
+                  <div className="h-9 w-9 rounded-full bg-primary/10 border border-gold/40 grid place-items-center font-bold text-xs text-primary shrink-0">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="font-bold text-primary text-sm leading-snug">{t.name}</div>
+                    <div className="text-[11px] text-muted-foreground flex items-center gap-1">
+                      <MapPin className="h-3 w-3 text-gold/80" />
+                      <span>{t.location}</span>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -1525,117 +1823,5 @@ function Contact() {
         </form>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="bg-primary text-primary-foreground border-t border-gold/30">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-4">
-        <div className="md:col-span-2">
-          <div className="inline-block rounded-2xl bg-background p-3 border border-gold/30 shadow-md">
-            <img src={logo} alt="Nikah Khawan & Nikah Registrar Karachi" className="h-14 w-auto" />
-          </div>
-          <p className="mt-5 max-w-md text-sm leading-relaxed opacity-85">
-            Official Nikah Khawan and Government Registered Nikah Registrar serving Karachi and
-            online worldwide. Conducting sacred ceremonies with religious integrity, official
-            documentation, and the Sunnah blessing.
-          </p>
-          <div className="mt-6 flex gap-3">
-            {SOCIAL.map(({ icon: I, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className="grid h-10 w-10 place-items-center rounded-full border border-champagne/40 text-champagne transition hover:bg-champagne/15 hover:scale-105"
-              >
-                <I className="h-4 w-4" />
-              </a>
-            ))}
-            <a
-              href={OLX}
-              target="_blank"
-              rel="noreferrer"
-              className="grid h-10 place-items-center rounded-full border border-champagne/40 px-4 text-xs font-bold text-champagne hover:bg-champagne/15 transition hover:scale-105"
-            >
-              OLX
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <h4 className="mb-4 font-display text-xl text-champagne">Quick Navigation</h4>
-          <ul className="space-y-2.5 text-sm opacity-85">
-            {nav.map(([l, h]) => (
-              <li key={h}>
-                <a href={h} className="hover:text-champagne transition flex items-center gap-1.5">
-                  <ChevronRight className="h-3 w-3 text-gold" /> {l}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="mb-4 font-display text-xl text-champagne">Contact Registrar</h4>
-          <ul className="space-y-3 text-sm opacity-85">
-            <li className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-gold shrink-0" />
-              <a href={`tel:${PHONE}`} className="hover:text-champagne transition font-semibold">
-                {PHONE}
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-gold shrink-0" />
-              <a href={`mailto:${EMAIL}`} className="break-all hover:text-champagne transition">
-                {EMAIL}
-              </a>
-            </li>
-            <li className="flex items-start gap-2">
-              <MapPin className="h-4 w-4 text-gold shrink-0 mt-1" />
-              <a
-                href={MAP}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-champagne transition text-xs leading-relaxed"
-              >
-                {ADDRESS}
-              </a>
-            </li>
-            <li className="flex items-center gap-2 text-xs">
-              <Globe className="h-4 w-4 text-gold shrink-0" />
-              <a href={SITE_URL} className="hover:text-champagne transition">
-                www.nikahkhawan.com
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-7xl px-5">
-        <div className="gold-rule opacity-50" />
-      </div>
-
-      <div className="mx-auto max-w-7xl px-5 pt-6 pb-28 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-center md:text-left opacity-90">
-        <p>
-          © {new Date().getFullYear()} Nikah Khawan & Registrar Service Karachi. All rights
-          reserved.
-        </p>
-        <p className="text-xs text-champagne">
-          Developed by{" "}
-          <a
-            href="https://pixelwebdevelopers.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold text-champagne underline decoration-gold/60 underline-offset-4 transition-colors hover:text-white"
-          >
-            Pixel Web Developers
-          </a>
-        </p>
-        <p className="text-[11px] opacity-80">Strictly Shariah Compliant & Government Authorized</p>
-      </div>
-    </footer>
   );
 }

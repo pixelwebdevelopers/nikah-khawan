@@ -10,33 +10,298 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutUsRouteImport } from './routes/about-us'
+import { Route as BlogsRouteImport } from './routes/blogs'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as CourtMarriageRouteImport } from './routes/court-marriage'
+import { Route as FeedbackReviewsRouteImport } from './routes/feedback-reviews'
+import { Route as GoogleReviewsRouteImport } from './routes/google-reviews'
+import { Route as NikahInHallRouteImport } from './routes/nikah-in-hall'
+import { Route as NikahInHomeRouteImport } from './routes/nikah-in-home'
+import { Route as NikahInHotelRouteImport } from './routes/nikah-in-hotel'
+import { Route as NikahInMadinahRouteImport } from './routes/nikah-in-madinah'
+import { Route as NikahInMadinhRouteImport } from './routes/nikah-in-madinh'
+import { Route as NikahInMakkahRouteImport } from './routes/nikah-in-makkah'
+import { Route as NikahInMosqueRouteImport } from './routes/nikah-in-mosque'
+import { Route as NikahInOurOfficeRouteImport } from './routes/nikah-in-our-office'
+import { Route as NikahKhawanIslamicScholarPhotosRouteImport } from './routes/nikah-khawan-islamic-scholar-photos'
+import { Route as NikahKhawanServiceKarachiRouteImport } from './routes/nikah-khawan-service-karachi'
+import { Route as NikahVideosRouteImport } from './routes/nikah-videos'
+import { Route as OnlineNikahWorldwideRouteImport } from './routes/online-nikah-worldwide'
+import { Route as QAndARouteImport } from './routes/q-and-a'
+import { Route as BlogsSlugRouteImport } from './routes/blogs.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsRoute = BlogsRouteImport.update({
+  id: '/blogs',
+  path: '/blogs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CourtMarriageRoute = CourtMarriageRouteImport.update({
+  id: '/court-marriage',
+  path: '/court-marriage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackReviewsRoute = FeedbackReviewsRouteImport.update({
+  id: '/feedback-reviews',
+  path: '/feedback-reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoogleReviewsRoute = GoogleReviewsRouteImport.update({
+  id: '/google-reviews',
+  path: '/google-reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NikahInHallRoute = NikahInHallRouteImport.update({
+  id: '/nikah-in-hall',
+  path: '/nikah-in-hall',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NikahInHomeRoute = NikahInHomeRouteImport.update({
+  id: '/nikah-in-home',
+  path: '/nikah-in-home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NikahInHotelRoute = NikahInHotelRouteImport.update({
+  id: '/nikah-in-hotel',
+  path: '/nikah-in-hotel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NikahInMadinahRoute = NikahInMadinahRouteImport.update({
+  id: '/nikah-in-madinah',
+  path: '/nikah-in-madinah',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NikahInMadinhRoute = NikahInMadinhRouteImport.update({
+  id: '/nikah-in-madinh',
+  path: '/nikah-in-madinh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NikahInMakkahRoute = NikahInMakkahRouteImport.update({
+  id: '/nikah-in-makkah',
+  path: '/nikah-in-makkah',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NikahInMosqueRoute = NikahInMosqueRouteImport.update({
+  id: '/nikah-in-mosque',
+  path: '/nikah-in-mosque',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NikahInOurOfficeRoute = NikahInOurOfficeRouteImport.update({
+  id: '/nikah-in-our-office',
+  path: '/nikah-in-our-office',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NikahKhawanIslamicScholarPhotosRoute =
+  NikahKhawanIslamicScholarPhotosRouteImport.update({
+    id: '/nikah-khawan-islamic-scholar-photos',
+    path: '/nikah-khawan-islamic-scholar-photos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const NikahKhawanServiceKarachiRoute =
+  NikahKhawanServiceKarachiRouteImport.update({
+    id: '/nikah-khawan-service-karachi',
+    path: '/nikah-khawan-service-karachi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const NikahVideosRoute = NikahVideosRouteImport.update({
+  id: '/nikah-videos',
+  path: '/nikah-videos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnlineNikahWorldwideRoute = OnlineNikahWorldwideRouteImport.update({
+  id: '/online-nikah-worldwide',
+  path: '/online-nikah-worldwide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QAndARoute = QAndARouteImport.update({
+  id: '/q-and-a',
+  path: '/q-and-a',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsSlugRoute = BlogsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/blogs': typeof BlogsRouteWithChildren
+  '/contact-us': typeof ContactUsRoute
+  '/court-marriage': typeof CourtMarriageRoute
+  '/feedback-reviews': typeof FeedbackReviewsRoute
+  '/google-reviews': typeof GoogleReviewsRoute
+  '/nikah-in-hall': typeof NikahInHallRoute
+  '/nikah-in-home': typeof NikahInHomeRoute
+  '/nikah-in-hotel': typeof NikahInHotelRoute
+  '/nikah-in-madinah': typeof NikahInMadinahRoute
+  '/nikah-in-madinh': typeof NikahInMadinhRoute
+  '/nikah-in-makkah': typeof NikahInMakkahRoute
+  '/nikah-in-mosque': typeof NikahInMosqueRoute
+  '/nikah-in-our-office': typeof NikahInOurOfficeRoute
+  '/nikah-khawan-islamic-scholar-photos': typeof NikahKhawanIslamicScholarPhotosRoute
+  '/nikah-khawan-service-karachi': typeof NikahKhawanServiceKarachiRoute
+  '/nikah-videos': typeof NikahVideosRoute
+  '/online-nikah-worldwide': typeof OnlineNikahWorldwideRoute
+  '/q-and-a': typeof QAndARoute
+  '/blogs/$slug': typeof BlogsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/blogs': typeof BlogsRouteWithChildren
+  '/contact-us': typeof ContactUsRoute
+  '/court-marriage': typeof CourtMarriageRoute
+  '/feedback-reviews': typeof FeedbackReviewsRoute
+  '/google-reviews': typeof GoogleReviewsRoute
+  '/nikah-in-hall': typeof NikahInHallRoute
+  '/nikah-in-home': typeof NikahInHomeRoute
+  '/nikah-in-hotel': typeof NikahInHotelRoute
+  '/nikah-in-madinah': typeof NikahInMadinahRoute
+  '/nikah-in-madinh': typeof NikahInMadinhRoute
+  '/nikah-in-makkah': typeof NikahInMakkahRoute
+  '/nikah-in-mosque': typeof NikahInMosqueRoute
+  '/nikah-in-our-office': typeof NikahInOurOfficeRoute
+  '/nikah-khawan-islamic-scholar-photos': typeof NikahKhawanIslamicScholarPhotosRoute
+  '/nikah-khawan-service-karachi': typeof NikahKhawanServiceKarachiRoute
+  '/nikah-videos': typeof NikahVideosRoute
+  '/online-nikah-worldwide': typeof OnlineNikahWorldwideRoute
+  '/q-and-a': typeof QAndARoute
+  '/blogs/$slug': typeof BlogsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/blogs': typeof BlogsRouteWithChildren
+  '/contact-us': typeof ContactUsRoute
+  '/court-marriage': typeof CourtMarriageRoute
+  '/feedback-reviews': typeof FeedbackReviewsRoute
+  '/google-reviews': typeof GoogleReviewsRoute
+  '/nikah-in-hall': typeof NikahInHallRoute
+  '/nikah-in-home': typeof NikahInHomeRoute
+  '/nikah-in-hotel': typeof NikahInHotelRoute
+  '/nikah-in-madinah': typeof NikahInMadinahRoute
+  '/nikah-in-madinh': typeof NikahInMadinhRoute
+  '/nikah-in-makkah': typeof NikahInMakkahRoute
+  '/nikah-in-mosque': typeof NikahInMosqueRoute
+  '/nikah-in-our-office': typeof NikahInOurOfficeRoute
+  '/nikah-khawan-islamic-scholar-photos': typeof NikahKhawanIslamicScholarPhotosRoute
+  '/nikah-khawan-service-karachi': typeof NikahKhawanServiceKarachiRoute
+  '/nikah-videos': typeof NikahVideosRoute
+  '/online-nikah-worldwide': typeof OnlineNikahWorldwideRoute
+  '/q-and-a': typeof QAndARoute
+  '/blogs/$slug': typeof BlogsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about-us'
+    | '/blogs'
+    | '/contact-us'
+    | '/court-marriage'
+    | '/feedback-reviews'
+    | '/google-reviews'
+    | '/nikah-in-hall'
+    | '/nikah-in-home'
+    | '/nikah-in-hotel'
+    | '/nikah-in-madinah'
+    | '/nikah-in-madinh'
+    | '/nikah-in-makkah'
+    | '/nikah-in-mosque'
+    | '/nikah-in-our-office'
+    | '/nikah-khawan-islamic-scholar-photos'
+    | '/nikah-khawan-service-karachi'
+    | '/nikah-videos'
+    | '/online-nikah-worldwide'
+    | '/q-and-a'
+    | '/blogs/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about-us'
+    | '/blogs'
+    | '/contact-us'
+    | '/court-marriage'
+    | '/feedback-reviews'
+    | '/google-reviews'
+    | '/nikah-in-hall'
+    | '/nikah-in-home'
+    | '/nikah-in-hotel'
+    | '/nikah-in-madinah'
+    | '/nikah-in-madinh'
+    | '/nikah-in-makkah'
+    | '/nikah-in-mosque'
+    | '/nikah-in-our-office'
+    | '/nikah-khawan-islamic-scholar-photos'
+    | '/nikah-khawan-service-karachi'
+    | '/nikah-videos'
+    | '/online-nikah-worldwide'
+    | '/q-and-a'
+    | '/blogs/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-us'
+    | '/blogs'
+    | '/contact-us'
+    | '/court-marriage'
+    | '/feedback-reviews'
+    | '/google-reviews'
+    | '/nikah-in-hall'
+    | '/nikah-in-home'
+    | '/nikah-in-hotel'
+    | '/nikah-in-madinah'
+    | '/nikah-in-madinh'
+    | '/nikah-in-makkah'
+    | '/nikah-in-mosque'
+    | '/nikah-in-our-office'
+    | '/nikah-khawan-islamic-scholar-photos'
+    | '/nikah-khawan-service-karachi'
+    | '/nikah-videos'
+    | '/online-nikah-worldwide'
+    | '/q-and-a'
+    | '/blogs/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
+  BlogsRoute: typeof BlogsRouteWithChildren
+  ContactUsRoute: typeof ContactUsRoute
+  CourtMarriageRoute: typeof CourtMarriageRoute
+  FeedbackReviewsRoute: typeof FeedbackReviewsRoute
+  GoogleReviewsRoute: typeof GoogleReviewsRoute
+  NikahInHallRoute: typeof NikahInHallRoute
+  NikahInHomeRoute: typeof NikahInHomeRoute
+  NikahInHotelRoute: typeof NikahInHotelRoute
+  NikahInMadinahRoute: typeof NikahInMadinahRoute
+  NikahInMadinhRoute: typeof NikahInMadinhRoute
+  NikahInMakkahRoute: typeof NikahInMakkahRoute
+  NikahInMosqueRoute: typeof NikahInMosqueRoute
+  NikahInOurOfficeRoute: typeof NikahInOurOfficeRoute
+  NikahKhawanIslamicScholarPhotosRoute: typeof NikahKhawanIslamicScholarPhotosRoute
+  NikahKhawanServiceKarachiRoute: typeof NikahKhawanServiceKarachiRoute
+  NikahVideosRoute: typeof NikahVideosRoute
+  OnlineNikahWorldwideRoute: typeof OnlineNikahWorldwideRoute
+  QAndARoute: typeof QAndARoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +313,180 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs': {
+      id: '/blogs'
+      path: '/blogs'
+      fullPath: '/blogs'
+      preLoaderRoute: typeof BlogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/court-marriage': {
+      id: '/court-marriage'
+      path: '/court-marriage'
+      fullPath: '/court-marriage'
+      preLoaderRoute: typeof CourtMarriageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feedback-reviews': {
+      id: '/feedback-reviews'
+      path: '/feedback-reviews'
+      fullPath: '/feedback-reviews'
+      preLoaderRoute: typeof FeedbackReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/google-reviews': {
+      id: '/google-reviews'
+      path: '/google-reviews'
+      fullPath: '/google-reviews'
+      preLoaderRoute: typeof GoogleReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-in-hall': {
+      id: '/nikah-in-hall'
+      path: '/nikah-in-hall'
+      fullPath: '/nikah-in-hall'
+      preLoaderRoute: typeof NikahInHallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-in-home': {
+      id: '/nikah-in-home'
+      path: '/nikah-in-home'
+      fullPath: '/nikah-in-home'
+      preLoaderRoute: typeof NikahInHomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-in-hotel': {
+      id: '/nikah-in-hotel'
+      path: '/nikah-in-hotel'
+      fullPath: '/nikah-in-hotel'
+      preLoaderRoute: typeof NikahInHotelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-in-madinah': {
+      id: '/nikah-in-madinah'
+      path: '/nikah-in-madinah'
+      fullPath: '/nikah-in-madinah'
+      preLoaderRoute: typeof NikahInMadinahRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-in-madinh': {
+      id: '/nikah-in-madinh'
+      path: '/nikah-in-madinh'
+      fullPath: '/nikah-in-madinh'
+      preLoaderRoute: typeof NikahInMadinhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-in-makkah': {
+      id: '/nikah-in-makkah'
+      path: '/nikah-in-makkah'
+      fullPath: '/nikah-in-makkah'
+      preLoaderRoute: typeof NikahInMakkahRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-in-mosque': {
+      id: '/nikah-in-mosque'
+      path: '/nikah-in-mosque'
+      fullPath: '/nikah-in-mosque'
+      preLoaderRoute: typeof NikahInMosqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-in-our-office': {
+      id: '/nikah-in-our-office'
+      path: '/nikah-in-our-office'
+      fullPath: '/nikah-in-our-office'
+      preLoaderRoute: typeof NikahInOurOfficeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-khawan-islamic-scholar-photos': {
+      id: '/nikah-khawan-islamic-scholar-photos'
+      path: '/nikah-khawan-islamic-scholar-photos'
+      fullPath: '/nikah-khawan-islamic-scholar-photos'
+      preLoaderRoute: typeof NikahKhawanIslamicScholarPhotosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-khawan-service-karachi': {
+      id: '/nikah-khawan-service-karachi'
+      path: '/nikah-khawan-service-karachi'
+      fullPath: '/nikah-khawan-service-karachi'
+      preLoaderRoute: typeof NikahKhawanServiceKarachiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nikah-videos': {
+      id: '/nikah-videos'
+      path: '/nikah-videos'
+      fullPath: '/nikah-videos'
+      preLoaderRoute: typeof NikahVideosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/online-nikah-worldwide': {
+      id: '/online-nikah-worldwide'
+      path: '/online-nikah-worldwide'
+      fullPath: '/online-nikah-worldwide'
+      preLoaderRoute: typeof OnlineNikahWorldwideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/q-and-a': {
+      id: '/q-and-a'
+      path: '/q-and-a'
+      fullPath: '/q-and-a'
+      preLoaderRoute: typeof QAndARouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/$slug': {
+      id: '/blogs/$slug'
+      path: '/$slug'
+      fullPath: '/blogs/$slug'
+      preLoaderRoute: typeof BlogsSlugRouteImport
+      parentRoute: typeof BlogsRoute
+    }
   }
 }
 
+interface BlogsRouteChildren {
+  BlogsSlugRoute: typeof BlogsSlugRoute
+}
+
+const BlogsRouteChildren: BlogsRouteChildren = {
+  BlogsSlugRoute: BlogsSlugRoute,
+}
+
+const BlogsRouteWithChildren = BlogsRoute._addFileChildren(BlogsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
+  BlogsRoute: BlogsRouteWithChildren,
+  ContactUsRoute: ContactUsRoute,
+  CourtMarriageRoute: CourtMarriageRoute,
+  FeedbackReviewsRoute: FeedbackReviewsRoute,
+  GoogleReviewsRoute: GoogleReviewsRoute,
+  NikahInHallRoute: NikahInHallRoute,
+  NikahInHomeRoute: NikahInHomeRoute,
+  NikahInHotelRoute: NikahInHotelRoute,
+  NikahInMadinahRoute: NikahInMadinahRoute,
+  NikahInMadinhRoute: NikahInMadinhRoute,
+  NikahInMakkahRoute: NikahInMakkahRoute,
+  NikahInMosqueRoute: NikahInMosqueRoute,
+  NikahInOurOfficeRoute: NikahInOurOfficeRoute,
+  NikahKhawanIslamicScholarPhotosRoute: NikahKhawanIslamicScholarPhotosRoute,
+  NikahKhawanServiceKarachiRoute: NikahKhawanServiceKarachiRoute,
+  NikahVideosRoute: NikahVideosRoute,
+  OnlineNikahWorldwideRoute: OnlineNikahWorldwideRoute,
+  QAndARoute: QAndARoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
