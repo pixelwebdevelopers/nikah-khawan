@@ -41,13 +41,14 @@ export function SiteHeader() {
   const routerState = useRouterState();
   const currentPath = routerState.location.pathname;
 
-  // Mobile accordion states
-  const [openSection, setOpenSection] = useState<string | null>("services");
+  // Mobile accordion states (all closed by default)
+  const [openSection, setOpenSection] = useState<string | null>(null);
 
-  // Close dropdown on route change
+  // Close dropdown and drawer on route change
   useEffect(() => {
     setActiveDropdown(null);
     setSidebarOpen(false);
+    setOpenSection(null);
   }, [currentPath]);
 
   const handleMouseEnter = (name: string) => {
