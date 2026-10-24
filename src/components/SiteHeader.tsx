@@ -69,8 +69,8 @@ export function SiteHeader() {
 
   return (
     <>
-      {/* 24/7 Top Bar */}
-      <div className="border-b border-gold/20 bg-primary px-4 py-2 text-xs text-primary-foreground">
+      {/* 24/7 Top Bar: Desktop Full Layout */}
+      <div className="hidden md:block border-b border-gold/20 bg-primary px-4 py-2 text-xs text-primary-foreground">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
           <div className="flex items-center gap-2 font-medium">
             <span className="relative flex h-2 w-2">
@@ -78,10 +78,9 @@ export function SiteHeader() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
             <span className="font-semibold text-champagne">24/7 Immediate Availability:</span>
-            <span className="hidden sm:inline opacity-90">
+            <span className="opacity-90">
               Registered Nikah Registrar on call across all Karachi towns & Online Worldwide
             </span>
-            <span className="sm:hidden opacity-90">Karachi & Online Worldwide</span>
           </div>
           <div className="flex shrink-0 items-center gap-4 text-xs font-semibold">
             <a
@@ -99,6 +98,84 @@ export function SiteHeader() {
             >
               <MessageCircle className="h-3 w-3 text-emerald-400" /> Quick WhatsApp
             </a>
+          </div>
+        </div>
+      </div>
+
+      {/* 24/7 Top Bar: Mobile Marquee Ticker */}
+      <div className="relative flex items-center overflow-hidden border-b border-gold/25 bg-primary py-2 text-xs text-primary-foreground md:hidden select-none">
+        {/* Pinned Left 24/7 Status Pill */}
+        <div className="z-10 flex shrink-0 items-center gap-1.5 bg-primary pl-3 pr-2.5 text-[11px] font-bold text-champagne shadow-[4px_0_12px_rgba(55,8,88,0.9)]">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+          </span>
+          <span>24/7 LIVE</span>
+          <span className="text-gold/60">|</span>
+        </div>
+
+        {/* Right Fade Vignette for smooth exit */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-primary to-transparent z-10" />
+
+        {/* Endless Marquee Stream */}
+        <div className="flex w-full overflow-hidden whitespace-nowrap">
+          <div className="flex w-max animate-marquee animate-marquee-medium">
+            <div className="flex shrink-0 items-center gap-6 pr-6 text-[11px] font-medium text-primary-foreground">
+              <span className="flex items-center gap-2">
+                <span>Nikah Registrar on call across all Karachi towns & Online Worldwide</span>
+                <span className="text-gold">✦</span>
+              </span>
+              <a
+                href={`tel:${SITE_CONFIG.phone}`}
+                className="flex items-center gap-1 font-semibold text-champagne hover:underline"
+              >
+                <Phone className="h-3 w-3 text-gold" /> Call: {SITE_CONFIG.phoneFormatted}
+                <span className="ml-1 text-gold">✦</span>
+              </a>
+              <a
+                href={SITE_CONFIG.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1 font-semibold text-champagne hover:underline"
+              >
+                <MessageCircle className="h-3 w-3 text-emerald-400" /> WhatsApp Us
+                <span className="ml-1 text-gold">✦</span>
+              </a>
+              <span className="flex items-center gap-2">
+                <span>Home, Masjid, Banquet Hall & Court Marriage Ceremonies</span>
+                <span className="text-gold">✦</span>
+              </span>
+            </div>
+
+            <div
+              className="flex shrink-0 items-center gap-6 pr-6 text-[11px] font-medium text-primary-foreground"
+              aria-hidden="true"
+            >
+              <span className="flex items-center gap-2">
+                <span>Nikah Registrar on call across all Karachi towns & Online Worldwide</span>
+                <span className="text-gold">✦</span>
+              </span>
+              <a
+                href={`tel:${SITE_CONFIG.phone}`}
+                className="flex items-center gap-1 font-semibold text-champagne hover:underline"
+              >
+                <Phone className="h-3 w-3 text-gold" /> Call: {SITE_CONFIG.phoneFormatted}
+                <span className="ml-1 text-gold">✦</span>
+              </a>
+              <a
+                href={SITE_CONFIG.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1 font-semibold text-champagne hover:underline"
+              >
+                <MessageCircle className="h-3 w-3 text-emerald-400" /> WhatsApp Us
+                <span className="ml-1 text-gold">✦</span>
+              </a>
+              <span className="flex items-center gap-2">
+                <span>Home, Masjid, Banquet Hall & Court Marriage Ceremonies</span>
+                <span className="text-gold">✦</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>

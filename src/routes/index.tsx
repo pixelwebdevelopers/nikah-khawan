@@ -350,7 +350,8 @@ function Index() {
 
             {/* Keyword-Rich High SEO H1 Heading */}
             <h1 className="text-3xl font-semibold leading-[1.15] sm:text-4xl md:text-5xl lg:text-5xl">
-              Official <span className="gold-gradient-text">Nikah Khawan</span> & RNikah Service Karachi 
+              Official <span className="gold-gradient-text">Nikah Khawan</span> & Nikah Service
+              Karachi
             </h1>
 
             <p className="mt-5 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
