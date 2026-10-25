@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import {
   BookOpen,
   Check,
@@ -31,7 +31,11 @@ import {
   HeartHandshake,
   AlertCircle,
   Building2,
+  Building,
+  Hotel,
+  PartyPopper,
   ExternalLink,
+  Landmark,
 } from "lucide-react";
 import {
   Accordion,
@@ -265,6 +269,112 @@ function Heading({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?
   );
 }
 
+function MosqueIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Central Spire & Dome */}
+      <path d="M12 2v2" />
+      <path d="M7 10c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+      {/* Minarets Left & Right */}
+      <path d="M4 6V3.5a.5.5 0 0 1 .5-.5.5.5 0 0 1 .5.5V6" />
+      <path d="M19 6V3.5a.5.5 0 0 1 .5-.5.5.5 0 0 1 .5.5V6" />
+      {/* Outer Walls & Base */}
+      <path d="M5 21V10l2-2" />
+      <path d="M19 21V10l-2-2" />
+      <path d="M2 21h20" />
+      {/* Arched Mihrab / Doorway */}
+      <path d="M10 21v-5a2 2 0 0 1 4 0v5" />
+    </svg>
+  );
+}
+
+const HERO_SERVICES_BUBBLE = [
+  {
+    icon: Globe,
+    title: "Online Nikah Worldwide",
+    subtitle: "UK · USA · UAE · Canada · Europe",
+    badge: "Live Video",
+  },
+  {
+    icon: Landmark,
+    title: "Nikah In Saudia Arabia",
+    subtitle: "Holy Makkah & Madinah al-Munawwarah",
+    badge: "Holy Cities",
+  },
+  {
+    icon: Home,
+    title: "Nikah In Home (Doorstep)",
+    subtitle: "DHA, Clifton, Gulshan & all Karachi Towns",
+    badge: "24/7 On-Call",
+  },
+  {
+    icon: Hotel,
+    title: "Nikah In Hall & 5-Star Hotel",
+    subtitle: "Pearl Continental, Marriott & Banquet Halls",
+    badge: "Grand Stage",
+  },
+  {
+    icon: Scale,
+    title: "Court Marriage in Karachi",
+    subtitle: "100% Legal Protection, Advocates & NADRA MRC",
+    badge: "Article 35 Law",
+  },
+  {
+    icon: MosqueIcon,
+    title: "Masjid Sunnah Nikah",
+    subtitle: "Masnoon Khutbah, Dua & Khajoor Distribution",
+    badge: "Prophetic Sunnah",
+  },
+];
+
+function HeroServicesBubble() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % HERO_SERVICES_BUBBLE.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, []);
+
+  const current = HERO_SERVICES_BUBBLE[currentIndex] ?? HERO_SERVICES_BUBBLE[0];
+  if (!current) return null;
+  const Icon = current.icon;
+
+  return (
+    <div className="absolute -bottom-4 left-2 sm:-bottom-6 sm:-left-4 rounded-2xl border border-gold/40 bg-background/95 p-3 sm:p-4 shadow-xl backdrop-blur-md md:-left-8 transition-all duration-300 w-[280px] sm:w-[330px]">
+      <div className="flex items-center gap-3">
+        <div className="grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-full bg-lavender border border-gold/30 shrink-0">
+          <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-gold transition-transform duration-300 hover:scale-110" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs sm:text-sm font-bold text-primary truncate">
+              {current.title}
+            </span>
+            <span className="shrink-0 rounded-full bg-emerald-50 border border-emerald-300 px-1.5 py-0.5 text-[9px] font-bold text-emerald-700">
+              {current.badge}
+            </span>
+          </div>
+          <div className="text-[10px] sm:text-xs text-muted-foreground truncate mt-0.5">
+            {current.subtitle}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased selection:bg-gold/30 selection:text-primary">
@@ -305,22 +415,8 @@ function Index() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
             </div>
 
-            {/* Floating Badge 1: Online Nikah Worldwide */}
-            <div className="absolute -bottom-4 left-2 sm:-bottom-6 sm:-left-4 rounded-2xl border border-gold/40 bg-background/95 p-3 sm:p-4 shadow-soft backdrop-blur md:-left-8 animate-float">
-              <div className="flex items-center gap-3">
-                <div className="grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-full bg-lavender border border-gold/30">
-                  <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-gold" />
-                </div>
-                <div>
-                  <div className="text-xs sm:text-sm font-bold text-primary">
-                    Online Nikah Worldwide
-                  </div>
-                  <div className="text-[10px] sm:text-xs text-muted-foreground">
-                    UK · USA · UAE · Canada · Europe
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Floating Dynamic Service Rotator Bubble */}
+            <HeroServicesBubble />
 
             {/* Floating Badge 2: NADRA & Govt Certified */}
             <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 rounded-2xl border border-gold/40 bg-background/95 p-2.5 sm:p-3.5 shadow-soft backdrop-blur flex items-center gap-2">
@@ -356,8 +452,9 @@ function Index() {
 
             <p className="mt-5 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
               Solemnizing sacred matrimonial bonds with dignity, legal perfection and Sunnah
-              barakah. Available for home, masjid, and banquet ceremonies across all Karachi areas —
-              plus legitimate Online Nikah for couples worldwide.
+              barakah. Available for home, masjid, and banquet ceremonies across all Karachi areas,
+              blessed Nikah in Saudia (Makkah &amp; Madinah) &mdash; plus legitimate Online Nikah
+              for families worldwide.
             </p>
 
             {/* CTA Buttons */}
@@ -491,13 +588,13 @@ const services = [
     href: "/nikah-in-home",
   },
   {
-    icon: BookOpen,
+    icon: PartyPopper,
     t: "Banquet Hall & Marquee",
     d: "Respectful, dignified attendance at banquets, marriage halls, marquees, and wedding venues across Karachi with strictly punctual arrival and legal documentation.",
     href: "/nikah-in-hall",
   },
   {
-    icon: Video,
+    icon: Globe,
     t: "Online Nikah Worldwide",
     d: "100% Shariah-compliant and legally recognized online Nikah via Zoom or WhatsApp Video for overseas Pakistanis in UK, USA, UAE, Canada, and worldwide.",
     href: "/online-nikah-worldwide",
@@ -509,19 +606,19 @@ const services = [
     href: "/court-marriage",
   },
   {
-    icon: FileSignature,
+    icon: Building,
     t: "Nikah in Our Office",
-    d: "Simple, dignified, and budget-friendly Nikah solemnization directly at our registrar office in Korangi Crossing, Karachi with immediate official copies.",
+    d: "A simple, dignified, and convenient Nikah ceremony at our office. Our experienced Nikah Khawans assist with Nikah proceedings, required documentation, and witness arrangements to help make your Nikah smooth and hassle-free.",
     href: "/nikah-in-our-office",
   },
   {
-    icon: Building2,
+    icon: Hotel,
     t: "Luxury Hotel Nikah",
     d: "Executive Nikah Registrar service for 4-star and 5-star hotel weddings in Karachi (Mövenpick, PC, Marriott, Avari) with bilingual English and Urdu Khutbah.",
     href: "/nikah-in-hotel",
   },
   {
-    icon: ScrollText,
+    icon: MosqueIcon,
     t: "Nikah in Mosque (Masjid)",
     d: "Revive the sacred Sunnah with a blessed Nikah ceremony in major Masajid across Karachi with official government stamping on-site.",
     href: "/nikah-in-mosque",
@@ -1062,9 +1159,9 @@ function KnowledgeHub() {
 const GALLERY_ROW_1 = [
   {
     src: "/images/services/nikah-in-hall-1.jpg",
-    alt: "Grand Banquet Hall Nikah Ceremony Karachi",
+    alt: "Grand Banquet Hall Stage Nikah Ceremony Karachi",
     title: "Grand Banquet Hall Solemnization",
-    location: "DHA Creek Banquet, Karachi",
+    location: "DHA Creek Banquet Stage, Karachi",
     badge: "Hall Ceremony",
   },
   {
@@ -1083,34 +1180,41 @@ const GALLERY_ROW_1 = [
   },
   {
     src: "/images/services/nikah-in-hotel-1.jpg",
-    alt: "5-Star Luxury Ballroom Nikah Setup",
+    alt: "5-Star Luxury Ballroom Skyline View Nikah Setup",
     title: "5-Star Luxury Ballroom Celebration",
     location: "Pearl Continental Hotel, Karachi",
     badge: "5-Star Hotel",
   },
   {
     src: "/images/services/nikah-in-makkah-1.jpg",
-    alt: "Umrah Sacred Nikah in Masjid al-Haram Makkah",
-    title: "Holy Umrah Pilgrimage Nikah Blessing",
+    alt: "Sacred Nikah Facing the Holy Kaaba in Masjid al-Haram",
+    title: "Holy Kaaba Sacred Solemnization",
     location: "Masjid al-Haram, Makkah",
     badge: "Holy Makkah",
   },
   {
     src: "/images/services/online-nikah-1.jpg",
-    alt: "Live HD Video Conference Online Nikah",
+    alt: "Live HD Video Conference Online Nikah Session",
     title: "Worldwide Live Video Solemnization",
     location: "London UK & Karachi Video Live",
     badge: "Online Worldwide",
+  },
+  {
+    src: "/images/services/nikah-in-office-2.jpg",
+    alt: "Executive Nikah Registrar Chamber with 3D Brand Logo",
+    title: "Executive Registrar Chamber Signing",
+    location: "Official Registrar Chamber, Karachi",
+    badge: "Executive Chamber",
   },
 ];
 
 const GALLERY_ROW_2 = [
   {
     src: "/images/services/nikah-in-hall-2.jpg",
-    alt: "Official Urdu Nikahnama Registration with Gold Pen",
-    title: "Official Government Nikahnama Registry",
-    location: "Sindh Local Govt 4-Copy Register",
-    badge: "Legal Document",
+    alt: "Traditional Celebratory Mithai Sweets Distribution",
+    title: "Joyful Celebratory Mithai Distribution",
+    location: "Wedding Stage Celebration, Karachi",
+    badge: "Joyful Celebration",
   },
   {
     src: "/images/services/nikah-in-home-2.jpg",
@@ -1121,76 +1225,97 @@ const GALLERY_ROW_2 = [
   },
   {
     src: "/images/services/nikah-in-mosque-2.jpg",
-    alt: "Congregational Dua-e-Khair in Mosque",
+    alt: "Congregational Dua-e-Khair in Grand Decorated Mosque",
     title: "Sunlit Congregational Dua-e-Khair",
     location: "Masjid-e-Tooba, DHA Karachi",
     badge: "Sacred Dua",
   },
   {
     src: "/images/services/nikah-in-hotel-2.jpg",
-    alt: "Bilingual Khutbah on Luxury Hotel Stage",
-    title: "Bilingual Khutbah & Marital Guidance",
-    location: "Mövenpick Hotel, Karachi",
-    badge: "Executive VIP",
+    alt: "Senior Scholar Solemnizing Nikah at Marriott Karachi",
+    title: "Marriott Hotel VIP Solemnization",
+    location: "Marriott Hotel, Karachi",
+    badge: "Marriott Karachi",
   },
   {
     src: "/images/services/nikah-in-madinah-1.jpg",
-    alt: "Prophetic Mosque Courtyard in Madinah",
+    alt: "Sacred Courtyard of Masjid an-Nabawi facing Green Dome",
     title: "Prophetic Sunnah Nikah in Madinah",
     location: "Masjid an-Nabawi, Madinah",
     badge: "Holy Madinah",
   },
   {
     src: "/images/services/court-marriage-1.jpg",
-    alt: "Judicial Legal Protection & Court Marriage",
+    alt: "High Court Advocate Chamber Court Marriage Consultation",
     title: "Judicial Legal Counsel & Protection",
     location: "City Court Chambers, Karachi",
     badge: "Article 35 Law",
+  },
+  {
+    src: "/images/services/nikah-in-makkah-3.jpg",
+    alt: "Masjid al-Haram Courtyard Nikah with Clock Tower",
+    title: "Makkah Haram Sanctuary Blessing",
+    location: "Masjid al-Haram Courtyard, Makkah",
+    badge: "Makkah Clock Tower",
   },
 ];
 
 const GALLERY_ROW_3 = [
   {
     src: "/images/services/nikah-in-hall-3.jpg",
-    alt: "Heartfelt Family Dua on Banquet Wedding Stage",
-    title: "Emotional Family Dua & Blessings",
-    location: "Karsaz Banquet Lawn, Karachi",
-    badge: "Family Dua",
+    alt: "Grand Stage Collective Dua-e-Khair on Banquet Stage",
+    title: "Grand Stage Collective Dua-e-Khair",
+    location: "Karsaz Banquet Lawn Stage, Karachi",
+    badge: "Stage Dua",
   },
   {
     src: "/images/services/nikah-in-home-3.jpg",
-    alt: "Traditional Mithai Sweets Distribution with Qazi",
+    alt: "Traditional Mithai Celebratory Sweets with Qazi",
     title: "Traditional Mithai Celebratory Sweets",
     location: "Gulshan-e-Iqbal, Karachi",
     badge: "Celebration",
   },
   {
     src: "/images/services/nikah-in-mosque-3.jpg",
-    alt: "Prophetic Sunnah Date Distribution Khajoor Taqseem",
-    title: "Prophetic Sunnah Khajoor Date Taqseem",
-    location: "Memon Masjid, Karachi",
-    badge: "Sunnah Taqseem",
+    alt: "Islamic Scholar Solemnizing Nikah inside Mosque",
+    title: "Sacred Mosque Khutbah & Register",
+    location: "Grand Prayer Hall, Karachi",
+    badge: "Masjid Ceremony",
   },
   {
     src: "/images/services/nikah-in-hotel-3.jpg",
-    alt: "Official Marriage Contract on Podium with Rings",
+    alt: "VIP Executive Registry Presentation with Rings",
     title: "VIP Executive Registry & Rings",
-    location: "Marriott Hotel, Karachi",
+    location: "Luxury Hotel Ballroom, Karachi",
     badge: "VIP Presentation",
   },
   {
-    src: "/images/services/nikah-in-office-1.jpg",
-    alt: "Authorized Nikah Registrar Office in Karachi",
+    src: "/images/services/nikah-in-office-3.jpg",
+    alt: "Official Family Nikah Consultation in Registrar Office",
     title: "Direct Registrar Chamber Solemnization",
     location: "Korangi Crossing, Karachi",
     badge: "Office Suite",
   },
   {
     src: "/images/services/court-marriage-2.jpg",
-    alt: "Official Marriage Registration Affidavit & Seals",
+    alt: "Official Marriage Registration Affidavit & Seals Signing",
     title: "NADRA Verified Statutory Documentation",
     location: "Sindh Family Court Jurisdiction",
     badge: "NADRA Verified",
+  },
+  {
+    src: "/images/services/online-nikah-2.jpg",
+    alt: "Overseas Pakistani Couple Online Video Call Nikah",
+    title: "Overseas Couple Video Solemnization",
+    location: "Toronto Canada & Karachi Live",
+    badge: "Global Connection",
+  },
+  {
+    src: "/images/services/nikah-in-madinah-2.jpg",
+    alt: "Nikah Contract Signing Inside Pillars of Masjid an-Nabawi",
+    title: "Historical Pillars Sunnah Signing",
+    location: "Masjid an-Nabawi Interior, Madinah",
+    badge: "Nabawi Pillars",
   },
 ];
 

@@ -80,6 +80,29 @@ export const SITE_CONFIG = {
     },
   ],
 
+  saudia: [
+    {
+      title: "Nikah In Makkah",
+      urduTitle: "مکہ مکرمہ میں نکاح رہنمائی",
+      href: "/nikah-in-makkah",
+      description: "Sacred Nikah solemnization & guidance facing the Holy Kaaba in Makkah",
+    },
+    {
+      title: "Nikah In Madina",
+      urduTitle: "مدینہ منورہ میں نکاح رہنمائی",
+      href: "/nikah-in-madinah",
+      description: "Blessed Nikah solemnization & guidance at Masjid an-Nabawi in Madinah",
+    },
+  ],
+
+  onlineNikah: {
+    title: "Online Nikah",
+    fullTitle: "Online Nikah Worldwide",
+    urduTitle: "آن لائن نکاح پوری دنیا میں",
+    href: "/online-nikah-worldwide",
+    description: "Live video Nikah for overseas Pakistanis & global couples",
+  },
+
   international: [
     {
       title: "Online Nikah Worldwide",
@@ -94,7 +117,7 @@ export const SITE_CONFIG = {
       description: "Sacred Nikah solemnization & guidance in holy Makkah",
     },
     {
-      title: "Nikah In Madinh",
+      title: "Nikah In Madinah",
       urduTitle: "مدینہ منورہ میں نکاح رہنمائی",
       href: "/nikah-in-madinah",
       description: "Blessed Nikah solemnization & guidance in holy Madinah",

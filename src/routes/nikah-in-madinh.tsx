@@ -16,15 +16,16 @@ const pageData: ServiceDetailConfig = {
   images: [
     {
       src: "/images/services/nikah-in-madinah-1.jpg",
-      alt: "Masjid an-Nabawi courtyard and iconic umbrellas in Madinah al-Munawwarah",
-      caption: "Tranquil and sacred atmosphere in the city of the Prophet (ﷺ) Madinah.",
-      badge: "Masjid an-Nabawi",
+      alt: "Sacred Nikah solemnization in the courtyard of Masjid an-Nabawi Madinah facing the Green Dome",
+      caption: "Sacred Nikah ceremony in the blessed courtyard of the Prophet's Mosque in Madinah.",
+      badge: "Masjid an-Nabawi Courtyard",
     },
     {
-      src: "/images/services/nikah-in-mosque-2.jpg",
-      alt: "Sincere Dua supplication seeking marriage blessings in the holy city",
-      caption: "Soul-stirring supplications and Salawat for eternal matrimonial barakah.",
-      badge: "Prophetic Sunnah Dua",
+      src: "/images/services/nikah-in-madinah-2.jpg",
+      alt: "Blessed Sunnah Nikah contract signing inside the illuminated pillars of Masjid an-Nabawi Madinah",
+      caption:
+        "Sacred matrimonial contract signing inside the historical pillars of Masjid an-Nabawi.",
+      badge: "Prophetic Sunnah Solemnization",
     },
     {
       src: "/images/services/nikah-in-mosque-3.jpg",

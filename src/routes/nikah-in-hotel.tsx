@@ -16,15 +16,15 @@ const pageData: ServiceDetailConfig = {
   images: [
     {
       src: "/images/services/nikah-in-hotel-1.jpg",
-      alt: "Luxury 5-star Karachi hotel ballroom with crystal chandeliers and Nikah stage",
-      caption: "Opulent ballroom setting with crystal chandeliers for executive celebrations.",
+      alt: "Luxury 5-star Karachi hotel ballroom with Nikah stage and city skyline view",
+      caption: "Opulent ballroom solemnization and collective Dua for executive celebrations.",
       badge: "5-Star Luxury Venue",
     },
     {
       src: "/images/services/nikah-in-hotel-2.jpg",
-      alt: "Qazi scholar in ceremonial turban explaining marital covenants to groom on hotel stage",
-      caption: "Bilingual explanation of marital covenants by our esteemed Islamic scholar.",
-      badge: "Executive Stage Protocol",
+      alt: "Senior Islamic scholar conducting Nikah in Marriott Karachi luxury hotel ballroom",
+      caption: "Distinguished Nikah solemnization and marital counseling at Marriott Karachi.",
+      badge: "Marriott Karachi VIP",
     },
     {
       src: "/images/services/nikah-in-hotel-3.jpg",

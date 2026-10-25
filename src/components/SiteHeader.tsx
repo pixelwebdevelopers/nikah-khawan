@@ -268,38 +268,36 @@ export function SiteHeader() {
               )}
             </div>
 
-            {/* Holy Cities & Online Dropdown */}
+            {/* Nikkah in Saudia Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => handleMouseEnter("international")}
+              onMouseEnter={() => handleMouseEnter("saudia")}
               onMouseLeave={handleMouseLeave}
             >
               <button
                 type="button"
                 className={`flex items-center gap-1 py-1.5 transition-colors hover:text-gold cursor-pointer ${
-                  currentPath.includes("makkah") ||
-                  currentPath.includes("madin") ||
-                  currentPath.includes("online-nikah")
+                  currentPath.includes("makkah") || currentPath.includes("madin")
                     ? "text-gold font-bold"
                     : "text-primary"
                 }`}
-                aria-expanded={activeDropdown === "international"}
+                aria-expanded={activeDropdown === "saudia"}
               >
-                <span>Online & Holy Cities</span>
+                <span>Nikkah in Saudia</span>
                 <ChevronDown
                   className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                    activeDropdown === "international" ? "rotate-180 text-gold" : ""
+                    activeDropdown === "saudia" ? "rotate-180 text-gold" : ""
                   }`}
                 />
               </button>
 
-              {activeDropdown === "international" && (
+              {activeDropdown === "saudia" && (
                 <div className="absolute top-full left-0 mt-1 w-76 rounded-2xl border border-gold/30 bg-background/98 p-3 shadow-2xl backdrop-blur-xl animate-in fade-in-50 zoom-in-95 duration-150">
                   <div className="mb-2 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-gold">
-                    Overseas & Holy Destinations
+                    Holy Destinations in Saudi Arabia
                   </div>
                   <div className="space-y-1">
-                    {SITE_CONFIG.international.map((item) => (
+                    {SITE_CONFIG.saudia.map((item) => (
                       <Link
                         key={item.href}
                         to={item.href}
@@ -309,7 +307,7 @@ export function SiteHeader() {
                             : "text-primary hover:bg-pearl/80 hover:text-gold"
                         }`}
                       >
-                        <Globe className="h-4 w-4 text-gold shrink-0 mt-0.5" />
+                        <Landmark className="h-4 w-4 text-gold shrink-0 mt-0.5" />
                         <div>
                           <div className="text-xs font-semibold leading-tight">{item.title}</div>
                           <div className="text-[11px] text-muted-foreground leading-snug line-clamp-1">
@@ -322,6 +320,18 @@ export function SiteHeader() {
                 </div>
               )}
             </div>
+
+            {/* Online Nikah Separate Menu Link */}
+            <Link
+              to="/online-nikah-worldwide"
+              className={`transition-colors hover:text-gold relative py-1.5 ${
+                currentPath === "/online-nikah-worldwide"
+                  ? "text-gold font-bold after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-gold"
+                  : "text-primary"
+              }`}
+            >
+              <span>Online Nikah</span>
+            </Link>
 
             {/* Reviews & Media Dropdown */}
             <div
@@ -537,24 +547,24 @@ export function SiteHeader() {
             )}
           </div>
 
-          {/* Online & Holy Cities Accordion */}
+          {/* Nikkah in Saudia Accordion */}
           <div className="rounded-xl border border-gold/20 overflow-hidden">
             <button
-              onClick={() => toggleSection("international")}
+              onClick={() => toggleSection("saudia")}
               className="flex w-full items-center justify-between bg-pearl/60 px-4 py-3 text-sm font-bold text-primary transition"
             >
               <span className="flex items-center gap-2">
-                <Globe className="h-4 w-4 text-gold" /> Online & Holy Cities
+                <Landmark className="h-4 w-4 text-gold" /> Nikkah in Saudia
               </span>
               <ChevronDown
                 className={`h-4 w-4 text-gold transition-transform duration-200 ${
-                  openSection === "international" ? "rotate-180" : ""
+                  openSection === "saudia" ? "rotate-180" : ""
                 }`}
               />
             </button>
-            {openSection === "international" && (
+            {openSection === "saudia" && (
               <div className="divide-y divide-gold/10 bg-background/50 px-2 py-1">
-                {SITE_CONFIG.international.map((item) => (
+                {SITE_CONFIG.saudia.map((item) => (
                   <Link
                     key={item.href}
                     to={item.href}
@@ -572,6 +582,22 @@ export function SiteHeader() {
               </div>
             )}
           </div>
+
+          {/* Online Nikah Separate Mobile Item */}
+          <Link
+            to="/online-nikah-worldwide"
+            onClick={() => setSidebarOpen(false)}
+            className={`flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-semibold transition border border-gold/20 ${
+              currentPath === "/online-nikah-worldwide"
+                ? "bg-gold/15 text-gold font-bold"
+                : "bg-pearl/30 text-primary hover:bg-lavender"
+            }`}
+          >
+            <span className="flex items-center gap-2">
+              <Globe className="h-4 w-4 text-gold" /> Online Nikah Worldwide
+            </span>
+            <ChevronRight className="h-4 w-4 text-gold" />
+          </Link>
 
           {/* Reviews & Media Accordion */}
           <div className="rounded-xl border border-gold/20 overflow-hidden">

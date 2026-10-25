@@ -351,27 +351,94 @@ I want to inquire/book a Nikah ceremony:
 
               <div className="mt-8 pt-6 border-t border-gold/20 flex flex-col sm:flex-row gap-3">
                 <a
-                  href={SITE_CONFIG.mapUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-gold/60 bg-pearl px-5 py-3 text-xs font-bold text-primary hover:bg-gold/15 transition"
+                  href={`tel:${SITE_CONFIG.phone}`}
+                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-xs font-bold text-primary-foreground shadow-sm hover:bg-primary/90 transition"
                 >
-                  <MapPin className="h-4 w-4 text-gold" />
-                  <span>Open in Google Maps</span>
-                  <ExternalLink className="h-3.5 w-3.5" />
+                  <Phone className="h-4 w-4 text-champagne" />
+                  <span>Call: {SITE_CONFIG.phoneFormatted}</span>
                 </a>
 
                 <a
-                  href={`tel:${SITE_CONFIG.phone}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-xs font-bold text-primary-foreground shadow-sm hover:bg-primary/90 transition"
+                  href={SITE_CONFIG.whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-gold/60 bg-pearl px-6 py-3 text-xs font-bold text-primary hover:bg-gold/15 transition"
                 >
-                  <Phone className="h-4 w-4 text-champagne" />
-                  <span>Call Office</span>
+                  <MessageCircle className="h-4 w-4 text-emerald-600" />
+                  <span>WhatsApp Registrar</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Full Width Google Maps Section */}
+        <section
+          aria-label="Head Office Location Map"
+          className="mt-16 md:mt-20 w-full border-t border-b border-gold/30 bg-pearl/40"
+        >
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2 text-xs font-bold text-gold uppercase tracking-wider mb-1">
+                  <MapPin className="h-4 w-4" />
+                  <span>Interactive Location Map</span>
+                  <span className="text-[10px] text-emerald-600 font-bold flex items-center gap-1 ml-2">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    Verified Office
+                  </span>
+                </div>
+                <h2 className="text-xl sm:text-2xl font-bold text-primary">
+                  Official Nikah Registrar Office Location
+                </h2>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">
+                  {SITE_CONFIG.address} · Near Rasheedia Masjid, Allah Wala Town, Korangi Crossing
+                </p>
+              </div>
+
+              <div className="flex shrink-0 items-center gap-3">
+                <a
+                  href={SITE_CONFIG.mapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-gold bg-primary px-5 py-2.5 text-xs font-bold text-primary-foreground shadow-md hover:bg-primary/90 transition"
+                >
+                  <MapPin className="h-3.5 w-3.5 text-champagne" />
+                  <span>Open in Google Maps App</span>
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Full Screen Width Map Container */}
+          <div className="w-full relative bg-charcoal/5 border-t border-gold/20">
+            <iframe
+              title="Nikah Registrar Karachi Office Location Map Full Width"
+              src="https://maps.google.com/maps?q=Rasheedia+Masjid+Allah+Wala+Town+Korangi+Crossing+Karachi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="500"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-[400px] sm:h-[460px] md:h-[520px] block"
+            />
+          </div>
+
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-primary">🚗 Easy Highway Access:</span>
+              <span>
+                Direct approach from Korangi Crossing, DHA Phase 7 Ext, and Qayyumabad Flyover.
+              </span>
+            </div>
+            <div className="flex items-center gap-4">
+              <span>🅿️ Dedicated On-Premises Parking</span>
+              <span>❄️ Air-Conditioned Registry Chambers</span>
+            </div>
+          </div>
+        </section>
       </div>
     </SiteLayout>
   );

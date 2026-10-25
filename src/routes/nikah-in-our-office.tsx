@@ -22,18 +22,18 @@ const pageData: ServiceDetailConfig = {
       badge: "Executive Office Suite",
     },
     {
-      src: "/images/services/nikah-in-hall-2.jpg",
-      alt: "Official Pakistani Nikahnama 4-copy register signing and biometric verification",
+      src: "/images/services/nikah-in-office-2.jpg",
+      alt: "Official Nikah Registrar chamber in Karachi with 3D gold brand logo and register signing",
       caption:
-        "Instant on-site signing of official Urdu Nikahnama with authorized government stamps.",
-      badge: "Immediate Registration",
+        "Private registrar consultation chamber with official seals and golden registration desk.",
+      badge: "Executive Office Suite",
     },
     {
-      src: "/images/services/g3-real.jpg",
-      alt: "Certified marriage certificate handover to couple in Karachi office",
+      src: "/images/services/nikah-in-office-3.jpg",
+      alt: "Family Nikah registration consultation in air-conditioned registrar chambers",
       caption:
-        "Official handover of certified legal copies and Union Council registration receipts.",
-      badge: "Certificate Handover",
+        "Dignified, Shariah-compliant solemnization in air-conditioned private office suite.",
+      badge: "Official Registration",
     },
   ],
   whyChooseHeading: "Why Choose Solemnization at Our Registrar Office?",

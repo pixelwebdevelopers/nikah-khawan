@@ -16,19 +16,19 @@ const pageData: ServiceDetailConfig = {
   images: [
     {
       src: "/images/services/court-marriage-1.jpg",
-      alt: "Scales of justice and legal law volumes in advocate legal chamber",
+      alt: "High Court advocate and registered Nikah Registrar conducting official court marriage consultation in Karachi",
       caption: "Professional legal consultation protecting constitutional rights under Article 35.",
-      badge: "Judicial Legal Protection",
+      badge: "High Court Legal Chamber",
     },
     {
       src: "/images/services/court-marriage-2.jpg",
-      alt: "Official affidavit and legal marriage registration contract signing",
+      alt: "Official affidavit and legal Nikahnama contract signing before licensed Nikah Registrar",
       caption: "Preparation of sworn free-will affidavits and authorized registrar verification.",
       badge: "Sworn Free-Will Affidavit",
     },
     {
-      src: "/images/services/nikah-in-office-1.jpg",
-      alt: "Family court advocate and licensed Nikah registrar office in Karachi",
+      src: "/images/services/nikah-in-office-2.jpg",
+      alt: "Official Nikah Registrar executive chamber with 3D brand seal in Karachi",
       caption:
         "Confidential execution in licensed registrar office with certified government seals.",
       badge: "Licensed Legal Chamber",

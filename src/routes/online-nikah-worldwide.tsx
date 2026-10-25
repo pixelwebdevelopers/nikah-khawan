@@ -23,9 +23,9 @@ const pageData: ServiceDetailConfig = {
     },
     {
       src: "/images/services/online-nikah-2.jpg",
-      alt: "Overseas Pakistani groom reviewing online Nikah legal proxy and Power of Attorney",
-      caption: "Digital document verification and legal proxy appointment (Tawkeel-e-Nikah).",
-      badge: "Overseas Proxy & Verification",
+      alt: "Overseas Pakistani couple participating in live online Nikah video call with registered Qazi",
+      caption: "Live HD video conference connecting overseas bride and groom with registrar.",
+      badge: "Overseas Couple Connection",
     },
     {
       src: "/images/services/nikah-in-hall-2.jpg",

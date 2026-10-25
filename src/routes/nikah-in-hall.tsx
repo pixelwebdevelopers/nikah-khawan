@@ -16,21 +16,20 @@ const pageData: ServiceDetailConfig = {
   images: [
     {
       src: "/images/services/nikah-in-hall-1.jpg",
-      alt: "Islamic Qazi Nikah Khawan conducting Nikah ceremony on banquet stage in Karachi",
-      caption:
-        "Sacred Masnoon Khutbah recitation on the decorated banquet hall stage before guests.",
+      alt: "Islamic Qazi Nikah Khawan conducting Nikah ceremony on decorated banquet stage in Karachi",
+      caption: "Sacred Masnoon Khutbah recitation on decorated banquet hall stage.",
       badge: "Stage Solemnization",
     },
     {
       src: "/images/services/nikah-in-hall-2.jpg",
-      alt: "Official Pakistani Nikahnama registration signing on wedding table with gold pen",
-      caption: "Official Urdu Nikahnama signed with authorized registrar seals and rose petals.",
-      badge: "Official Legal Registry",
+      alt: "Traditional celebratory Mithai sweets distribution following Nikah ceremony",
+      caption: "Traditional celebratory sweets and joyful moments with family and elders.",
+      badge: "Joyful Celebration",
     },
     {
       src: "/images/services/nikah-in-hall-3.jpg",
-      alt: "Emotional Dua prayer by groom and family elders in Karachi wedding hall",
-      caption: "Sincere collective Dua-e-Khair with groom and elders after marriage solemnization.",
+      alt: "Grand stage collective Dua-e-Khair with groom and family elders on banquet hall stage",
+      caption: "Sincere collective Dua-e-Khair seeking lifelong marital barakah and prosperity.",
       badge: "Collective Dua-e-Khair",
     },
   ],

@@ -45,6 +45,20 @@ const credentials = [
 
 const photoShowcase = [
   {
+    title: "Executive VIP Hotel Nikah Solemnization",
+    location: "Pearl Continental / Marriott Hotel, Karachi",
+    desc: "Qualified Islamic Scholar supervising official register signing alongside groom with ceremonial rose-petal table decor.",
+    img: "/images/scholar/islamic-scholar-1.jpg",
+    category: "VIP Hotel Nikah",
+  },
+  {
+    title: "Traditional Karachi Banquet Stage Nikah",
+    location: "Grand Marriage Lawn & Banquet, Karachi",
+    desc: "Islamic Scholar reviewing legal conditions of Nikahnama with groom, family elders, and witnesses on stage.",
+    img: "/images/scholar/islamic-scholar-2.jpg",
+    category: "Banquet Hall Stage",
+  },
+  {
     title: "Dignified Banquet Hall Nikah Solemnization",
     location: "DHA Creek Banquet Hall, Karachi",
     desc: "Recitation of the sacred Masnoon Khutbah-e-Nikah over the hall audio system before family and guests.",
@@ -196,7 +210,7 @@ function ScholarPhotosPage() {
               </p>
             </div>
 
-            <div className="grid gap-8 sm:grid-cols-2">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {photoShowcase.map((photo, idx) => (
                 <div
                   key={idx}

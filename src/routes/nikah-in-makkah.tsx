@@ -16,9 +16,9 @@ const pageData: ServiceDetailConfig = {
   images: [
     {
       src: "/images/services/nikah-in-makkah-1.jpg",
-      alt: "Masjid al-Haram and the Holy Kaaba in Makkah al-Mukarramah",
+      alt: "Sacred Nikah solemnization facing the Holy Kaaba in Masjid al-Haram Makkah Mukarramah",
       caption: "Spiritual matrimonial covenant facing the Holy Kaaba in Masjid al-Haram.",
-      badge: "Masjid al-Haram Makkah",
+      badge: "Holy Kaaba Solemnization",
     },
     {
       src: "/images/services/nikah-in-makkah-2.jpg",
@@ -27,10 +27,10 @@ const pageData: ServiceDetailConfig = {
       badge: "Spiritual Sanctuary",
     },
     {
-      src: "/images/services/nikah-in-mosque-2.jpg",
-      alt: "Sincere congregational Dua prayer for newly married couple with hands raised",
-      caption: "Solemn supplications seeking lifelong barakah and harmony for the couple.",
-      badge: "Dua-e-Barakah",
+      src: "/images/services/nikah-in-makkah-3.jpg",
+      alt: "Blessed Nikah ceremony in Masjid al-Haram courtyard with Makkah Royal Clock Tower",
+      caption: "Solemn supplications seeking lifelong barakah and harmony in holy Makkah.",
+      badge: "Makkah Haram Sanctuary",
     },
   ],
   whyChooseHeading: "The Spiritual & Legal Value of Our Makkah Nikah Guidance",
