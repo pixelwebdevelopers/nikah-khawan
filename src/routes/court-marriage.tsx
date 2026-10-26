@@ -26,13 +26,6 @@ const pageData: ServiceDetailConfig = {
       caption: "Preparation of sworn free-will affidavits and authorized registrar verification.",
       badge: "Sworn Free-Will Affidavit",
     },
-    {
-      src: "/images/services/nikah-in-office-2.jpg",
-      alt: "Official Nikah Registrar executive chamber with 3D brand seal in Karachi",
-      caption:
-        "Confidential execution in licensed registrar office with certified government seals.",
-      badge: "Licensed Legal Chamber",
-    },
   ],
   whyChooseHeading: "Why Trust Our Legal Team for Your Court Marriage in Karachi?",
   whyChoosePoints: [

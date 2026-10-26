@@ -15,13 +15,6 @@ const pageData: ServiceDetailConfig = {
     "Looking for a simple, dignified, and legally protected Nikah ceremony without the high expense of booking wedding halls or complex arrangements? Visit our official Nikah Registrar office in Korangi Crossing, Karachi. We provide private, Shariah-compliant solemnization, immediate government registration, and on-the-spot Nikahnama issuance in a comfortable, respectful setting.",
   images: [
     {
-      src: "/images/services/nikah-in-office-1.jpg",
-      alt: "Authorized Government Nikah Registrar executive office in Korangi Crossing Karachi",
-      caption:
-        "Private registrar consultation chamber with official seals and registration volumes.",
-      badge: "Executive Office Suite",
-    },
-    {
       src: "/images/services/nikah-in-office-2.jpg",
       alt: "Official Nikah Registrar chamber in Karachi with 3D gold brand logo and register signing",
       caption:

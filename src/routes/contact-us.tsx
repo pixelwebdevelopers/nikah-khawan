@@ -425,19 +425,6 @@ I want to inquire/book a Nikah ceremony:
               className="w-full h-[400px] sm:h-[460px] md:h-[520px] block"
             />
           </div>
-
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-primary">🚗 Easy Highway Access:</span>
-              <span>
-                Direct approach from Korangi Crossing, DHA Phase 7 Ext, and Qayyumabad Flyover.
-              </span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span>🅿️ Dedicated On-Premises Parking</span>
-              <span>❄️ Air-Conditioned Registry Chambers</span>
-            </div>
-          </div>
         </section>
       </div>
     </SiteLayout>

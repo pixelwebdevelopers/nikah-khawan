@@ -298,6 +298,59 @@ function MosqueIcon({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
+function KaabaIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Holy Kaaba Isometric Cube */}
+      <path d="M4 7l8-4 8 4v11l-8 4-8-4V7z" />
+      <path d="M12 3v19" />
+      <path d="M4 7l8 4 8-4" />
+      {/* Kiswah Golden Belt / Hizam */}
+      <path d="M4 11l8 4 8-4" />
+    </svg>
+  );
+}
+
+function MadinaIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Crescent & Finial */}
+      <path d="M10 2v2" />
+      <path d="M9 2.5a1.2 1.2 0 0 1 2 0" />
+      {/* Prophet's Green Dome */}
+      <path d="M4 11c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+      {/* Minaret */}
+      <path d="M19 4v16" />
+      <path d="M17.5 7h3" />
+      <path d="M18 4l1-2 1 2" />
+      {/* Ground & Arches */}
+      <path d="M2 20h20" />
+      <path d="M4 20v-9h12v9" />
+      <path d="M7 20v-4a3 3 0 0 1 6 0v4" />
+    </svg>
+  );
+}
+
 const HERO_SERVICES_BUBBLE = [
   {
     icon: Globe,
@@ -306,7 +359,7 @@ const HERO_SERVICES_BUBBLE = [
     badge: "Live Video",
   },
   {
-    icon: Landmark,
+    icon: KaabaIcon,
     title: "Nikah In Saudia Arabia",
     subtitle: "Holy Makkah & Madinah al-Munawwarah",
     badge: "Holy Cities",
@@ -629,6 +682,18 @@ const services = [
     d: "Full-service Nikah solemnization, legal documentation, and Union Council marriage registration across all Karachi towns with 24/7 emergency dispatch.",
     href: "/nikah-khawan-service-karachi",
   },
+  {
+    icon: KaabaIcon,
+    t: "Nikkah in Makkah",
+    d: "Sacred Nikah solemnization guidance facing the Holy Kaaba in Masjid al-Haram, complete Islamic scholar consultation, and official legal registration with NADRA.",
+    href: "/nikah-in-makkah",
+  },
+  {
+    icon: MadinaIcon,
+    t: "Nikkah in Madina",
+    d: "Blessed Nikah solemnization guidance in the illuminated city of the Prophet (ﷺ) near Masjid an-Nabawi, with prophetic Khutbah recitation and official government registration.",
+    href: "/nikah-in-madinah",
+  },
 ];
 
 function Services() {
@@ -641,10 +706,12 @@ function Services() {
           sub="From sacred Masnoon Khutbah recitation to official government registration and NADRA certificate issuance."
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ icon: I, t, d, href }) => (
+          {services.map(({ icon: I, t, d, href }, index) => (
             <div
               key={t}
-              className="group relative rounded-2xl border border-gold/25 bg-background p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold hover:shadow-xl flex flex-col justify-between"
+              className={`group relative rounded-2xl border border-gold/25 bg-background p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold hover:shadow-xl flex flex-col justify-between ${
+                index === 8 ? "lg:col-start-2" : ""
+              }`}
             >
               <div>
                 <div className="mb-5 grid h-12 w-12 place-items-center rounded-2xl border border-gold/40 bg-pearl transition-colors group-hover:bg-gold/15">
