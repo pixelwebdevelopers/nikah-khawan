@@ -44,7 +44,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.webp";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero.webp";
 import g1 from "@/assets/g1.jpg";
 import g2 from "@/assets/g2.jpg";
 import g3 from "@/assets/g3.jpg";
@@ -455,15 +455,15 @@ function Index() {
 
           <div className="mx-auto grid max-w-7xl items-center gap-10 lg:gap-12 px-5 lg:grid-cols-2">
             {/* Hero Visual Column (Appears FIRST on mobile, RIGHT on desktop) */}
-            <div className="relative order-1 lg:order-2 contain-paint">
+            <div className="relative order-1 lg:order-2">
               {/* Ornamental Gold Offset Frame */}
               <div className="absolute -inset-3 rounded-[2.2rem] border-2 border-gold/30 -rotate-1 hidden sm:block" />
               <div className="relative overflow-hidden rounded-[2rem] border border-gold/40 shadow-soft">
                 <img
                   src={hero}
                   alt="Nikah Khawan performing official Nikah ceremony in Karachi"
-                  width={1280}
-                  height={1536}
+                  width={800}
+                  height={1000}
                   fetchPriority="high"
                   decoding="async"
                   className="aspect-[4/3] sm:aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-103"
@@ -515,7 +515,13 @@ function Index() {
 
               {/* CTA Buttons */}
               <div className="mt-7 sm:mt-8 flex flex-wrap gap-3.5 sm:gap-4 items-center">
-                <a href={WA} target="_blank" rel="noreferrer" className={btnGold}>
+                <a
+                  href={WA}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Book Nikah ceremony on WhatsApp"
+                  className={btnGold}
+                >
                   <MessageCircle className="h-4 w-4" />
                   <span>Book on WhatsApp</span>
                 </a>
@@ -929,7 +935,7 @@ function Why() {
         </div>
 
         <div>
-          <div className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+          <div className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#855a06] dark:text-gold">
             <span className="h-px w-8 bg-gold" />
             Why Choose Us
           </div>
@@ -1633,7 +1639,7 @@ function Testimonials() {
                     </span>
                   </div>
 
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-gold">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-[#855a06] dark:text-gold">
                     {t.service}
                   </div>
 
@@ -1678,7 +1684,7 @@ function Testimonials() {
                     </span>
                   </div>
 
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-gold">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-[#855a06] dark:text-gold">
                     {t.service}
                   </div>
 
@@ -1780,7 +1786,7 @@ function Contact() {
     <section id="contact" className="bg-background py-24 scroll-mt-12">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <div className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+          <div className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#855a06] dark:text-gold">
             <span className="h-px w-8 bg-gold" />
             Direct Contact
           </div>

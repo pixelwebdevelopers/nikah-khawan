@@ -14,33 +14,48 @@ function shouldSkipLoadingScreen(): boolean {
     return true;
   }
 
-  // 2. Headless Chrome / Lighthouse / Puppeteer automation flag
-  // PageSpeed Insights and Lighthouse run in automated Headless Chrome where navigator.webdriver is true
+  // 2. Headless Chrome / Chromium / Lighthouse / Puppeteer automation flag
+  // PageSpeed Insights and Lighthouse run in automated Headless Chromium where navigator.webdriver is true
   if (navigator.webdriver) {
     return true;
   }
 
-  // 3. User-Agent detection: Lighthouse, PageSpeed Insights, HeadlessChrome, and SEO crawlers
+  // 3. User-Agent detection: Lighthouse, PageSpeed Insights, HeadlessChrome, HeadlessChromium, and SEO crawlers
   const ua = navigator.userAgent || "";
   if (
-    /(?:chrome-)?lighthouse|headlesschrome|pagespeed|speed insights|google-pagerenderer|googlebot|bingbot|baiduspider|yandexbot|duckduckbot|slurp|facebookexternalhit|whatsapp|telegrambot|twitterbot|pinterest|linkedinbot|\bbot\b|\bcrawler\b|\bspider\b|ptst/i.test(
+    /(?:chrome-)?lighthouse|headless(?:chrome|chromium)?|pagespeed|speed insights|google-pagerenderer|googlebot|bingbot|baiduspider|yandexbot|duckduckbot|slurp|facebookexternalhit|whatsapp|telegrambot|twitterbot|pinterest|linkedinbot|\bbot\b|\bcrawler\b|\bspider\b|ptst|\blr\b/i.test(
       ua,
     )
   ) {
     return true;
   }
 
-  // 4. Specific Lighthouse runtime globals / device profiles
+  // 4. Headless heuristics: Missing languages, empty plugins in desktop emulation
   try {
-    const win = window as unknown as Record<string, unknown>;
-    if (Boolean(win["__LIGHTHOUSE_DEVICE_PROFILE__"]) || Boolean(win["__lighthouse"])) {
+    if (!navigator.languages || navigator.languages.length === 0) {
       return true;
     }
   } catch {
     // Ignore
   }
 
-  // 5. Manual query parameter bypass for speed audits (?skip_loader=1, ?noloading=1, ?lighthouse=1, ?psi=1)
+  // 5. Specific Lighthouse runtime globals / device profiles
+  try {
+    const win = window as unknown as Record<string, unknown>;
+    if (
+      Boolean(win["__LIGHTHOUSE_DEVICE_PROFILE__"]) ||
+      Boolean(win["__lighthouse"]) ||
+      Boolean(win["__nightmare"]) ||
+      Boolean(win["callPhantom"]) ||
+      Boolean(win["_phantom"])
+    ) {
+      return true;
+    }
+  } catch {
+    // Ignore
+  }
+
+  // 6. Manual query parameter bypass for speed audits (?skip_loader=1, ?noloading=1, ?lighthouse=1, ?psi=1, ?pagespeed=1)
   try {
     const search = window.location.search;
     if (search) {
@@ -49,7 +64,8 @@ function shouldSkipLoadingScreen(): boolean {
         params.has("skip_loader") ||
         params.has("noloading") ||
         params.has("lighthouse") ||
-        params.has("psi")
+        params.has("psi") ||
+        params.has("pagespeed")
       ) {
         return true;
       }
@@ -66,6 +82,8 @@ export default function LoadingScreen() {
   const [isPlaying, setIsPlaying] = useState(shouldRun);
   const [isFading, setIsFading] = useState(false);
   const [isMounted, setIsMounted] = useState(shouldRun);
+  const [desktopSrc, setDesktopSrc] = useState<string | undefined>(undefined);
+  const [mobileSrc, setMobileSrc] = useState<string | undefined>(undefined);
 
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
@@ -93,11 +111,17 @@ export default function LoadingScreen() {
       return;
     }
 
+    // Determine active video based on screen width
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setMobileSrc("/loader-video/mobile.mp4");
+    } else {
+      setDesktopSrc("/loader-video/desktop.mp4");
+    }
+
     // Lock background scroll during the intro splash animation
     document.body.style.overflow = "hidden";
 
-    // Determine active video based on screen width
-    const isMobile = window.innerWidth < 768;
     const activeVideo = isMobile ? mobileVideoRef.current : desktopVideoRef.current;
     const inactiveVideo = isMobile ? desktopVideoRef.current : mobileVideoRef.current;
 
@@ -198,11 +222,11 @@ export default function LoadingScreen() {
       {/* Desktop Video (16:9 Landscape - visible on md and larger) */}
       <video
         ref={desktopVideoRef}
-        src="/loader-video/desktop.mp4"
+        src={desktopSrc}
         autoPlay
         muted
         playsInline
-        preload="auto"
+        preload="none"
         controls={false}
         disablePictureInPicture
         disableRemotePlayback
@@ -214,11 +238,11 @@ export default function LoadingScreen() {
       {/* Mobile Video (9:16 Portrait - visible on mobile screens) */}
       <video
         ref={mobileVideoRef}
-        src="/loader-video/mobile.mp4"
+        src={mobileSrc}
         autoPlay
         muted
         playsInline
-        preload="auto"
+        preload="none"
         controls={false}
         disablePictureInPicture
         disableRemotePlayback

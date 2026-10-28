@@ -475,7 +475,15 @@ export function SiteHeader() {
         {/* Pinned Top Bar: Logo & Close */}
         <div className="flex shrink-0 items-center justify-between border-b border-gold/20 bg-background px-5 py-4">
           <Link to="/" onClick={() => setSidebarOpen(false)}>
-            <img src={logo} alt="Nikah Khawan Karachi" className="h-10 w-auto" />
+            <img
+              src={logo}
+              alt="Nikah Khawan Karachi"
+              className="h-10 w-auto"
+              width={150}
+              height={40}
+              loading="lazy"
+              decoding="async"
+            />
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}

@@ -49,7 +49,32 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalizedResponse = await normalizeCatastrophicSsrResponse(response);
+
+      // Ensure static assets serve with efficient Cache-Control headers
+      const url = new URL(request.url);
+      const path = url.pathname;
+      const isStaticAsset =
+        path.startsWith("/assets/") ||
+        path.startsWith("/images/") ||
+        path.startsWith("/loader-video/") ||
+        /\.(?:webp|jpg|jpeg|png|svg|ico|woff2?|mp4)$/i.test(path);
+
+      if (normalizedResponse.status === 200 && isStaticAsset) {
+        const headers = new Headers(normalizedResponse.headers);
+        if (path.startsWith("/assets/")) {
+          headers.set("Cache-Control", "public, max-age=31536000, immutable");
+        } else {
+          headers.set("Cache-Control", "public, max-age=2592000");
+        }
+        return new Response(normalizedResponse.body, {
+          status: normalizedResponse.status,
+          statusText: normalizedResponse.statusText,
+          headers,
+        });
+      }
+
+      return normalizedResponse;
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {
