@@ -158,6 +158,7 @@ export function SiteHeader() {
               </span>
               <a
                 href={`tel:${SITE_CONFIG.phone}`}
+                tabIndex={-1}
                 className="flex items-center gap-1 font-semibold text-champagne hover:underline"
               >
                 <Phone className="h-3 w-3 text-gold" /> Call: {SITE_CONFIG.phoneFormatted}
@@ -167,6 +168,7 @@ export function SiteHeader() {
                 href={SITE_CONFIG.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
+                tabIndex={-1}
                 className="flex items-center gap-1 font-semibold text-champagne hover:underline"
               >
                 <MessageCircle className="h-3 w-3 text-emerald-400" /> WhatsApp Us

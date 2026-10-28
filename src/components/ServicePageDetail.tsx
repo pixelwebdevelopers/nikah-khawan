@@ -196,7 +196,10 @@ export function ServicePageDetail({ data }: ServicePageDetailProps) {
                     <img
                       src={img.src}
                       alt={img.alt}
+                      width={800}
+                      height={500}
                       loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"
                     />
                     {img.badge && (

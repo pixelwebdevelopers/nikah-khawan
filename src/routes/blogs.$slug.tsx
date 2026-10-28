@@ -134,6 +134,10 @@ function BlogPostComponent() {
                   <img
                     src={post.author.avatar}
                     alt={post.author.name}
+                    width={44}
+                    height={44}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover"
                   />
                 </div>

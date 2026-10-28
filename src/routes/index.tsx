@@ -251,7 +251,7 @@ const btnOutline =
 
 function Eyebrow({ children }: { children: string }) {
   return (
-    <div className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+    <div className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#8f6208] dark:text-gold">
       <span className="h-px w-8 bg-gradient-to-r from-transparent to-gold" />
       {children}
       <span className="h-px w-8 bg-gradient-to-l from-transparent to-gold" />
@@ -443,186 +443,192 @@ function Index() {
       {/* Unified Site Header with Dropdowns and Mobile Drawer */}
       <SiteHeader />
 
-      {/* Hero Section */}
-      <section
-        id="top"
-        className="relative overflow-hidden bg-gradient-to-b from-pearl via-background to-pearl/60 py-16 md:py-24"
-      >
-        {/* Subtle Ambient Decorative Glows */}
-        <div className="pointer-events-none absolute -top-40 right-10 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-10 left-10 h-96 w-96 rounded-full bg-purple/5 blur-3xl" />
+      <main id="main-content">
+        {/* Hero Section */}
+        <section
+          id="top"
+          className="relative overflow-hidden bg-gradient-to-b from-pearl via-background to-pearl/60 py-16 md:py-24"
+        >
+          {/* Subtle Ambient Decorative Glows */}
+          <div className="pointer-events-none absolute -top-40 right-10 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
+          <div className="pointer-events-none absolute bottom-10 left-10 h-96 w-96 rounded-full bg-purple/5 blur-3xl" />
 
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:gap-12 px-5 lg:grid-cols-2">
-          {/* Hero Visual Column (Appears FIRST on mobile, RIGHT on desktop) */}
-          <div className="relative order-1 lg:order-2">
-            {/* Ornamental Gold Offset Frame */}
-            <div className="absolute -inset-3 rounded-[2.2rem] border-2 border-gold/30 -rotate-1 hidden sm:block" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-gold/40 shadow-soft">
-              <img
-                src={hero}
-                alt="Nikah Khawan performing official Nikah ceremony in Karachi"
-                width={1280}
-                height={1536}
-                className="aspect-[4/3] sm:aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-103"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+          <div className="mx-auto grid max-w-7xl items-center gap-10 lg:gap-12 px-5 lg:grid-cols-2">
+            {/* Hero Visual Column (Appears FIRST on mobile, RIGHT on desktop) */}
+            <div className="relative order-1 lg:order-2 contain-paint">
+              {/* Ornamental Gold Offset Frame */}
+              <div className="absolute -inset-3 rounded-[2.2rem] border-2 border-gold/30 -rotate-1 hidden sm:block" />
+              <div className="relative overflow-hidden rounded-[2rem] border border-gold/40 shadow-soft">
+                <img
+                  src={hero}
+                  alt="Nikah Khawan performing official Nikah ceremony in Karachi"
+                  width={1280}
+                  height={1536}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="aspect-[4/3] sm:aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-103"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+              </div>
+
+              {/* Floating Dynamic Service Rotator Bubble */}
+              <HeroServicesBubble />
+
+              {/* Floating Badge 2: NADRA & Govt Certified */}
+              <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 rounded-2xl border border-gold/40 bg-background/95 p-2.5 sm:p-3.5 shadow-soft backdrop-blur flex items-center gap-2">
+                <BadgeCheck className="h-4 w-4 sm:h-5 sm:w-5 text-gold" />
+                <div className="text-[11px] sm:text-xs font-bold text-primary">
+                  Govt. Registered & NADRA Verified
+                </div>
+              </div>
             </div>
 
-            {/* Floating Dynamic Service Rotator Bubble */}
-            <HeroServicesBubble />
+            {/* Hero Content Column (Appears SECOND on mobile, LEFT on desktop) */}
+            <div className="order-2 lg:order-1 pt-4 lg:pt-0">
+              {/* Islamic Calligraphy */}
+              <p
+                className="mb-4 font-urdu text-2xl md:text-3xl leading-loose text-gold text-center lg:text-left"
+                dir="rtl"
+                lang="ur"
+              >
+                بِسْمِ اللّٰہِ الرَّحْمٰنِ الرَّحِیْمِ
+              </p>
 
-            {/* Floating Badge 2: NADRA & Govt Certified */}
-            <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 rounded-2xl border border-gold/40 bg-background/95 p-2.5 sm:p-3.5 shadow-soft backdrop-blur flex items-center gap-2">
-              <BadgeCheck className="h-4 w-4 sm:h-5 sm:w-5 text-gold" />
-              <div className="text-[11px] sm:text-xs font-bold text-primary">
-                Govt. Registered & NADRA Verified
+              {/* Official Registration Badge */}
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/50 bg-background/90 px-4 py-1.5 text-xs font-semibold text-primary shadow-sm backdrop-blur">
+                <ShieldCheck className="h-4 w-4 text-gold" />
+                <span>Government Registered Nikah Registrar · Karachi</span>
+              </div>
+
+              {/* Keyword-Rich High SEO H1 Heading */}
+              <h1 className="text-3xl font-semibold leading-[1.15] sm:text-4xl md:text-5xl lg:text-5xl">
+                Official <span className="gold-gradient-text">Nikah Khawan</span> & Nikah Service
+                Karachi
+              </h1>
+
+              <p className="mt-5 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
+                Solemnizing sacred matrimonial bonds with dignity, legal perfection and Sunnah
+                barakah. Available for home, masjid, and banquet ceremonies across all Karachi
+                areas, blessed Nikah in Saudia (Makkah &amp; Madinah) &mdash; plus legitimate Online
+                Nikah for families worldwide.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="mt-7 sm:mt-8 flex flex-wrap gap-3.5 sm:gap-4 items-center">
+                <a href={WA} target="_blank" rel="noreferrer" className={btnGold}>
+                  <MessageCircle className="h-4 w-4" />
+                  <span>Book on WhatsApp</span>
+                </a>
+                <a href={`tel:${PHONE}`} className={btnOutline}>
+                  <Phone className="h-4 w-4 text-gold" />
+                  <span>Call {PHONE}</span>
+                </a>
+              </div>
+
+              {/* Fast Stats with Luxury Cards */}
+              <div className="mt-10 sm:mt-12 grid grid-cols-3 gap-3 sm:gap-4 border-t border-gold/20 pt-6 sm:pt-8">
+                {[
+                  ["10+", "Years of Trust", "Serving families across Karachi"],
+                  ["5,000+", "Nikahs Performed", "100% Shariah compliant"],
+                  ["24/7", "Immediate Dispatch", "Short notice & urgent Nikah"],
+                ].map(([num, label, desc]) => (
+                  <div key={label} className="text-left">
+                    <div className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
+                      {num}
+                    </div>
+                    <div className="text-[11px] sm:text-xs font-semibold text-gold mt-1">
+                      {label}
+                    </div>
+                    <div className="text-[10px] sm:text-[11px] text-muted-foreground hidden sm:block mt-0.5">
+                      {desc}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
+        </section>
 
-          {/* Hero Content Column (Appears SECOND on mobile, LEFT on desktop) */}
-          <div className="order-2 lg:order-1 pt-4 lg:pt-0">
-            {/* Islamic Calligraphy */}
-            <p
-              className="mb-4 font-urdu text-2xl md:text-3xl leading-loose text-gold text-center lg:text-left"
-              dir="rtl"
-              lang="ur"
-            >
-              بِسْمِ اللّٰہِ الرَّحْمٰنِ الرَّحِیْمِ
-            </p>
+        {/* Trust & Official Compliance Infinite Marquee Strip */}
+        <section className="relative overflow-hidden border-y border-gold/30 bg-primary py-3.5 md:py-4 text-primary-foreground select-none">
+          {/* Left & Right Smooth Edge Fade Vignettes */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-12 md:w-24 bg-gradient-to-r from-primary to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-12 md:w-24 bg-gradient-to-l from-primary to-transparent" />
 
-            {/* Official Registration Badge */}
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/50 bg-background/90 px-4 py-1.5 text-xs font-semibold text-primary shadow-sm backdrop-blur">
-              <ShieldCheck className="h-4 w-4 text-gold" />
-              <span>Government Registered Nikah Registrar · Karachi</span>
-            </div>
-
-            {/* Keyword-Rich High SEO H1 Heading */}
-            <h1 className="text-3xl font-semibold leading-[1.15] sm:text-4xl md:text-5xl lg:text-5xl">
-              Official <span className="gold-gradient-text">Nikah Khawan</span> & Nikah Service
-              Karachi
-            </h1>
-
-            <p className="mt-5 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
-              Solemnizing sacred matrimonial bonds with dignity, legal perfection and Sunnah
-              barakah. Available for home, masjid, and banquet ceremonies across all Karachi areas,
-              blessed Nikah in Saudia (Makkah &amp; Madinah) &mdash; plus legitimate Online Nikah
-              for families worldwide.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="mt-7 sm:mt-8 flex flex-wrap gap-3.5 sm:gap-4 items-center">
-              <a href={WA} target="_blank" rel="noreferrer" className={btnGold}>
-                <MessageCircle className="h-4 w-4" />
-                <span>Book on WhatsApp</span>
-              </a>
-              <a href={`tel:${PHONE}`} className={btnOutline}>
-                <Phone className="h-4 w-4 text-gold" />
-                <span>Call {PHONE}</span>
-              </a>
-            </div>
-
-            {/* Fast Stats with Luxury Cards */}
-            <div className="mt-10 sm:mt-12 grid grid-cols-3 gap-3 sm:gap-4 border-t border-gold/20 pt-6 sm:pt-8">
+          <div className="flex overflow-hidden whitespace-nowrap">
+            <div className="animate-marquee flex shrink-0 items-center gap-6 sm:gap-8 md:gap-12 text-xs sm:text-sm font-semibold tracking-wide">
+              {/* First Half */}
               {[
-                ["10+", "Years of Trust", "Serving families across Karachi"],
-                ["5,000+", "Nikahs Performed", "100% Shariah compliant"],
-                ["24/7", "Immediate Dispatch", "Short notice & urgent Nikah"],
-              ].map(([num, label, desc]) => (
-                <div key={label} className="text-left">
-                  <div className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
-                    {num}
-                  </div>
-                  <div className="text-[11px] sm:text-xs font-semibold text-gold mt-1">{label}</div>
-                  <div className="text-[10px] sm:text-[11px] text-muted-foreground hidden sm:block mt-0.5">
-                    {desc}
-                  </div>
+                { icon: ShieldCheck, text: "Govt. Registered Registrar" },
+                { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
+                { icon: Award, text: "NADRA MRC Assistance" },
+                { icon: Clock, text: "24/7 Express Service" },
+                { icon: ShieldCheck, text: "Govt. Registered Registrar" },
+                { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
+                { icon: Award, text: "NADRA MRC Assistance" },
+                { icon: Clock, text: "24/7 Express Service" },
+              ].map(({ icon: I, text }, i) => (
+                <div key={`item-a-${i}`} className="flex items-center gap-2.5 shrink-0">
+                  <I className="h-4 w-4 md:h-4.5 md:w-4.5 text-champagne shrink-0" />
+                  <span className="text-champagne font-semibold">{text}</span>
+                  <span className="text-gold/50 ml-6 sm:ml-8 md:ml-12">✦</span>
+                </div>
+              ))}
+
+              {/* Second Half (Exact Duplicate for Seamless Loop at -50% translate) */}
+              {[
+                { icon: ShieldCheck, text: "Govt. Registered Registrar" },
+                { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
+                { icon: Award, text: "NADRA MRC Assistance" },
+                { icon: Clock, text: "24/7 Express Service" },
+                { icon: ShieldCheck, text: "Govt. Registered Registrar" },
+                { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
+                { icon: Award, text: "NADRA MRC Assistance" },
+                { icon: Clock, text: "24/7 Express Service" },
+              ].map(({ icon: I, text }, i) => (
+                <div key={`item-b-${i}`} className="flex items-center gap-2.5 shrink-0">
+                  <I className="h-4 w-4 md:h-4.5 md:w-4.5 text-champagne shrink-0" />
+                  <span className="text-champagne font-semibold">{text}</span>
+                  <span className="text-gold/50 ml-6 sm:ml-8 md:ml-12">✦</span>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Trust & Official Compliance Infinite Marquee Strip */}
-      <section className="relative overflow-hidden border-y border-gold/30 bg-primary py-3.5 md:py-4 text-primary-foreground select-none">
-        {/* Left & Right Smooth Edge Fade Vignettes */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-12 md:w-24 bg-gradient-to-r from-primary to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-12 md:w-24 bg-gradient-to-l from-primary to-transparent" />
+        {/* Services Section */}
+        <Services />
 
-        <div className="flex overflow-hidden whitespace-nowrap">
-          <div className="animate-marquee flex shrink-0 items-center gap-6 sm:gap-8 md:gap-12 text-xs sm:text-sm font-semibold tracking-wide">
-            {/* First Half */}
-            {[
-              { icon: ShieldCheck, text: "Govt. Registered Registrar" },
-              { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
-              { icon: Award, text: "NADRA MRC Assistance" },
-              { icon: Clock, text: "24/7 Express Service" },
-              { icon: ShieldCheck, text: "Govt. Registered Registrar" },
-              { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
-              { icon: Award, text: "NADRA MRC Assistance" },
-              { icon: Clock, text: "24/7 Express Service" },
-            ].map(({ icon: I, text }, i) => (
-              <div key={`item-a-${i}`} className="flex items-center gap-2.5 shrink-0">
-                <I className="h-4 w-4 md:h-4.5 md:w-4.5 text-champagne shrink-0" />
-                <span className="text-champagne font-semibold">{text}</span>
-                <span className="text-gold/50 ml-6 sm:ml-8 md:ml-12">✦</span>
-              </div>
-            ))}
+        {/* NEW: Transparent Service Packages */}
+        <Packages />
 
-            {/* Second Half (Exact Duplicate for Seamless Loop at -50% translate) */}
-            {[
-              { icon: ShieldCheck, text: "Govt. Registered Registrar" },
-              { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
-              { icon: Award, text: "NADRA MRC Assistance" },
-              { icon: Clock, text: "24/7 Express Service" },
-              { icon: ShieldCheck, text: "Govt. Registered Registrar" },
-              { icon: FileCheck2, text: "Official Nikah Nama & Seal" },
-              { icon: Award, text: "NADRA MRC Assistance" },
-              { icon: Clock, text: "24/7 Express Service" },
-            ].map(({ icon: I, text }, i) => (
-              <div key={`item-b-${i}`} className="flex items-center gap-2.5 shrink-0">
-                <I className="h-4 w-4 md:h-4.5 md:w-4.5 text-champagne shrink-0" />
-                <span className="text-champagne font-semibold">{text}</span>
-                <span className="text-gold/50 ml-6 sm:ml-8 md:ml-12">✦</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* Why Choose Us */}
+        <Why />
 
-      {/* Services Section */}
-      <Services />
+        {/* Step-by-Step Nikah Process */}
+        <Process />
 
-      {/* NEW: Transparent Service Packages */}
-      <Packages />
+        {/* NEW: Karachi Towns Service Coverage Guide */}
+        <Coverage />
 
-      {/* Why Choose Us */}
-      <Why />
+        {/* NEW: Required Documents Checklist */}
+        <DocumentsChecklist />
 
-      {/* Step-by-Step Nikah Process */}
-      <Process />
+        {/* NEW: Knowledge & Trust Hub */}
+        <KnowledgeHub />
 
-      {/* NEW: Karachi Towns Service Coverage Guide */}
-      <Coverage />
+        {/* Gallery */}
+        <Gallery />
 
-      {/* NEW: Required Documents Checklist */}
-      <DocumentsChecklist />
+        {/* Client Testimonials */}
+        <Testimonials />
 
-      {/* NEW: Knowledge & Trust Hub */}
-      <KnowledgeHub />
+        {/* Frequently Asked Questions */}
+        <Faq />
 
-      {/* Gallery */}
-      <Gallery />
-
-      {/* Client Testimonials */}
-      <Testimonials />
-
-      {/* Frequently Asked Questions */}
-      <Faq />
-
-      {/* Contact & Booking Form */}
-      <Contact />
+        {/* Contact & Booking Form */}
+        <Contact />
+      </main>
 
       {/* Footer */}
       <SiteFooter />
@@ -1202,7 +1208,7 @@ function KnowledgeHub() {
               className="group flex flex-col justify-between rounded-3xl border border-gold/25 bg-background p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold hover:shadow-xl"
             >
               <div>
-                <span className="inline-block rounded-full bg-gold/15 px-3 py-1 text-[11px] font-bold text-gold border border-gold/30 mb-3">
+                <span className="inline-block rounded-full bg-gold/15 px-3 py-1 text-[11px] font-bold text-[#8f6208] border border-gold/30 mb-3">
                   {hub.badge}
                 </span>
                 <h3 className="text-xl font-bold text-primary group-hover:text-gold transition">
@@ -1386,6 +1392,38 @@ const GALLERY_ROW_3 = [
   },
 ];
 
+function GalleryItem({
+  item,
+}: {
+  item: { src: string; alt: string; title: string; location: string; badge: string };
+}) {
+  return (
+    <div className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]">
+      <img
+        src={item.src}
+        alt={item.alt}
+        loading="lazy"
+        decoding="async"
+        width={384}
+        height={240}
+        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+      />
+      <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
+        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span>{item.badge}</span>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+      <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+        <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">{item.title}</p>
+        <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
+          <MapPin className="h-3 w-3 text-gold shrink-0" />
+          <span>{item.location}</span>
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function Gallery() {
   return (
     <section
@@ -1407,38 +1445,13 @@ function Gallery() {
       <div className="relative w-full overflow-hidden space-y-4 sm:space-y-6">
         {/* Row 1: Left to Right */}
         <div className="relative w-full overflow-hidden">
-          {/* Subtle Narrow Left & Right Fade Masks */}
           <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-12 md:w-16 bg-gradient-to-r from-background to-transparent z-20" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-12 md:w-16 bg-gradient-to-l from-background to-transparent z-20" />
 
           <div className="flex w-max animate-marquee-reverse animate-marquee-medium">
             <div className="flex shrink-0 items-center gap-4 sm:gap-6 pr-4 sm:pr-6">
               {GALLERY_ROW_1.map((item, idx) => (
-                <div
-                  key={`r1-a-${idx}`}
-                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-                  />
-                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>{item.badge}</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
-                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
-                      <MapPin className="h-3 w-3 text-gold shrink-0" />
-                      <span>{item.location}</span>
-                    </p>
-                  </div>
-                </div>
+                <GalleryItem key={`r1-a-${idx}`} item={item} />
               ))}
             </div>
             <div
@@ -1446,31 +1459,7 @@ function Gallery() {
               aria-hidden="true"
             >
               {GALLERY_ROW_1.map((item, idx) => (
-                <div
-                  key={`r1-b-${idx}`}
-                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-                  />
-                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>{item.badge}</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
-                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
-                      <MapPin className="h-3 w-3 text-gold shrink-0" />
-                      <span>{item.location}</span>
-                    </p>
-                  </div>
-                </div>
+                <GalleryItem key={`r1-b-${idx}`} item={item} />
               ))}
             </div>
           </div>
@@ -1478,38 +1467,13 @@ function Gallery() {
 
         {/* Row 2: Right to Left */}
         <div className="relative w-full overflow-hidden">
-          {/* Subtle Narrow Left & Right Fade Masks */}
           <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-12 md:w-16 bg-gradient-to-r from-background to-transparent z-20" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-12 md:w-16 bg-gradient-to-l from-background to-transparent z-20" />
 
           <div className="flex w-max animate-marquee animate-marquee-slow">
             <div className="flex shrink-0 items-center gap-4 sm:gap-6 pr-4 sm:pr-6">
               {GALLERY_ROW_2.map((item, idx) => (
-                <div
-                  key={`r2-a-${idx}`}
-                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-                  />
-                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>{item.badge}</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
-                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
-                      <MapPin className="h-3 w-3 text-gold shrink-0" />
-                      <span>{item.location}</span>
-                    </p>
-                  </div>
-                </div>
+                <GalleryItem key={`r2-a-${idx}`} item={item} />
               ))}
             </div>
             <div
@@ -1517,31 +1481,7 @@ function Gallery() {
               aria-hidden="true"
             >
               {GALLERY_ROW_2.map((item, idx) => (
-                <div
-                  key={`r2-b-${idx}`}
-                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-                  />
-                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>{item.badge}</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
-                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
-                      <MapPin className="h-3 w-3 text-gold shrink-0" />
-                      <span>{item.location}</span>
-                    </p>
-                  </div>
-                </div>
+                <GalleryItem key={`r2-b-${idx}`} item={item} />
               ))}
             </div>
           </div>
@@ -1549,38 +1489,13 @@ function Gallery() {
 
         {/* Row 3: Left to Right */}
         <div className="relative w-full overflow-hidden">
-          {/* Subtle Narrow Left & Right Fade Masks */}
           <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-12 md:w-16 bg-gradient-to-r from-background to-transparent z-20" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-12 md:w-16 bg-gradient-to-l from-background to-transparent z-20" />
 
           <div className="flex w-max animate-marquee-reverse animate-marquee-medium">
             <div className="flex shrink-0 items-center gap-4 sm:gap-6 pr-4 sm:pr-6">
               {GALLERY_ROW_3.map((item, idx) => (
-                <div
-                  key={`r3-a-${idx}`}
-                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-                  />
-                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>{item.badge}</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
-                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
-                      <MapPin className="h-3 w-3 text-gold shrink-0" />
-                      <span>{item.location}</span>
-                    </p>
-                  </div>
-                </div>
+                <GalleryItem key={`r3-a-${idx}`} item={item} />
               ))}
             </div>
             <div
@@ -1588,31 +1503,7 @@ function Gallery() {
               aria-hidden="true"
             >
               {GALLERY_ROW_3.map((item, idx) => (
-                <div
-                  key={`r3-b-${idx}`}
-                  className="group relative w-72 sm:w-84 md:w-96 shrink-0 aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-gold/30 bg-card shadow-soft transition-all duration-300 hover:border-gold hover:shadow-2xl hover:scale-[1.02]"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
-                  />
-                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/65 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-champagne shadow-sm">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>{item.badge}</span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
-                  <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                    <p className="text-xs sm:text-sm font-bold leading-tight drop-shadow-sm">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 flex items-center gap-1 text-[11px] text-pearl/80">
-                      <MapPin className="h-3 w-3 text-gold shrink-0" />
-                      <span>{item.location}</span>
-                    </p>
-                  </div>
-                </div>
+                <GalleryItem key={`r3-b-${idx}`} item={item} />
               ))}
             </div>
           </div>
@@ -1908,27 +1799,39 @@ function Contact() {
               { i: Mail, l: "Official Email", v: EMAIL, h: `mailto:${EMAIL}` },
               { i: MapPin, l: "Office Address", v: ADDRESS, h: MAP },
               { i: Clock, l: "Service Timings", v: "24 Hours a Day · 7 Days a Week", h: undefined },
-            ].map(({ i: I, l, v, h }) => (
-              <a
-                key={l}
-                href={h}
-                target={h?.startsWith("http") ? "_blank" : undefined}
-                rel="noreferrer"
-                className="flex items-start gap-4 group"
-              >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-gold/50 bg-lavender transition group-hover:bg-gold/20">
-                  <I className="h-5 w-5 text-gold" />
-                </span>
-                <div>
-                  <span className="block text-xs uppercase tracking-wider text-muted-foreground">
-                    {l}
+            ].map(({ i: I, l, v, h }) => {
+              const content = (
+                <>
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-gold/50 bg-lavender transition group-hover:bg-gold/20">
+                    <I className="h-5 w-5 text-gold" />
                   </span>
-                  <span className="text-sm font-semibold text-primary group-hover:text-gold transition">
-                    {v}
-                  </span>
+                  <div>
+                    <span className="block text-xs uppercase tracking-wider text-muted-foreground">
+                      {l}
+                    </span>
+                    <span className="text-sm font-semibold text-primary group-hover:text-gold transition">
+                      {v}
+                    </span>
+                  </div>
+                </>
+              );
+
+              return h ? (
+                <a
+                  key={l}
+                  href={h}
+                  target={h.startsWith("http") ? "_blank" : undefined}
+                  rel="noreferrer"
+                  className="flex items-start gap-4 group"
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={l} className="flex items-start gap-4 group">
+                  {content}
                 </div>
-              </a>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -1948,28 +1851,66 @@ function Contact() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="block text-xs font-semibold text-primary mb-1">
+                <label
+                  htmlFor="booking-name"
+                  className="block text-xs font-semibold text-primary mb-1"
+                >
                   Your Full Name *
                 </label>
-                <input required name="name" placeholder="e.g. Muhammad Farhan" className={field} />
+                <input
+                  id="booking-name"
+                  required
+                  name="name"
+                  placeholder="e.g. Muhammad Farhan"
+                  aria-label="Your Full Name"
+                  className={field}
+                />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-primary mb-1">
+                <label
+                  htmlFor="booking-phone"
+                  className="block text-xs font-semibold text-primary mb-1"
+                >
                   Contact Number *
                 </label>
-                <input required name="phone" placeholder="0300-1234567" className={field} />
+                <input
+                  id="booking-phone"
+                  required
+                  name="phone"
+                  placeholder="0300-1234567"
+                  aria-label="Contact Number"
+                  className={field}
+                />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-primary mb-1">
+                <label
+                  htmlFor="booking-date"
+                  className="block text-xs font-semibold text-primary mb-1"
+                >
                   Proposed Nikah Date
                 </label>
-                <input name="date" type="date" className={field} />
+                <input
+                  id="booking-date"
+                  name="date"
+                  type="date"
+                  aria-label="Proposed Nikah Date"
+                  className={field}
+                />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-primary mb-1">
+                <label
+                  htmlFor="booking-service"
+                  className="block text-xs font-semibold text-primary mb-1"
+                >
                   Service Type
                 </label>
-                <select name="service" className={field} defaultValue="Nikah at Home">
+                <select
+                  id="booking-service"
+                  name="service"
+                  aria-label="Service Type"
+                  className={field}
+                  defaultValue="Nikah at Home"
+                >
                   {services.map((s) => (
                     <option key={s.t}>{s.t}</option>
                   ))}
@@ -1978,23 +1919,33 @@ function Contact() {
                 </select>
               </div>
               <div className="sm:col-span-2">
-                <label className="block text-xs font-semibold text-primary mb-1">
+                <label
+                  htmlFor="booking-area"
+                  className="block text-xs font-semibold text-primary mb-1"
+                >
                   Area / Venue in Karachi
                 </label>
                 <input
+                  id="booking-area"
                   name="area"
                   placeholder="e.g. DHA Phase 5, Banquet Hall or Home address"
+                  aria-label="Area or Venue in Karachi"
                   className={field}
                 />
               </div>
               <div className="sm:col-span-2">
-                <label className="block text-xs font-semibold text-primary mb-1">
+                <label
+                  htmlFor="booking-msg"
+                  className="block text-xs font-semibold text-primary mb-1"
+                >
                   Additional Requirements / Notes
                 </label>
                 <textarea
+                  id="booking-msg"
                   name="msg"
                   rows={3}
                   placeholder="Mention timings, Wali status, or any special documentation needs"
+                  aria-label="Additional Requirements or Notes"
                   className={field}
                 />
               </div>

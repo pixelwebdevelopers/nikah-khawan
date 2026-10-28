@@ -24,7 +24,7 @@ function shouldSkipLoadingScreen(): boolean {
   const ua = navigator.userAgent || "";
   if (
     /(?:chrome-)?lighthouse|headlesschrome|pagespeed|speed insights|google-pagerenderer|googlebot|bingbot|baiduspider|yandexbot|duckduckbot|slurp|facebookexternalhit|whatsapp|telegrambot|twitterbot|pinterest|linkedinbot|\bbot\b|\bcrawler\b|\bspider\b|ptst/i.test(
-      ua
+      ua,
     )
   ) {
     return true;
@@ -33,7 +33,7 @@ function shouldSkipLoadingScreen(): boolean {
   // 4. Specific Lighthouse runtime globals / device profiles
   try {
     const win = window as unknown as Record<string, unknown>;
-    if (win.__LIGHTHOUSE_DEVICE_PROFILE__ || win.__lighthouse) {
+    if (Boolean(win["__LIGHTHOUSE_DEVICE_PROFILE__"]) || Boolean(win["__lighthouse"])) {
       return true;
     }
   } catch {
@@ -45,7 +45,12 @@ function shouldSkipLoadingScreen(): boolean {
     const search = window.location.search;
     if (search) {
       const params = new URLSearchParams(search);
-      if (params.has("skip_loader") || params.has("noloading") || params.has("lighthouse") || params.has("psi")) {
+      if (
+        params.has("skip_loader") ||
+        params.has("noloading") ||
+        params.has("lighthouse") ||
+        params.has("psi")
+      ) {
         return true;
       }
     }

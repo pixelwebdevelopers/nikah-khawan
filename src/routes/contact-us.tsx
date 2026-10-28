@@ -204,41 +204,59 @@ I want to inquire/book a Nikah ceremony:
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-primary mb-1">
+                  <label
+                    htmlFor="contact-name"
+                    className="block text-xs font-semibold text-primary mb-1"
+                  >
                     Your Full Name *
                   </label>
                   <input
+                    id="contact-name"
+                    name="name"
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Enter your name"
+                    aria-label="Your Full Name"
                     className="w-full rounded-xl border border-gold/30 bg-pearl/40 px-4 py-2.5 text-xs sm:text-sm text-foreground focus:border-gold focus:outline-hidden"
                   />
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="block text-xs font-semibold text-primary mb-1">
+                    <label
+                      htmlFor="contact-phone"
+                      className="block text-xs font-semibold text-primary mb-1"
+                    >
                       Phone / WhatsApp Number *
                     </label>
                     <input
+                      id="contact-phone"
+                      name="phone"
                       type="tel"
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="03XX-XXXXXXX"
+                      aria-label="Phone or WhatsApp Number"
                       className="w-full rounded-xl border border-gold/30 bg-pearl/40 px-4 py-2.5 text-xs sm:text-sm text-foreground focus:border-gold focus:outline-hidden"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-primary mb-1">
+                    <label
+                      htmlFor="contact-service"
+                      className="block text-xs font-semibold text-primary mb-1"
+                    >
                       Select Service *
                     </label>
                     <select
+                      id="contact-service"
+                      name="service"
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      aria-label="Select Nikah Service"
                       className="w-full rounded-xl border border-gold/30 bg-pearl/40 px-4 py-2.5 text-xs sm:text-sm text-foreground focus:border-gold focus:outline-hidden"
                     >
                       <option value="Nikah Khawan Service Karachi">
@@ -259,41 +277,59 @@ I want to inquire/book a Nikah ceremony:
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="block text-xs font-semibold text-primary mb-1">
+                    <label
+                      htmlFor="contact-venue"
+                      className="block text-xs font-semibold text-primary mb-1"
+                    >
                       Venue / Area in Karachi
                     </label>
                     <input
+                      id="contact-venue"
+                      name="venue"
                       type="text"
                       value={formData.venue}
                       onChange={(e) => setFormData({ ...formData, venue: e.target.value })}
                       placeholder="e.g. DHA, Gulshan, Banquet Name"
+                      aria-label="Venue or Area in Karachi"
                       className="w-full rounded-xl border border-gold/30 bg-pearl/40 px-4 py-2.5 text-xs sm:text-sm text-foreground focus:border-gold focus:outline-hidden"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-primary mb-1">
+                    <label
+                      htmlFor="contact-date"
+                      className="block text-xs font-semibold text-primary mb-1"
+                    >
                       Intended Date & Time
                     </label>
                     <input
+                      id="contact-date"
+                      name="date"
                       type="text"
                       value={formData.date}
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                       placeholder="e.g. 25th Dec, 8:00 PM"
+                      aria-label="Intended Date and Time"
                       className="w-full rounded-xl border border-gold/30 bg-pearl/40 px-4 py-2.5 text-xs sm:text-sm text-foreground focus:border-gold focus:outline-hidden"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-primary mb-1">
+                  <label
+                    htmlFor="contact-notes"
+                    className="block text-xs font-semibold text-primary mb-1"
+                  >
                     Special Requirements or Questions
                   </label>
                   <textarea
+                    id="contact-notes"
+                    name="notes"
                     rows={3}
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     placeholder="Mention timing constraints, overseas bride/groom details, or Wali requirements"
+                    aria-label="Special Requirements or Questions"
                     className="w-full rounded-xl border border-gold/30 bg-pearl/40 px-4 py-2.5 text-xs sm:text-sm text-foreground focus:border-gold focus:outline-hidden"
                   />
                 </div>
