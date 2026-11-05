@@ -29,7 +29,7 @@ import { Route as NikahKhawanServiceKarachiRouteImport } from './routes/nikah-kh
 import { Route as NikahVideosRouteImport } from './routes/nikah-videos'
 import { Route as OnlineNikahWorldwideRouteImport } from './routes/online-nikah-worldwide'
 import { Route as QAndARouteImport } from './routes/q-and-a'
-import { Route as BlogsSlugRouteImport } from './routes/blogs.$slug'
+import { Route as BlogsSlugRouteImport } from './routes/blogs_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -134,15 +134,15 @@ const QAndARoute = QAndARouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogsSlugRoute = BlogsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogsRoute,
+  id: '/blogs_/$slug',
+  path: '/blogs/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
-  '/blogs': typeof BlogsRouteWithChildren
+  '/blogs': typeof BlogsRoute
   '/contact-us': typeof ContactUsRoute
   '/court-marriage': typeof CourtMarriageRoute
   '/feedback-reviews': typeof FeedbackReviewsRoute
@@ -165,7 +165,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
-  '/blogs': typeof BlogsRouteWithChildren
+  '/blogs': typeof BlogsRoute
   '/contact-us': typeof ContactUsRoute
   '/court-marriage': typeof CourtMarriageRoute
   '/feedback-reviews': typeof FeedbackReviewsRoute
@@ -189,7 +189,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
-  '/blogs': typeof BlogsRouteWithChildren
+  '/blogs': typeof BlogsRoute
   '/contact-us': typeof ContactUsRoute
   '/court-marriage': typeof CourtMarriageRoute
   '/feedback-reviews': typeof FeedbackReviewsRoute
@@ -207,7 +207,7 @@ export interface FileRoutesById {
   '/nikah-videos': typeof NikahVideosRoute
   '/online-nikah-worldwide': typeof OnlineNikahWorldwideRoute
   '/q-and-a': typeof QAndARoute
-  '/blogs/$slug': typeof BlogsSlugRoute
+  '/blogs_/$slug': typeof BlogsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -278,13 +278,13 @@ export interface FileRouteTypes {
     | '/nikah-videos'
     | '/online-nikah-worldwide'
     | '/q-and-a'
-    | '/blogs/$slug'
+    | '/blogs_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
-  BlogsRoute: typeof BlogsRouteWithChildren
+  BlogsRoute: typeof BlogsRoute
   ContactUsRoute: typeof ContactUsRoute
   CourtMarriageRoute: typeof CourtMarriageRoute
   FeedbackReviewsRoute: typeof FeedbackReviewsRoute
@@ -302,6 +302,7 @@ export interface RootRouteChildren {
   NikahVideosRoute: typeof NikahVideosRoute
   OnlineNikahWorldwideRoute: typeof OnlineNikahWorldwideRoute
   QAndARoute: typeof QAndARoute
+  BlogsSlugRoute: typeof BlogsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -446,30 +447,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QAndARouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blogs/$slug': {
-      id: '/blogs/$slug'
-      path: '/$slug'
+    '/blogs_/$slug': {
+      id: '/blogs_/$slug'
+      path: '/blogs/$slug'
       fullPath: '/blogs/$slug'
       preLoaderRoute: typeof BlogsSlugRouteImport
-      parentRoute: typeof BlogsRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface BlogsRouteChildren {
-  BlogsSlugRoute: typeof BlogsSlugRoute
-}
-
-const BlogsRouteChildren: BlogsRouteChildren = {
-  BlogsSlugRoute: BlogsSlugRoute,
-}
-
-const BlogsRouteWithChildren = BlogsRoute._addFileChildren(BlogsRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
-  BlogsRoute: BlogsRouteWithChildren,
+  BlogsRoute: BlogsRoute,
   ContactUsRoute: ContactUsRoute,
   CourtMarriageRoute: CourtMarriageRoute,
   FeedbackReviewsRoute: FeedbackReviewsRoute,
@@ -487,6 +478,7 @@ const rootRouteChildren: RootRouteChildren = {
   NikahVideosRoute: NikahVideosRoute,
   OnlineNikahWorldwideRoute: OnlineNikahWorldwideRoute,
   QAndARoute: QAndARoute,
+  BlogsSlugRoute: BlogsSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

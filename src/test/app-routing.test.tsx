@@ -14,4 +14,20 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it("matches the blogs listing page for /blogs", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const matches = router.matchRoutes("/blogs");
+
+    expect(matches.at(-1)?.routeId).toBe("/blogs");
+  });
+
+  it("matches the blog detail route directly under root for /blogs/:slug", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const matches = router.matchRoutes("/blogs/nadra-marriage-certificate-karachi-guide");
+
+    expect(matches.at(-1)?.routeId).toBe("/blogs_/$slug");
+  });
 });

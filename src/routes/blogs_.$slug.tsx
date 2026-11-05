@@ -29,7 +29,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export const Route = createFileRoute("/blogs/$slug")({
+export const Route = createFileRoute("/blogs_/$slug")({
   loader: ({ params }) => {
     const post = getBlogBySlug(params.slug);
     if (!post) {
