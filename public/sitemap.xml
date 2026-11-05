@@ -101,9 +101,15 @@
   <!-- Resources, Q&A and Corporate Pages -->
   <url>
     <loc>https://www.nikahkhawan.com/blogs</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nikahkhawan.com/blogs/nikahnama-columns-explained-pakistan-guide</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.nikahkhawan.com/blogs/nadra-marriage-certificate-karachi-guide</loc>

@@ -41,6 +41,194 @@ export interface BlogPost {
 
 export const BLOGS_DATA: BlogPost[] = [
   {
+    id: "nikahnama-columns-explained-pakistan-guide",
+    slug: "nikahnama-columns-explained-pakistan-guide",
+    title:
+      "Nikahnama Columns Explained: Complete Guide to Pakistan's Form II (All 25 Columns & Rights)",
+    urduTitle:
+      "پاکستانی نکاح نامہ کے تمام 25 خانے اور شرائط: حق مہر، طلاقِ تفویض اور قانونی حقوق کی مکمل وضاحت",
+    metaDescription:
+      "Clause-by-clause legal breakdown of all 25 columns of the Pakistani Nikahnama (Form II). Understand Haq Mehr (Prompt vs Deferred), Column 18 Talaq-e-Tafweez, and Column 17 conditions.",
+    category: "Legal Documentation",
+    readTime: "9 min read",
+    date: "November 2026",
+    updatedDate: "November 2026",
+    author: {
+      name: "Advocate Tariq Mahmood",
+      role: "High Court Advocate & Matrimonial Legal Counsel",
+      avatar: "/logo.webp",
+    },
+    image: "/images/blogs/nikahnama-columns-explained.jpg",
+    imageAlt:
+      "Official Pakistani Nikahnama Form II 25 columns explained with legal fountain pen, seal stamp, and portfolio",
+    imageCaption:
+      "Statutory Form II under Rule 8 of the Muslim Family Laws Ordinance 1961: The ultimate legal safeguard for bridal and spousal rights.",
+    badge: "Nikahnama Legal Guide",
+    excerpt:
+      "The Pakistani Nikahnama (Form II) is a sacred, legally enforceable covenant under the Muslim Family Laws Ordinance 1961. This clause-by-clause legal guide breaks down all 25 columns—from Haq-Mehr and Column 17 special conditions to Column 18 Talaq-e-Tafweez and the 4 statutory copies—so you never sign blindly on your wedding day.",
+    keyTakeaways: [
+      "The Nikahnama is Form II under Rule 8 of the Muslim Family Laws Ordinance (MFLO) 1961, containing 25 legally binding statutory columns.",
+      "Columns 13 to 16 govern Haq-Mehr: Prompt (Mu'ajjal) is payable immediately; if Column 14 is left blank, superior court precedent dictates the entire dower defaults to prompt.",
+      "Column 18 (Talaq-e-Tafweez) delegates the unconditional right of divorce to the bride; crossing it out without informed consent violates judicial guidelines.",
+      "Under the Sindh Child Marriage Restraint Act 2013, both bride and groom must be at least 18 years old to legally execute a Nikahnama in Karachi.",
+    ],
+    sections: [
+      {
+        heading: "1. The Pakistani Nikahnama is a Binding Legal Contract, Not Merely a Ceremony",
+        paragraphs: [
+          "On the wedding day, amidst the celebration, emotional family tears, and flashing cameras, the Urdu Nikahnama is often thrust before the bride and groom for rapid signatures. Rushed by relatives or wedding hall curfews, most couples sign without having read a single line.",
+          "Under Pakistani law, the Nikahnama is officially designated as Form II under Rule 8 of the Muslim Family Laws Ordinance (MFLO), 1961. It is not a decorative certificate; it is a solemn, legally binding civil contract governed by Islamic Shariah and enforceable in the Family Courts of Pakistan.",
+          "Careless blanks, hurried handwriting, or arbitrary lines drawn through critical protective clauses (Khat-e-Tanseekh / خط تنسیخ) frequently lead to prolonged court battles over financial dower, maintenance, and divorce rights. Understanding all 25 columns beforehand protects both partners' dignity and future.",
+        ],
+        callout: {
+          type: "important",
+          title: "Judicial Precedent on Crossing Out Clauses",
+          text: "The High Courts of Pakistan and the Federal Shariat Court have repeatedly admonished Nikah Registrars against unilaterally striking out columns—especially Columns 17 and 18. Both parties must be explicitly consulted and their informed consent recorded.",
+        },
+      },
+      {
+        heading: "2. Columns 1 to 6: Personal Identifications, Wards & Age Verification (Sindh Act 2013)",
+        paragraphs: [
+          "The first block of the Nikahnama establishes the statutory jurisdiction, geographic locus, and legal identity of the bride and groom:",
+        ],
+        bulletPoints: [
+          "Header Information (Ward, Town, Tehsil & District): Identifies the local Union Council where the marriage took place or where the bride permanently resides, determining registration jurisdiction.",
+          "Column 1 & 2 (Groom's Particulars & Age): Groom's full legal name according to NADRA CNIC/NICOP, father's name, residential address, and verified age in completed years.",
+          "Column 3 (Groom's Marital Status): Specifies whether the groom is a bachelor (Ghair-Shadishuda), widower (Bewa), or divorced (Talaq-Yafta).",
+          "Column 4 (Bride's Particulars): Bride's full legal name as per NADRA CNIC/Smart Card, father's or legal guardian's name, and residential address.",
+          "Column 5 (Bride's Marital Status): Identifies whether the bride is an unmarried virgin (Bakira / Kanwari), a widow (Bewa), or a divorcee (Muntashira / Talaq-Yafta).",
+          "Column 6 (Bride's Age & Sindh Age Rules): Under the Sindh Child Marriage Restraint Act 2013, the minimum marriage age for BOTH bride and groom is strictly 18 years in Karachi. Unlike federal law where female age is 16, solemnizing a marriage under 18 in Karachi is a non-bailable criminal offense.",
+        ],
+      },
+      {
+        heading: "3. Columns 7 to 12: Appointment of Wakils (Proxies), Witnesses & Solemnization",
+        paragraphs: [
+          "Islamic jurisprudence (Fiqh) permits entering into a marriage contract directly or through an authorized representative (Wakeel / Wakil). Columns 7 through 12 formalize representation and statutory witnesses:",
+        ],
+        bulletPoints: [
+          "Column 7 (Bride's Wakil): Full name, father's name, and address of the attorney or representative appointed by the bride to communicate her proposal or acceptance (Ijab-o-Qubool).",
+          "Column 8 (Witnesses of Bride's Wakil Appointment): Two adult Muslim witnesses who personally verified the bride's voluntary consent and appointment of her Wakil, along with their relationship to the bride.",
+          "Column 9 & 10 (Groom's Wakil & Witnesses): If the groom is absent (such as an overseas Pakistani solemnizing via an Online Nikah), his designated Wakeel and two attesting witnesses are recorded here.",
+          "Column 11 (Witnesses to Marriage Solemnization): Names, CNIC numbers, father's names, and residences of two independent, sane, adult Muslim male witnesses who witnessed the verbal exchange of vows.",
+          "Column 12 (Date of Marriage): The exact Gregorian and Islamic (Hijri) calendar date on which the Nikah ceremony took place.",
+        ],
+        callout: {
+          type: "tip",
+          title: "Online Nikah Documentation",
+          text: "For overseas Pakistanis using our Online Nikah service from the UK, USA, Canada, or Gulf, Columns 7 through 10 are meticulously executed under a formal Special Power of Attorney (Tawkeel-e-Nikah) to guarantee 100% legal compliance.",
+        },
+      },
+      {
+        heading: "4. Columns 13 to 16: Haq-Mehr (Dower) Terms — Prompt (Mu'ajjal) vs Deferred (Mu'wajjal)",
+        paragraphs: [
+          "Haq-Mehr is an obligatory financial gift and divine economic safeguard mandated by Islamic Shariah from the husband to the wife. It is her absolute personal property, entirely free from parental or marital claim.",
+          "The Pakistani Nikahnama breaks Haq-Mehr down into four interconnected statutory clauses:",
+        ],
+        bulletPoints: [
+          "Column 13 (Total Haq-Mehr Fixed): The comprehensive value agreed upon. This can be expressed in Pakistani Rupees (PKR), specified weight of gold (e.g., 2 Tolas 24K Gold), foreign currency, or real estate.",
+          "Column 14 (Prompt / Mu'ajjal vs. Deferred / Mu'wajjal): Mu'ajjal (معجل) is payable immediately at the ceremony or upon demand at any time. Mu'wajjal (مؤجل) is payable upon dissolution of marriage (divorce/khula) or upon the husband's demise.",
+          "Column 15 (Portion Paid at Ceremony): The precise cash or gold jewelry handed over to the bride in the presence of the Nikah Registrar during the solemnization.",
+          "Column 16 (Property Given in Lieu of Mehr): If agricultural land, a residential apartment, car, or family heirloom is pledged, complete property deed numbers, survey plot numbers, and registry details must be inscribed here.",
+        ],
+        callout: {
+          type: "important",
+          title: "Critical Legal Rule on Blank Column 14",
+          text: "Under Section 10 of the Muslim Family Laws Ordinance 1961, if Column 14 does not specify whether the Mehr is prompt or deferred, the entire dower is legally presumed to be prompt (Mu'ajjal) and is payable immediately upon the wife's demand.",
+        },
+      },
+      {
+        heading: "5. Columns 17 & 18: The Essential Protective Clauses (Special Conditions & Talaq-e-Tafweez)",
+        paragraphs: [
+          "Columns 17 and 18 represent the most vital, yet frequently misunderstood and neglected sections of the Pakistani Nikahnama. They provide statutory mechanisms for negotiating personal rights and matrimonial security:",
+        ],
+        bulletPoints: [
+          "Column 17 (Special Conditions / Shartain): Both parties can agree on legally enforceable terms. Examples include: guaranteeing the wife's fundamental right to pursue higher education, right to continue professional employment, provision of an independent separate accommodation (apart from in-laws), monthly pocket allowance (Kharch-e-Jaib), and annual travel allowances.",
+          "Column 18 (Talaq-e-Tafweez / Delegated Right of Divorce): Under Islamic Shariah, the husband possesses the inherent unilateral right of Talaq. In Column 18, he can delegate this exact power to the wife unconditionally or under specific conditions.",
+          "Why Column 18 is Crucial: If a wife possesses Talaq-e-Tafweez and the marriage breaks down, she can dissolve the marriage directly without filing for Khula in Family Court, preserving her full Haq-Mehr and avoiding years of exhausting litigation.",
+        ],
+        callout: {
+          type: "quote",
+          title: "Islamic Jurisprudence on Talaq-e-Tafweez",
+          text: "'Delegation of divorce (Tafweez-e-Talaq) is unanimously endorsed by all four classical Sunni schools of Islamic jurisprudence (Hanafi, Maliki, Shafi'i, Hanbali) as an authentic, binding Shariah right.' — Radd al-Muhtar (Allama Ibn Abidin)",
+        },
+      },
+      {
+        heading: "6. Columns 19 to 21: Maintenance Agreements, Polygamy Controls & Section 6 MFLO",
+        paragraphs: [
+          "These clauses govern the ongoing financial support of the wife and enforce statutory checks on polygamous marriages:",
+        ],
+        bulletPoints: [
+          "Column 19 (Restrictions on Husband's Power of Divorce): Allows the couple to stipulate agreed terms if the husband contemplates divorce, such as requiring formal family mediation or specific financial compensation.",
+          "Column 20 (Wife's Maintenance Documents): Explicitly records any separate legal deeds or agreements regarding monthly maintenance (*nafaqah*), child custody stipulations, or property transfers.",
+          "Column 21 (Existing Wives & Arbitration Council Permission): If the groom already has a living wife, he is legally required under Section 6 of the Muslim Family Laws Ordinance 1961 to obtain prior written permission from the Chairman of the local Arbitration Council. The official permission certificate number and issuance date must be entered here. Marrying without this permission is a criminal offense punishable by fine and imprisonment.",
+        ],
+      },
+      {
+        heading: "7. Columns 22 to 25: Solemnization, Registrar Seals & The Rule of Four Copies",
+        paragraphs: [
+          "The closing section formalizes the legal execution, authentication, and statutory archiving of the marriage contract:",
+        ],
+        bulletPoints: [
+          "Column 22: Full name, father's name, and residential address of the Islamic Scholar / Nikah Khawan who solemnized the marriage.",
+          "Column 23: The formal date of registration in the municipal archives.",
+          "Column 24: The permanent license number, volume serial number, and official government stamp of the licensed Nikah Registrar.",
+          "Column 25: The prescribed government registration fee paid according to municipal schedules.",
+          "The Rule of Four Original Copies: By law, every Pakistani Nikahnama is executed in quadruplicate. Copy 1 is retained by the Union Council for NADRA computerization; Copy 2 is given to the Bride; Copy 3 is given to the Groom; and Copy 4 remains in the Registrar's permanent record book.",
+        ],
+        callout: {
+          type: "tip",
+          title: "Always Keep the Original Bride Copy Safe",
+          text: "The bride's original copy is an indispensable legal document for updating her NADRA CNIC marital status, applying for a computerized NADRA Marriage Certificate (MRC), spouse visa processing, and foreign embassy attestation.",
+        },
+      },
+      {
+        heading: "8. Why Choosing a Professional Registered Nikah Khawan in Karachi Protects Your Future",
+        paragraphs: [
+          "A Nikahnama is not just ink on paper; it is the constitutional foundation of a new family. Entrusting its execution to untrained or unauthorized individuals can result in misspelled names, unverified CNIC data, missing witness records, or unregistered marriages that create nightmare hurdles during passport renewals, child birth registrations, and immigration petitions.",
+          "Our team of Government Registered Nikah Registrars and High Court Advocates—led by Maulana Abdul Rehman, Advocate Tariq Mahmood, and Qazi M. Rizwan—guarantees:",
+        ],
+        bulletPoints: [
+          "Pre-Marital Clause Counseling: We explain all 25 columns to both families in advance, ensuring transparent agreements on Haq-Mehr, Column 17 conditions, and Column 18.",
+          "Strict Age Verification: 100% adherence to the Sindh Child Marriage Restraint Act 2013, safeguarding families from criminal liability.",
+          "Flawless Biometric & CNIC Documentation: Zero spelling errors, ensuring seamless synchronization with NADRA CRMS and passport systems.",
+          "Direct Union Council Computerization: Prompt submission of the 4th copy to the relevant Karachi Union Council to issue your Computerized NADRA Marriage Registration Certificate (MRC).",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What happens if Column 18 (Talaq-e-Tafweez) is struck out without my consent?",
+        a: "Unilaterally crossing out Column 18 violates High Court directives. However, if already registered with lines drawn through, the bride can still seek judicial dissolution through Khula under the Family Courts Act 1964, though having Column 18 intact allows immediate, penalty-free dissolution.",
+      },
+      {
+        q: "If Column 14 (Prompt vs. Deferred Mehr) is left blank, what does Pakistani law dictate?",
+        a: "Under Section 10 of the Muslim Family Laws Ordinance 1961, if the dower is not explicitly classified as deferred, the legal presumption is that the ENTIRE Haq-Mehr is prompt (Mu'ajjal) and payable immediately upon the wife's demand.",
+      },
+      {
+        q: "Can the bride demand a separate home or continued career in Column 17?",
+        a: "Yes. Column 17 is specifically provided for special conditions. Conditions that do not contradict Islamic Shariah or public policy—such as independent housing, right to work, education completion, or monthly maintenance—are completely valid and legally enforceable.",
+      },
+      {
+        q: "Can anyone under 18 years of age sign a Nikahnama in Karachi?",
+        a: "No. Under the Sindh Child Marriage Restraint Act 2013, anyone under 18 years old is legally a child. Solemnizing or registering an underage marriage in Karachi carries rigorous imprisonment and heavy fines for the groom, parents, and Nikah Registrar.",
+      },
+      {
+        q: "Who gets the four original copies of the Nikahnama after the wedding?",
+        a: "The law requires four identical copies: one for the Bride, one for the Groom, one for the Nikah Registrar's permanent record, and one submitted to the local Union Council for NADRA computerized MRC issuance.",
+      },
+      {
+        q: "Can the Nikahnama be amended or updated after it has been registered?",
+        a: "No. Once signed, stamped, and registered in the Union Council registry, a Nikahnama cannot be altered by hand. Any corrections for typographical errors require formal legal rectification through the Union Council Secretary or Family Court.",
+      },
+    ],
+    relatedSlugs: [
+      "nadra-marriage-certificate-karachi-guide",
+      "court-marriage-laws-in-pakistan-rights-procedure",
+      "documents-required-for-nikah-in-karachi-checklist",
+      "is-online-nikah-valid-in-islam-shariah-conditions",
+    ],
+  },
+  {
     id: "nadra-marriage-certificate-karachi-guide",
     slug: "nadra-marriage-certificate-karachi-guide",
     title: "Complete Guide to NADRA Computerized Marriage Certificate (MRC) in Karachi (2026)",
@@ -138,6 +326,7 @@ export const BLOGS_DATA: BlogPost[] = [
       },
     ],
     relatedSlugs: [
+      "nikahnama-columns-explained-pakistan-guide",
       "court-marriage-laws-in-pakistan-rights-procedure",
       "documents-required-for-nikah-in-karachi-checklist",
       "is-online-nikah-valid-in-islam-shariah-conditions",
@@ -231,6 +420,7 @@ export const BLOGS_DATA: BlogPost[] = [
       },
     ],
     relatedSlugs: [
+      "nikahnama-columns-explained-pakistan-guide",
       "nadra-marriage-certificate-karachi-guide",
       "documents-required-for-nikah-in-karachi-checklist",
       "is-online-nikah-valid-in-islam-shariah-conditions",
@@ -422,6 +612,7 @@ export const BLOGS_DATA: BlogPost[] = [
       },
     ],
     relatedSlugs: [
+      "nikahnama-columns-explained-pakistan-guide",
       "nadra-marriage-certificate-karachi-guide",
       "court-marriage-laws-in-pakistan-rights-procedure",
       "sunnah-of-masjid-nikah-blessings-etiquette",
