@@ -101,9 +101,15 @@
   <!-- Resources, Q&A and Corporate Pages -->
   <url>
     <loc>https://www.nikahkhawan.com/blogs</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.nikahkhawan.com/blogs/how-to-verify-book-registered-nikah-khawan-karachi</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.nikahkhawan.com/blogs/nikahnama-columns-explained-pakistan-guide</loc>

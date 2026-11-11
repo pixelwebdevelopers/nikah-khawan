@@ -110,11 +110,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const GTM_CONTAINER_IDS = ["GTM-KSZMRL62", "GTM-TB3KJ8FG"] as const;
+
+// Keep a stable object reference so React 19 never reassigns innerHTML across renders.
+const GTM_INIT_SCRIPT = {
+  __html: [
+    "window.dataLayer = window.dataLayer || [];",
+    "function gtag(){dataLayer.push(arguments);}",
+    "gtag('js', new Date());",
+  ].join("\n"),
+};
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
         <HeadContent />
+        {GTM_CONTAINER_IDS.map((id) => (
+          <script key={id} async src={`https://www.googletagmanager.com/gtm.js?id=${id}`} />
+        ))}
+        <script dangerouslySetInnerHTML={GTM_INIT_SCRIPT} />
       </head>
       <body>
         {children}

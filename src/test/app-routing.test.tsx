@@ -2,6 +2,7 @@ import { QueryClient } from "@tanstack/react-query";
 import { createRouter, rootRouteId } from "@tanstack/react-router";
 import { describe, expect, it } from "vitest";
 
+import { getBlogBySlug } from "@/data/blogs";
 import { routeTree } from "@/routeTree.gen";
 
 // Match routes without running loaders or rendering: loaders may need a server or
@@ -29,5 +30,16 @@ describe("App routing", () => {
     const matches = router.matchRoutes("/blogs/nadra-marriage-certificate-karachi-guide");
 
     expect(matches.at(-1)?.routeId).toBe("/blogs_/$slug");
+  });
+
+  it("resolves the Karachi registered Nikah Khawan guide route and data", () => {
+    const slug = "how-to-verify-book-registered-nikah-khawan-karachi";
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const matches = router.matchRoutes(`/blogs/${slug}`);
+    const post = getBlogBySlug(slug);
+
+    expect(matches.at(-1)?.routeId).toBe("/blogs_/$slug");
+    expect(post?.image).toBe("/images/blogs/registered-nikah-khawan-karachi.jpg");
   });
 });

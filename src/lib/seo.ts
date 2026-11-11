@@ -15,6 +15,7 @@ interface PageSeoParams {
     | "CollectionPage"
     | "ImageGallery";
   category?: string;
+  image?: string;
   faqs?: { q: string; a: string }[];
 }
 
@@ -25,10 +26,16 @@ export function buildPageSeo({
   keywords,
   schemaType = "Service",
   category = "Nikah Service",
+  image,
   faqs,
 }: PageSeoParams) {
   const pageUrl = `${SITE_CONFIG.url}${path}`;
   const fullTitle = `${title} | ${SITE_CONFIG.shortName}`;
+  const imageUrl = image
+    ? image.startsWith("http")
+      ? image
+      : `${SITE_CONFIG.url}${image}`
+    : `${SITE_CONFIG.url}/logo.webp`;
 
   const graphList: Record<string, unknown>[] = [
     {
@@ -37,6 +44,7 @@ export function buildPageSeo({
       name: title,
       url: pageUrl,
       description: description,
+      ...(image ? { image: imageUrl } : {}),
       provider: {
         "@type": ["LegalService", "LocalBusiness"],
         name: SITE_CONFIG.name,
@@ -102,12 +110,12 @@ export function buildPageSeo({
     { property: "og:description", content: description },
     { property: "og:type", content: "website" },
     { property: "og:url", content: pageUrl },
-    { property: "og:image", content: `${SITE_CONFIG.url}/logo.webp` },
+    { property: "og:image", content: imageUrl },
     { property: "og:site_name", content: SITE_CONFIG.name },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: fullTitle },
     { name: "twitter:description", content: description },
-    { name: "twitter:image", content: `${SITE_CONFIG.url}/logo.webp` },
+    { name: "twitter:image", content: imageUrl },
     { name: "geo.region", content: SITE_CONFIG.geo.region },
     { name: "geo.placename", content: SITE_CONFIG.geo.locality },
     { name: "geo.position", content: `${SITE_CONFIG.geo.lat};${SITE_CONFIG.geo.lng}` },

@@ -50,6 +50,7 @@ export const Route = createFileRoute("/blogs_/$slug")({
       path: `/blogs/${post.slug}`,
       schemaType: "Blog",
       category: post.category,
+      image: post.image,
       faqs: post.faqs,
     });
   },
