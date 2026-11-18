@@ -41,6 +41,163 @@ export interface BlogPost {
 
 export const BLOGS_DATA: BlogPost[] = [
   {
+    id: "nikah-in-makkah-and-madinah-during-umrah-complete-guide",
+    slug: "nikah-in-makkah-and-madinah-during-umrah-complete-guide",
+    title:
+      "Nikah in Makkah & Madinah During Umrah: Shariah Guide, Saudi Rules & NADRA Registration (2026)",
+    urduTitle:
+      "عمرہ کے دوران مکہ مکرمہ اور مدینہ منورہ میں نکاح: شرعی آداب، سعودی قوانین اور پاکستان میں نادرا رجسٹریشن",
+    metaDescription:
+      "Guide to Nikah in Makkah & Madinah during Umrah: Haram & Masjid an-Nabawi etiquette, Umrah visa rules, required documents & official Pakistani NADRA registration.",
+    category: "Sunnah & Traditions",
+    readTime: "8 min read",
+    date: "November 2026",
+    updatedDate: "November 2026",
+    author: {
+      name: "Maulana Abdul Rehman",
+      role: "Licensed Nikah Registrar & Islamic Legal Advisor",
+      avatar: "/logo.webp",
+    },
+    image: "/images/blogs/nikah-in-makkah-madinah-umrah.jpg",
+    imageAlt:
+      "Emerald-green Aqd al-Nikah folder, brass fountain pen, wooden tasbih, and Madinah Ajwa dates overlooking Masjid an-Nabawi umbrellas and the Green Dome",
+    imageCaption:
+      "Harmonizing the sacred spiritual beauty of an Umrah Nikah in Makkah or Madinah with official Pakistani Union Council and NADRA registration.",
+    badge: "Haramain Umrah Guide",
+    excerpt:
+      "Dreaming of solemnizing your Nikah during Umrah in Holy Makkah or illuminated Madinah? Learn the authentic Shariah requirements, Ihram rulings, Haramain etiquette, why Saudi Umrah visas do not grant local court certificates, and how to officially register your Haramain Nikah in Pakistan for a valid NADRA Marriage Certificate (MRC).",
+    keyTakeaways: [
+      "Solemnizing a simple, quiet Sunnah Nikah in Masjid al-Haram (Makkah) or Masjid an-Nabawi (Madinah) is completely valid in Islam when all Shariah pillars—Ijab-o-Qubool, Wali consent, two adult Muslim witnesses, and Haq-Mehr—are fulfilled.",
+      "Under unanimous Islamic jurisprudence, a Nikah must never be contracted while the bride, groom, or Wali is in the state of Ihram; always complete Umrah and exit Ihram (Tahallul) first.",
+      "Official Saudi court marriage registration generally requires valid Saudi residency (Iqama); pilgrims visiting on Umrah or tourist visas need official Pakistani Union Council registration to obtain a legal certificate.",
+      "Consulting a Government Registered Nikah Registrar 1 to 2 weeks before departure ensures seamless Form II registration under the Muslim Family Laws Ordinance 1961 and a Computerized NADRA MRC recognized worldwide.",
+    ],
+    sections: [
+      {
+        heading: "1. Why Couples Choose Makkah & Madinah for a Blessed Umrah Nikah",
+        paragraphs: [
+          "Beginning married life in the Two Holy Sanctuaries—facing the Holy Kaaba in Masjid al-Haram (Makkah al-Mukarramah) or in the radiant serenity of Masjid an-Nabawi (Madinah al-Munawwarah)—is a lifelong spiritual aspiration for Muslim families across Pakistan and the global diaspora.",
+          "An Umrah Nikah revives authentic Prophetic simplicity, freeing families from extravagant banquet hall expenses and social pressures while anchoring the marriage covenant in sincere worship, gratitude, and heartfelt Dua in the most blessed places on Earth.",
+        ],
+        callout: {
+          type: "quote",
+          title: "Quranic Blessing on Marriage",
+          text: "'And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy.' — Surah Ar-Rum (30:21)",
+        },
+      },
+      {
+        heading: "2. Saudi Umrah Visa Rules vs. Pakistani Legal Registration (What Families Miss)",
+        paragraphs: [
+          "The most common misconception among Pakistani and overseas pilgrims is assuming that a local Saudi Ma'zoon (marriage official) can issue an official Saudi government marriage contract while the couple is visiting on an Umrah or tourist visa.",
+          "In practice, official Saudi Ministry of Justice marriage registration generally requires valid Saudi residency (Iqama), local pre-marital medical clearance inside the Kingdom, and formal residency approvals that short-term Umrah visitors do not hold.",
+          "If a family conducts only a verbal ceremony inside the Haram without statutory registration, the couple returns home with no legal marriage document—creating serious obstacles for NADRA CNIC marital status updates, Family Registration Certificates (FRC), passports, child birth registrations, and UK, USA, Canada, or GCC spouse visas.",
+        ],
+        callout: {
+          type: "important",
+          title: "Bridging Shariah & Pakistani Statutory Law",
+          text: "Synchronizing your Makkah or Madinah ceremony with a Government Registered Pakistani Nikah Registrar ensures your marriage is both 100% Shariah-compliant in the Haramain and officially entered into Form II registers under the Muslim Family Laws Ordinance (MFLO) 1961 for Union Council filing and NADRA MRC issuance.",
+        },
+      },
+      {
+        heading: "3. Essential Shariah Pillars, Ihram Rules & Haramain Etiquette (Adab)",
+        paragraphs: [
+          "To preserve both the Shariah validity of your contract and the sacred decorum of the Two Holy Mosques, observe these essential religious and practical guidelines:",
+        ],
+        bulletPoints: [
+          "Complete Umrah & Exit Ihram First: Never contract a Nikah while the bride, groom, or Wali is in the state of Ihram. Complete your Umrah rituals and exit Ihram (Tahallul) before holding the solemnization.",
+          "Fulfill All Four Shariah Pillars: Clear verbal Ijab-o-Qubool (offer and acceptance), presence or verified consent of the bride's Wali, two sane adult Muslim male witnesses, and mutually agreed Haq-Mehr (which may be fixed in Saudi Riyals SAR, Gold, or Pakistani Rupees PKR).",
+          "Respect Haramain Sanctity & Crowd Flow: Keep voices calm and low, avoid blocking Tawaf routes, walkways, or prayer rows, and refrain from bulky videography rigs, banners, or disruptive gatherings inside Masjid al-Haram or Masjid an-Nabawi.",
+          "Choose Quiet, Dignified Spaces: In Makkah, families commonly gather in calmer upper-floor prayer areas or private Abraj Al Bait (Clock Tower) and Jabal Omar suites overlooking the Kaaba; in Madinah, families choose the shaded Piazza courtyard umbrellas or Markazia hotel lounges facing the Green Dome.",
+          "Sunnah Ajwa Date Distribution: Distribute blessed Madinah Ajwa dates or sweets discreetly outside carpeted prayer halls to maintain the cleanliness of the sanctuary.",
+        ],
+        callout: {
+          type: "important",
+          title: "Authentic Hadith Ruling on Marriage During Ihram",
+          text: "Uthman ibn Affan (RA) narrated that the Messenger of Allah (ﷺ) said: 'A Muhrim (one in the state of Ihram) must not marry, nor give in marriage, nor make a proposal of marriage.' (Sahih Muslim, Hadith 1409). Always schedule your Nikah after exiting Ihram.",
+        },
+      },
+      {
+        heading: "4. Step-by-Step Procedure to Solemnize & Legally Register Your Umrah Nikah",
+        paragraphs: [
+          "Registering a Makkah or Madinah Nikah cleanly under Pakistani family law follows a straightforward four-stage workflow when coordinated ahead of travel:",
+        ],
+        bulletPoints: [
+          "Step 1 — Pre-Travel Scholar Consultation (1–2 Weeks Ahead): Contact our licensed Nikah Registrar office via WhatsApp before flying to confirm your travel dates, preferred city (Makkah or Madinah), witness availability, Haq-Mehr currency, and Column 17–18 stipulations.",
+          "Step 2 — Advance Document Verification & Pre-Drafting: Share legible copies of CNICs/NICOPs, passports, and witness IDs so our Karachi office verifies 18+ statutory age eligibility and pre-drafts your Form II register entries matching NADRA spelling letter-for-letter.",
+          "Step 3 — Sacred Solemnization in Makkah or Madinah: Conduct the authentic Arabic Khutbah-e-Nikah, verbal Ijab-o-Qubool, and collective Dua in Makkah or Madinah—coordinated either with our traveling scholar guidance or via synchronized live link with authorized Wakeel and witnesses at our Karachi registrar office.",
+          "Step 4 — Union Council Filing & NADRA MRC Delivery: The licensed Nikah Registrar stamps the 4-copy government register, hands over the original Bride and Groom copies, submits Copy 1/4 to the Union Council, and facilitates your Computerized NADRA Marriage Registration Certificate (MRC) and MOFA attestation.",
+        ],
+      },
+      {
+        heading: "5. Complete Document Checklist Before Flying for Your Umrah Nikah",
+        paragraphs: [
+          "Prepare both physical copies and clear digital scans of the following documents before leaving Pakistan or your country of residence:",
+        ],
+        bulletPoints: [
+          "Groom & Bride Passports & Visas: Valid Pakistani Passports (or foreign passports for overseas dual nationals) along with active Umrah or visit visa copies.",
+          "NADRA Identity Cards: Clear copies of valid NADRA CNIC, Smart Card, or NICOP confirming both spouses are at least 18 years old under the Sindh Child Marriage Restraint Act 2013.",
+          "Passport Photographs: Two recent passport-size color photographs each for permanent Form II register affixing.",
+          "Wali & Witnesses Identification: Valid CNIC or passport copies of the bride's Wali (father or guardian) and two adult Muslim male witnesses.",
+          "Prior Marital Documents (If Applicable): Official NADRA Divorce Certificate (Talaqnama) or deceased spouse's Death Certificate; for a second marriage, written Arbitration Council permission under Section 6 MFLO 1961.",
+        ],
+        callout: {
+          type: "tip",
+          title: "Keep Digital Scans Ready on WhatsApp",
+          text: "Store clear PDF or photo scans of all passports, CNICs, and agreed Haq-Mehr details in a dedicated folder before boarding so your Nikah Registrar can verify every detail immediately without airport or roaming delays.",
+        },
+      },
+      {
+        heading: "6. Makkah vs. Madinah: Choosing the Best Setting for Your Ceremony",
+        paragraphs: [
+          "Many families ask whether to hold the ceremony in Makkah or Madinah—or how to combine both cities during one Umrah itinerary:",
+        ],
+        bulletPoints: [
+          "Nikah in Makkah (Masjid al-Haram & Clock Tower Hotels): Offers unmatched spiritual majesty facing the Holy Kaaba. Because the Mataf and ground levels stay intensely crowded, plan the solemnization after completing Umrah and exiting Ihram—ideally after Fajr, mid-morning, or in a serene Haram-view suite at Abraj Al Bait or Jabal Omar.",
+          "Nikah in Madinah (Masjid an-Nabawi Courtyard & Markazia): Widely cherished for its gentle, tranquil atmosphere and ease of accessibility for elderly parents and grandparents. Sharing fresh Madinah Ajwa dates beneath the courtyard umbrellas or in a Markazia suite creates an unforgettable Sunnah memory.",
+          "Combining Both Holy Cities: Many Karachi and overseas Pakistani families perform Umrah in Makkah first, complete Tahallul, and then travel to peaceful Madinah for their solemnization—while keeping all Pakistani Union Council and NADRA registration seamlessly synchronized.",
+        ],
+      },
+      {
+        heading: "7. End-to-End Haramain Nikah Consultation & Worldwide Documentation Support",
+        paragraphs: [
+          "Whether you are flying from Karachi, Lahore, Islamabad, or joining family in Saudi Arabia from the UK, USA, Canada, UAE, or Europe, our senior Islamic scholars and Government Registered Nikah Registrars provide complete Shariah and statutory guidance from start to finish.",
+          "From authentic Khutbah-e-Nikah coordination and Wakeel documentation to stamped Form II Nikahnama copies, Karachi Union Council registration, Computerized NADRA MRC issuance, and Ministry of Foreign Affairs (MOFA) attestation, we ensure your sacred Haramain covenant carries full legal validity back home and internationally.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can Pakistani pilgrims legally perform Nikah in Makkah or Madinah on an Umrah visa?",
+        a: "Yes. Performing a quiet, respectful Sunnah Nikah in Makkah or Madinah is completely valid under Islamic Shariah when all pillars (Ijab-o-Qubool, Wali consent, two adult Muslim witnesses, and Haq-Mehr) are met. To ensure legal validity for NADRA and visas, coordinate official Pakistani Form II registration with a licensed Nikah Registrar.",
+      },
+      {
+        q: "Can a Nikah be performed while wearing Ihram during Umrah?",
+        a: "No. Under authentic Hadith (Sahih Muslim, Hadith 1409) and unanimous Islamic jurisprudence, a person in the state of Ihram cannot marry, get married, or act as a Wali for a marriage. Always complete Umrah and exit Ihram (Tahallul) before solemnizing your Nikah.",
+      },
+      {
+        q: "Will the Saudi government issue a marriage certificate for an Umrah Nikah?",
+        a: "Generally no. Official Saudi Ministry of Justice marriage certificates require valid Saudi residency (Iqama) and local pre-marital medical clearances. Pilgrims on Umrah or visit visas should register their marriage through an authorized Pakistani Nikah Registrar to receive a valid Pakistani Nikahnama and NADRA MRC.",
+      },
+      {
+        q: "How do we get a NADRA Marriage Certificate (MRC) after a Nikah in Makkah or Madinah?",
+        a: "Once your ceremony is coordinated with our Government Registered Nikah Registrar and logged in the official 4-copy Form II register under the Muslim Family Laws Ordinance 1961, we submit the archive copy to the Union Council in Karachi so you receive your Computerized NADRA MRC—eligible for MOFA and foreign embassy attestation.",
+      },
+      {
+        q: "Can Haq-Mehr for a Makkah or Madinah Nikah be fixed in Saudi Riyals (SAR)?",
+        a: "Yes. Haq-Mehr can be mutually agreed upon in Saudi Riyals (SAR), Gold weight (Tola/Grams), or Pakistani Rupees (PKR), and clearly specified as Prompt (Mu'ajjal) or Deferred (Mu'wajjal) in Columns 13 to 16 of the official Nikahnama.",
+      },
+      {
+        q: "When should we contact a registered Nikah Registrar before traveling for Umrah?",
+        a: "We recommend contacting our team via WhatsApp at least 1 to 2 weeks before your travel dates so CNIC/NICOP details, passport spellings, witness records, and Wakeel authorizations are pre-verified well ahead of your departure.",
+      },
+    ],
+    relatedSlugs: [
+      "sunnah-of-masjid-nikah-blessings-etiquette",
+      "is-online-nikah-valid-in-islam-shariah-conditions",
+      "nadra-marriage-certificate-karachi-guide",
+    ],
+  },
+  {
     id: "how-to-verify-book-registered-nikah-khawan-karachi",
     slug: "how-to-verify-book-registered-nikah-khawan-karachi",
     title: "Registered Nikah Khawan in Karachi: License Verification, Fees & Booking Guide (2026)",
@@ -870,6 +1027,7 @@ export const BLOGS_DATA: BlogPost[] = [
       },
     ],
     relatedSlugs: [
+      "nikah-in-makkah-and-madinah-during-umrah-complete-guide",
       "documents-required-for-nikah-in-karachi-checklist",
       "nadra-marriage-certificate-karachi-guide",
       "is-online-nikah-valid-in-islam-shariah-conditions",
